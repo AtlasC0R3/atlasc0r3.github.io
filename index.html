@@ -10,8 +10,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<meta content="atlas_core's 'personal' page" property="og:title">
-		<meta content="Hi! This is the website where atlas_core presents himself. In a crappy way, of course, because I don't know how to HTML or Markdown." property="og:description">
+		<meta content="atlas_core" property="og:title">
+		<meta content="code doer, procrastinator, lazy person that plays around with technologic things." property="og:description">
 		<meta content="atlas_core.github.io" property="og:site_name">
 		<meta content='/images/avatar.png' property='og:image'>
 		<link type="application/json+oembed" href="/oembed.json"/>
@@ -29,24 +29,25 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<span class="image avatar"><img src="images/avatar.png" alt="" /></span>
+					<span class="image avatar"><img src="images/avatar.png" alt="this is chair. say hi" /></span>
 					<h1 id="logo"><a href="#">atlas_core</a></h1>
-					<p>Oh, I'm a developer?</p>
+					<p>random high school student writing code garbage</p>
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active">About</a></li>
-						<li><a href="#two">Ongoing Projects</a></li>
-						<p>not sure why i left this navbar here if theres only 2 links</p>
+						<li><a href="#one" class="active">about</a></li>
+						<li><a href="#blog-promotion">blog</a></li>
+						<li><a href="#two">things i did</a></li>
 					</ul>
 				</nav>
 				<footer>
 					<ul class="icons">
 						<!-- https://www.w3schools.com/icons/fontawesome5_icons_brands.asp -->
+						<li><a href="/blog/" class="icon solid fa-blog"><span class="label">Blog</span></a></li>
 						<li><a rel="me" href="https://linuxrocks.online/@atlas_core" class="icon brands fa-mastodon"><span class="label">Mastodon</span></a></li>
-						<li><a href="https://discord.com/users/333027024576970755/" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
+						<!-- <li><a href="https://discord.com/users/333027024576970755/" class="icon brands fa-discord"><span class="label">Discord</span></a></li> -->
 						<li><a href="https://github.com/AtlasC0R3" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="https://gitdab.com/atlas_core" class="icon brands fa-git-square"><span class="label">Gitdab</span></a></li>
+						<!-- <li><a href="https://gitdab.com/atlas_core" class="icon brands fa-git-square"><span class="label">Gitdab</span></a></li> -->
 						<li><a href="https://matrix.to/#/@atlas_core:matrix.org" class="icon solid fa-comment-alt"><span class="label">Matrix.org</span></a></li>
 					</ul>
 				</footer>
@@ -66,10 +67,21 @@
 								<div class="container">
 									<header class="major">
 										<h2>hi</h2>
-										<p>i code stuff i guess.</p>
+										<p>i do the programmer thing.</p>
 									</header>
-									<p>i write garbage codey code code and beg people to care.<br />
+									<p>or play around with whatever technologic thing that happens to be on my mind.<br />
 									<p style="text-decoration: line-through;">i alternatively bash my head against a keyboard when i feel like it</p>
+								</div>
+							</section>
+							<section id="blog-promotion">
+								<div class="container">
+									<header class="minor">
+										<h2>blog</h2>
+										<p>i have one of those.</p>
+									</header>
+									<p>i've worked on making Jekyll work so that I could have a place to write longer posts 
+										instead of writing everything on smaller Mastodon posts. <i>which is still better than Twitter for numerous reasons, but anyway.</i> <a href="/blog/"><span class="label">here it is.</span></a>
+									</p>
 								</div>
 							</section>
 
@@ -93,14 +105,14 @@
 						<!-- Two again -->
 							<section id="two">
 								<div class="container">
-									<h3>Ongoing Projects</h3>
+									<h3>things i did</h3>
 									<p>Just stuff I'm actively working on.. or at least, as of putting this site together.</p>
 									<div class="features">
 										<article>
 											<a href="https://github.com/AtlasC0R3/drop-mod" class="image"><img src="images/drop.png" alt="Drop's icon" /></a>
 											<div class="inner">
 												<h4>Drop</h4>
-												<p>A Python library meant to store chat moderation data (warns, mutes, etc).</p>
+												<p>A Python library meant to store chat moderation data (warns, mutes, etc). Which was first a Discord bot.</p>
 											</div>
 										</article>
 										<article>
@@ -117,11 +129,8 @@
 												<p>Some Spotify API wrapper I wrote in Lua for the Roblox engine.</p>
 											</div>
 										</article>
-										<article>
-											<p>yep that's about it</p>
-										</article>
 									</div>
-									<h3>Other Projects</h3>
+									<h3>other things i did</h3>
 									<p>Other programs that I have worked on, but either didn't have time to work on, or don't work on anymore. Not discontinued, just not updated.</p>
 									<div class="features">
 										<article>
@@ -149,6 +158,16 @@
 											</div>
 										</article>
 									</div>
+								</div>
+						
+								<section id="three">
+								<div class="container">
+										<div class="inner">
+											<h3>chair</h3>
+											<a class="image"><img src="images/avatar.png" alt="hhi :)" width=300 height=300/></a>
+											<h4>this is chair</h5>
+											<p>say hi</p>
+										</div>
 								</div>
 
 						<!-- Four -->
@@ -516,10 +535,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							</ul>
 							<ul class="icons">
 								<!-- https://www.w3schools.com/icons/fontawesome5_icons_brands.asp -->
-								<li><a rel="me" href="https://mastodon.online/@atlas_core" class="icon brands fa-mastodon"><span class="label">Mastodon</span></a></li>
-								<li><a href="https://discord.com/users/333027024576970755/" class="icon brands fa-discord"><span class="label">Discord</span></a></li>
+								<li><a href="/blog/" class="icon solid fa-blog"><span class="label">Blog</span></a></li>
+								<li><a rel="me" href="https://linuxrocks.online/@atlas_core" class="icon brands fa-mastodon"><span class="label">Mastodon</span></a></li>
 								<li><a href="https://github.com/AtlasC0R3" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								<li><a href="https://gitdab.com/atlas_core" class="icon brands fa-git-square"><span class="label">Gitdab</span></a></li>
 								<li><a href="https://matrix.to/#/@atlas_core:matrix.org" class="icon solid fa-comment-alt"><span class="label">Matrix.org</span></a></li>
 							</ul>
 						</div>
