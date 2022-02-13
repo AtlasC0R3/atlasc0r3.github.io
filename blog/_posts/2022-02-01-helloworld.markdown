@@ -6,3 +6,6 @@ date:   2022-02-12 15:25:21 -0500
 It took a long, *long* period of thinking and configuring, but finally it should all work as I want it to! That is, a GitHub page that allows me to have a custom HTML page, **and** a bloggy-type Jekyll post thing as a subsection of this page! Woohoo!
 
 So yeah, I'll probably start writing more here.
+
+![my cat :)](/blog/media/helloworld/example_cat.jpg)
+Here, have this photo of my cat.
