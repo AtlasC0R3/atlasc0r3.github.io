@@ -1,13 +1,14 @@
 ---
 layout: default
+title: Bunker
+category: bunker
 ---
-
 {% assign posts_count = paginator.posts | size %}
 {% if posts_count > 0 %}
 <h1>recent articles</h1>
     <div class="post-links">
       {% for post in paginator.posts %}
-        {% unless post.categories contains 'bunker' %}
+        {% if post.categories contains 'bunker' %}
           <div class="post-link-wrapper">
             <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
             <div class="post-meta">
@@ -31,13 +32,10 @@ layout: default
               {% endif %}
             </div>
           </div>
-        {% endunless %}
+        {% else %}
+          <p>what the fuck?</p>
+        {% endif %}
       {% endfor %}
     </div>
-
-    {% include pagination.html %}
-
-    {% include tagcloud.html %}
-{% else %}
-<h2>no posts yet.</h2>
 {% endif %}
+
