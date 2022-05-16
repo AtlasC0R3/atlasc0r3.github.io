@@ -1,3 +1,7 @@
+---
+sitemap: false
+tags: bunker
+---
 This situation sucks.  
 All of this sucks.  
 I agree that this is completely uncalled for.  

@@ -1,3 +1,7 @@
+---
+sitemap: false
+tags: bunker
+---
 I just now have been made aware that Zorya, "co-owner" of Bus Bunker, has purged every invite that leads to the server. I can see that as nothing else than an act of silencing and aggression, a way to silence the other side of the story and make it so that we can only see *their* side of the argument (which is full of unproven insults against me and my points).
 
 That is fucking petty. I can not see it as any other way than that.
