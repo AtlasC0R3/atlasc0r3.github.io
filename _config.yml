@@ -36,10 +36,6 @@ plugins:
 paginate: 15
 paginate_path: "/blog/page:num/"
 
-# RSS feed
-feed:
-  path: /blog/feed.xml
-
 dash:
   # the way how dates should be displayed
   date_format: "%b %-d, %Y"
