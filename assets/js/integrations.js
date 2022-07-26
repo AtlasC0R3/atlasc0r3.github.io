@@ -1,5 +1,4 @@
-function httpGet(theUrl, callback)
-{
+function httpGet(theUrl, callback){
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -8,6 +7,22 @@ function httpGet(theUrl, callback)
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }
+
+text_truncate = function(str, length, ending){
+    // https://www.w3resource.com/javascript-exercises/javascript-string-exercise-16.php
+    if (length == null) {
+      length = 100;
+    }
+    if (ending == null) {
+      ending = '...';
+    }
+    if (str.length > length) {
+      return str.substring(0, length - ending.length) + ending;
+    } else {
+      return str;
+    }
+  };
+
 
 document.getElementById("platformIntegration").hidden = false;
 
@@ -43,6 +58,7 @@ function fuck(shit){
         playing_now = false;
 
         // go through the recent listens, I guess...
+        document.getElementById("nowplaying2").innerHTML = "I am not currently listening to anything right now; I'll show you my most recently listened song, this won't take too long!";
         httpGet("https://api.listenbrainz.org/1/user/atlas_core/listens?count=1", fuck);
         return;
     }
@@ -62,6 +78,8 @@ function popcorn(data){
     if(data === "0"){
         console.log("nothing watching... going to use ListenBrainz instead");
 
+        document.getElementById("nowplaying1").innerHTML = "am trying to integrate with ListenBrainz";
+        document.getElementById("nowplaying2").innerHTML = "since I am not watching anything on Trakt, I am going to show you what I'm listening to. just give me a second...";
         httpGet("https://api.listenbrainz.org/1/user/atlas_core/playing-now", fuck)
         return;
     }
@@ -91,21 +109,28 @@ httpGet("https://api.rightmouse.click/traktWatching", popcorn);
 // Mastodon integration
 // -------------------------------------------------------------------
 function toothole(toots){  // toothole because funny or something idrk
-    var toot = JSON.parse(toots)[0];  // 1 is media only, 9 is something with a CW
+                           // I was tired when doing this part of the code. Don't ask.
+    var toot = JSON.parse(toots)[16];
     var idontfuckingknow = "recently tooted ";
     if(toot.spoiler_text){
         idontfuckingknow += "something controversial"
-        var content = "<strong>Marked as sensitive:</strong> " + toot.spoiler_text + "<br><i>click \"view post\" to see...</i>";
+        const random = Math.floor(Math.random() * 100) + 1;
+        if(random < 20){
+            var confirmation = "are you sure (is this what you want?)";
+        } else{
+            var confirmation = "click here to see...";
+        }
+        var content = `<strong>Marked as sensitive:</strong> ${toot.spoiler_text}<br><a href=${toot.url}><i>${confirmation}</i></a>`;
     } else if(!(toot.content) && (toot.media_attachments)){
         if(length > 1){
             idontfuckingknow += "attachments"
         } else{
             idontfuckingknow += "an attachment"
         }
-        var content = "<em>nothing but attachments.</em>" + "<br><i>click \"view post\" to see them.</i>";
+        var content = `<em>nothing but attachments.</em><br><a href=${toot.url}><i>click here to see them.</i></a>`;
     } else{
         idontfuckingknow += "something";
-        var content = toot.content;
+        var content = text_truncate(toot.content, 300);
     }
     var link = toot.url;
 
