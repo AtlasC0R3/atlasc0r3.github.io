@@ -110,7 +110,7 @@ httpGet("https://api.rightmouse.click/traktWatching", popcorn);
 // -------------------------------------------------------------------
 function toothole(toots){  // toothole because funny or something idrk
                            // I was tired when doing this part of the code. Don't ask.
-    var toot = JSON.parse(toots)[16];
+    var toot = JSON.parse(toots)[0];
     var idontfuckingknow = "recently tooted ";
     if(toot.spoiler_text){
         idontfuckingknow += "something controversial"
