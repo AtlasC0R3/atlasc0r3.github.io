@@ -4,7 +4,4 @@
 // Living, breathing piles of fucking garbage decaying on us humans.
 // This script isn't that. Don't worry.
 
-var whoopsies = document.createElement('div')
-e.id = "fuckfuckshitgoddammitfuckingcuntshit"
-e.style.display = "none"
-document.body.appendChild(whoopsies)
+document.getElementById("fuckfuckshitgoddammitfuckingcuntshit").style.display = "none"
