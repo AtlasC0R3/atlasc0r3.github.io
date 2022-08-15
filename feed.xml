@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://atlasc0r3.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://atlasc0r3.github.io/" rel="alternate" type="text/html" /><updated>2022-08-15T20:58:01+00:00</updated><id>https://atlasc0r3.github.io/feed.xml</id><title type="html">atlas_core writes things</title><subtitle>linux user plays around with technology and writes</subtitle><entry><title type="html">PlayStation Vita modding in 2022</title><link href="https://atlasc0r3.github.io/blog/2022/02/15/vitamodding.html" rel="alternate" type="text/html" title="PlayStation Vita modding in 2022" /><published>2022-02-15T02:00:00+00:00</published><updated>2022-02-15T02:00:00+00:00</updated><id>https://atlasc0r3.github.io/blog/2022/02/15/vitamodding</id><content type="html" xml:base="https://atlasc0r3.github.io/blog/2022/02/15/vitamodding.html">&lt;p&gt;The year is 2022. Valve has just released their Steam Deck, to great public reception.
+Mobile phones are powerful enough to run AAA games, with decent graphics and performance.
+The Nintendo Switch system family has sold over 100 million units to consumers worldwide.&lt;/p&gt;
+
+&lt;p&gt;Yet I’m still happily carrying a 2012 &lt;em&gt;(in North America at least)&lt;/em&gt; handheld game console that has been long discontinued officially.
+It’s been that way since I &lt;em&gt;think&lt;/em&gt; early 2019. &lt;em&gt;I dunno, time keeping has been completely elusive for about 2 years, I don’t remember anything! What happened?!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ll be writing a bit about how modding it was, what mods there are, some homebrew things, and how gaming is on this system.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-unofficial-side-of-things&quot;&gt;The Unofficial Side of Things&lt;/h1&gt;
+&lt;p&gt;As much as I like the official things (games, using it as a media player, etc.), the unofficial, homebrew side of things is just as awesome.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-custom-firmware-in-2019&quot;&gt;The Custom Firmware (in 2019)&lt;/h2&gt;
+&lt;p&gt;Now, I will say this right now: it’s been a long, &lt;em&gt;looong&lt;/em&gt; time since I modded this thing. So my memory’s definitely not fresh.
+Oh and, if you do want to install a CFW on your Vita system, if you have one, follow &lt;a href=&quot;https://vita.hacks.guide/get-started&quot;&gt;this guide&lt;/a&gt;. It’s not &lt;em&gt;exactly&lt;/em&gt; what I followed back then, but it is way more simple than whatever I did back then.&lt;/p&gt;
+
+&lt;p&gt;It started by me wondering the possibilities of a modded Vita; it seemed cool, enticing even.
+By that point, I had firmware version 3.70, so I had to install something called &lt;a href=&quot;https://github.com/TheOfficialFloW/h-encore&quot;&gt;h-encore&lt;/a&gt;, which actually went pretty well. &lt;em&gt;Granted, back then I only had a fairly crappy laptop, but I was still able to push h-encore to my Vita.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Once I had that installed, I technically modded it. I could run “unauthorized” software. However, that was only after I launched the “h-encore” bubble app.
+I wanted a bit more convenience, so I wanted to install &lt;a href=&quot;https://enso.henkaku.xyz/&quot;&gt;Ensō&lt;/a&gt;, to have a CFW right from when I started it.
+And back then, that process wasn’t exactly a cakewalk, like it is now.&lt;/p&gt;
+
+&lt;p&gt;I actually remember using something called &lt;a href=&quot;https://github.com/TheOfficialFloW/modoru&quot;&gt;Modoru 戻る&lt;/a&gt; to downgrade my Vita to 3.65 so that I could then install &lt;a href=&quot;https://enso.henkaku.xyz/&quot;&gt;Ensō&lt;/a&gt;.
+&lt;em&gt;Nowadays, this process is far more simple due to a very convenient tool called &lt;a href=&quot;https://github.com/SKGleba/VitaDeploy&quot;&gt;VitaDeploy&lt;/a&gt;, and I highly recommend you to use that instead, but anyway.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Regardless, I downgraded my system to firmware 3.65 using Modoru, installed Ensō, and from there I had a modded console every time I booted it up. It’s still that way even right now.&lt;/p&gt;
+
+&lt;p&gt;So, all things considered, modding it was pretty easy. Granted, I did have experience from modding my Wii U, but anyway. Nowadays, that process is far more simplified, so I’m pretty sure anyone can mod a Vita… &lt;em&gt;if&lt;/em&gt; they have one.&lt;/p&gt;
+
+&lt;h2 id=&quot;homebrew-tools&quot;&gt;Homebrew tools&lt;/h2&gt;
+&lt;p&gt;This’ll be a bit of a quick overview at what useful tools there are for a CFW’d Vita. At least, as of writing this.&lt;/p&gt;
+
+&lt;h3 id=&quot;vitashell&quot;&gt;VitaShell&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/media/vitamodding/vitashell.png&quot; alt=&quot;VitaShell screenshot&quot; /&gt;
+VitaShell is the essential tool. Every modded system should have it. &lt;em&gt;If you don’t have it installed but have your system modded, do you even exist?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s a file manager. A feature-rich one, even. It’s what you can use to transfer files to and from the system itself, via FTP or USB.
+Doesn’t sound like much, but a file manager in &lt;strong&gt;&lt;em&gt;any&lt;/em&gt;&lt;/strong&gt; modded system is a must-have, trust me.&lt;/p&gt;
+
+&lt;h3 id=&quot;vitadeploy&quot;&gt;VitaDeploy&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/media/vitamodding/vitadeploy.png&quot; alt=&quot;VitaDeploy screenshot&quot; /&gt;
+VitaShell is a bit of a Swiss Army knife; it integrates a lot of tools inside one convenient, easy to use app.&lt;/p&gt;
+
+&lt;p&gt;It can be used to install plenty of really useful tools for the Vita, downgrade the firmware &lt;em&gt;(more conveniently than modoru)&lt;/em&gt;… yeah.
+Very useful too.&lt;/p&gt;
+
+&lt;h3 id=&quot;adrenaline&quot;&gt;Adrenaline&lt;/h3&gt;
+&lt;p&gt;So, this one is a bit more complicated to install, but gives &lt;strong&gt;awesome&lt;/strong&gt; results. It’s actually a fully-fledge PSP/PS1 emulator.
+And I’m not just talking about &lt;a href=&quot;https://www.ppsspp.org/&quot;&gt;PPSSPP&lt;/a&gt; or &lt;a href=&quot;https://github.com/grumpycoders/pcsx-redux&quot;&gt;PCSX&lt;/a&gt;,
+I’m talking actual official emulators from Sony. The Vita (funnily codenamed PSP2 by some people) actually has PSP games from the PlayStation Store. Same thing with PlayStation games.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/TheOfficialFloW/Adrenaline&quot;&gt;Adrenaline&lt;/a&gt; uses the official emulator, modifies it and makes it completely usable as a regular PSP.
+Now in the convenience of a bubble on your home screen.
+&lt;a href=&quot;/blog/media/vitamodding/adrenaline.mp4&quot;&gt;Here’s how it looks like when it’s working.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And, yeah! It’s fully fledged as a PS1 emulator, &lt;em&gt;and&lt;/em&gt; a PSP emulator! There are even ways to &lt;a href=&quot;https://github.com/ONElua/AdrenalineBubbleManager&quot;&gt;put Adrenaline bubbles on your Vita home screen&lt;/a&gt; to launch them directly for even more convenience.&lt;/p&gt;
+
+&lt;h3 id=&quot;better-homebrew-browser-bhbb&quot;&gt;Better Homebrew Browser (BHBB)&lt;/h3&gt;
+&lt;p&gt;“The homebrew browser that’s actually good.”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/media/vitamodding/bhbb.png&quot; alt=&quot;BHBB screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Ibrahim778/BetterHomebrewBrowser&quot;&gt;Better Homebrew Browser&lt;/a&gt; may not be the most well known homebrew browser, but oh man is it leaps and bounds better and stabler than &lt;a href=&quot;https://github.com/devnoname120/vhbb&quot;&gt;Vita HomeBrew Browser&lt;/a&gt;. As for what it is, really it’s just a convenient little app to browse and install homebrew apps from &lt;a href=&quot;https://github.com/KuromeSan/cbps-db&quot;&gt;CBPS&lt;/a&gt; and &lt;a href=&quot;https://vitadb.rinnegatamante.it/&quot;&gt;VitaDB&lt;/a&gt; (both awesome places to get homebrew), and even download them in the background.&lt;/p&gt;
+
+&lt;p&gt;Oh and, it has a native UI, very similar to the PS Store.&lt;/p&gt;
+
+&lt;h3 id=&quot;autoplugineasyplugin&quot;&gt;&lt;a href=&quot;https://github.com/ONElua/AutoPlugin2&quot;&gt;Autoplugin&lt;/a&gt;/&lt;a href=&quot;https://github.com/THEN00P/EasyPlugin&quot;&gt;EasyPlugin&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Both are very similar to BHBB, in that they are pretty convenient ways to find and install homebrew. Only for this, it’s plugins instead of apps.&lt;/p&gt;
+
+&lt;h3 id=&quot;hexflow-launcher&quot;&gt;HEXFlow Launcher&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/media/vitamodding/hexflow.png&quot; alt=&quot;HEXFlow screenshot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Admittedly less of a “tool” than other apps, but it definitely can be fun. It’s similar to other modded launchers from other consoles 
+(&lt;a href=&quot;http://phoenix.xboxunity.net/images/aurora.07b.profile.disc.panel.png&quot;&gt;Aurora for Xbox 360&lt;/a&gt;,
+&lt;a href=&quot;http://static.wiidatabase.de/301962-LoadiineGX2_v1.0_DesignCarousel.png&quot;&gt;Loadiine GX2 for Wii U&lt;/a&gt;,
+&lt;a href=&quot;http://nintendo-wii.logic-sunrise.com/images/images_contenu/usbloadergx.png&quot;&gt;USB Loader GX for Wii&lt;/a&gt;, etc.)
+as in, it has a neat “cover flow” feature, and it does launch games.&lt;/p&gt;
+
+&lt;p&gt;Now something a bit more useful, &lt;a href=&quot;https://github.com/jimbob4000/RetroFlow-Launcher&quot;&gt;RetroFlow Launcher&lt;/a&gt; is essentially just HEXFlow,
+but with support for &lt;a href=&quot;https://docs.libretro.com/guides/install-psv/&quot;&gt;RetroArch&lt;/a&gt; and &lt;a href=&quot;https://github.com/Rinnegatamante/daedalusx64-vitagl&quot;&gt;DaedalusX64&lt;/a&gt;
+right out of the box, so you don’t have to go through a million hoops to get bubbles on your home screen or have it inside apps.&lt;/p&gt;
+
+&lt;h3 id=&quot;pkgj&quot;&gt;PKGj&lt;/h3&gt;
+&lt;p&gt;This is an application of… dubious legality. It’s not illegal to say what it is, what it does or how to use it, but it’s not &lt;em&gt;perfectly&lt;/em&gt; legal.&lt;/p&gt;
+
+&lt;p&gt;What this does is it fetches a list of sources to download PSVita/PSP/PSX games to the system directly, not having to deal with MaiDump or VPKs.
+The problem with that is, those sources are the ones pointing the app where to download the games for free; completely bypassing the PS Store.&lt;/p&gt;
+
+&lt;p&gt;If you want that, you set it up yourself, I’m not willing to get blamed for any legal issues. That’ll be your problem. Moving on.&lt;/p&gt;
+
+&lt;h2 id=&quot;homebrew-appsgames&quot;&gt;Homebrew apps/games&lt;/h2&gt;
+&lt;p&gt;There’s a surprisingly active homebrew community even today! People have made actual homebrew software/games in 2022, nearly 10 years after the console was released!
+Quick overview of some of my favorites:&lt;/p&gt;
+
+&lt;h3 id=&quot;moonlight-vita&quot;&gt;Moonlight-Vita&lt;/h3&gt;
+&lt;p&gt;This homebrew app is amazing; it’s a port of &lt;a href=&quot;https://moonlight-stream.org/&quot;&gt;Moonlight&lt;/a&gt;, the NVIDIA Gamestream client, on the Vita.
+What that means is you can stream PC games to your Vita.&lt;/p&gt;
+
+&lt;p&gt;Ever wanted to play &lt;a href=&quot;https://store.steampowered.com/app/1229490/ULTRAKILL/&quot;&gt;Ultrakill&lt;/a&gt; on a tiny handheld device? &lt;a href=&quot;/blog/media/vitamodding/ultrakill-vita.jpg&quot;&gt;Oh, you absolutely can.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, this does have a few caveats for me; being that it’s NVIDIA, predictably it’s a mess to get working reliably, for everyone.
+Doubly so since I am on Linux: GameStream does not work on Linux.
+This is where another PC app called &lt;a href=&quot;https://github.com/loki-47-6F-64/sunshine&quot;&gt;Sunshine&lt;/a&gt; comes into play;
+an open source GameStream server. Now, I actually spent weeks playing around with it to make it work on my Vita, until I realized
+that I had to put the encoder to “Software” for the streaming to actually work for more than 30 seconds.
+&lt;img src=&quot;/blog/media/vitamodding/sunshine-setup.png&quot; alt=&quot;Sunshine configuration, showcasing &amp;quot;Force a Specific Encoder&amp;quot; set to &amp;quot;Software&amp;quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;consolepedia-3d&quot;&gt;Consolepedia 3D&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://vitadb.rinnegatamante.it/screenshots/e774deca0cadf1c57f369ce9c9828a96a3efed8c1ab5957c0da3093120e7a57a.png&quot; alt=&quot;Consolepedia 3D demonstration&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Neat little app showcasing plenty of “retro”-ish consoles in 3D, not exactly the smallest app, but still pretty fun to check out at times.&lt;/p&gt;
+
+&lt;h3 id=&quot;helltaker-port-for-the-vita&quot;&gt;Helltaker port for the Vita&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/media/vitamodding/holymusic.png&quot; alt=&quot;What the fuck?&quot; /&gt;
+I have no idea why you’d want to play a game about horny demon girls on the go. Moving on.&lt;/p&gt;
+
+&lt;h3 id=&quot;baldis-basics-classic-port-for-the-vita&quot;&gt;Baldi’s Basics Classic port for the Vita&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/media/vitamodding/baldisbasics.png&quot; alt=&quot;blkasdis basics in educationjk and learing&quot; /&gt;
+Yeah, someone actually ported the game. It’s fully fledged.
+It’s fully functional.
+This is the actual game. It’s completely playable. &lt;em&gt;Not that you’d want to play it or anything…&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;chocolate-doom&quot;&gt;Chocolate Doom&lt;/h3&gt;
+&lt;p&gt;Doom runs on everything. And on the Vita, it runs and controls freaking great.&lt;/p&gt;
+
+&lt;h3 id=&quot;vitaquake-ports&quot;&gt;vitaQuake ports&lt;/h3&gt;
+&lt;p&gt;Okay, this is where I’m slightly disappointed..&lt;/p&gt;
+
+&lt;p&gt;It could just be my distant memory, but I actually remember trying out these ports a while ago, and they ran like garbage.
+GPU crashes, horrible performance in the home screen when exiting the app, frequent app crashes…&lt;/p&gt;
+
+&lt;p&gt;I’m not throwing shame at all to the developer, &lt;a href=&quot;https://rinnegatamante.it&quot;&gt;Rinnegatamante&lt;/a&gt;; they’re a really active homebrew developer for the Vita
+and have made plenty of amazing things (seriously, &lt;strong&gt;thank you&lt;/strong&gt;), but I have less good memories about these ports.&lt;/p&gt;
+
+&lt;h3 id=&quot;gta-san-andreas-port&quot;&gt;GTA: San Andreas port&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Huge respect&lt;/strong&gt; to the developers of &lt;a href=&quot;https://github.com/TheOfficialFloW/gtasa_vita&quot;&gt;this port&lt;/a&gt;.
+This, for many people, surely is a dream come true.&lt;/p&gt;
+
+&lt;h2 id=&quot;homebrew-conclusion&quot;&gt;Homebrew Conclusion&lt;/h2&gt;
+
+&lt;p&gt;There’s probably way more amazing things that the homebrew community has done: in fact, there is! There are many people that have ported numerous games
+(&lt;a href=&quot;https://vitadb.rinnegatamante.it/#/info/779&quot;&gt;Gato Roboto&lt;/a&gt;, &lt;a href=&quot;https://vitadb.rinnegatamante.it/#/info/649&quot;&gt;C&amp;amp;C: Red Alert&lt;/a&gt;, &lt;a href=&quot;https://vitadb.rinnegatamante.it/#/info/607&quot;&gt;Sonic&lt;/a&gt;, &lt;a href=&quot;https://vitadb.rinnegatamante.it/#/info/748&quot;&gt;uMario&lt;/a&gt;, &lt;a href=&quot;https://vitadb.rinnegatamante.it/#/info/739&quot;&gt;Granny&lt;/a&gt;, &lt;a href=&quot;https://vitadb.rinnegatamante.it/#/info/728&quot;&gt;Crazy Taxi&lt;/a&gt;, to name a few)
+to the Vita system, which is an amazing thing to see honestly. Except for that Nekopara port to the Vita that I saw a while back. What the fuck. No. &lt;strong&gt;NO.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recording-the-vita&quot;&gt;Recording the Vita&lt;/h2&gt;
+&lt;p&gt;Maybe you just want to stream your Vita gameplay with your friends, or record gameplay footage to put online.
+While the Vita itself doesn’t support recording videos, you can certainly make it work with a computer around.&lt;/p&gt;
+
+&lt;p&gt;With a &lt;a href=&quot;https://github.com/xerpi/vita-udcd-uvc&quot;&gt;plugin that allows to stream display content through USB&lt;/a&gt; (very, &lt;strong&gt;very&lt;/strong&gt; similar to how a camera works) and by plugging your Vita’s headphone output to your computer’s line in/mic input, you have pretty much everything you need to go!
+How you want to record is up to you; in my case, I use OBS. &lt;a href=&quot;/blog/media/vitamodding/vitaobs.mp4&quot;&gt;Here’s a demonstration of how it works.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;However, this leads me with a problem that I’m really not sure how to solve. If I plug in the Vita’s USB port in my computer &lt;em&gt;and&lt;/em&gt; the headphone cable to my computer’s line in, &lt;a href=&quot;/blog/media/vitamodding/vitastatic.mp4&quot;&gt;the audio becomes riddled with buzzy static.&lt;/a&gt;
+Not when I plug it in the charger or plug in normal headphones, though. Yet others have been perfectly capable to record their Vita systems.
+So if I had to guess, it’s only LCD models (PS Vita 2000) models that have this weird interference. Which also happens to be &lt;em&gt;my&lt;/em&gt; model.&lt;/p&gt;
+
+&lt;p&gt;The only “workaround” I found is to use the Vita’s Bluetooth audio output as audio input on my computer and record that way.
+The issue now is, it’s choppy, has latency and doesn’t stay connected for very long before my computer decides to ignore the audio input.
+&lt;a href=&quot;/blog/media/vitamodding/obsrecording.mp4&quot;&gt;This has been my best attempt so far.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;vita2sd&quot;&gt;Vita2SD&lt;/h2&gt;
+&lt;p&gt;Memory cards are expensive. And small in space. SD cards are way more accessible and can be pretty big in comparison.
+Therefore, if you use your Vita often or like storing a lot of big games on your system and you’re running out of space,
+an SD2Vita really would be excellent. I won’t go in detail about the installation, since &lt;a href=&quot;https://vita.hacks.guide/yamt&quot;&gt;this guide&lt;/a&gt; already covers pretty much everything,
+but I will say a few things: &lt;strong&gt;don’t plug in the SD card in your computer and transfer files directly there&lt;/strong&gt;. I can confirm this from experience.
+No apps/games would open, h-encore² magically became a Japanese game called “bitter smile”, and it just didn’t work right.&lt;/p&gt;
+
+&lt;p&gt;Now, for my SD card size recommendations,&lt;/p&gt;
+&lt;div class=&quot;datatable-begin&quot;&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8 GB&lt;/td&gt;
+      &lt;td&gt;maybe one or two big games, three at best. and maybe a few smaller games.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;16 GB&lt;/td&gt;
+      &lt;td&gt;a few big games. if you wanna try a few Vita games from time to time.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;32 GB&lt;/td&gt;
+      &lt;td&gt;storage isn’t much of a concern; you just download and play games that you want to play.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;64 GB&lt;/td&gt;
+      &lt;td&gt;if you don’t know that you can delete games, or just want to keep a lot of them installed.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;128 GB&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;calm down man thats way too much for a vita jeez&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;div class=&quot;datatable-end&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;As of right now I have a 32GB SD card in the system and it’s working perfectly fine.
+I have plenty of space for games I play and it’s not &lt;em&gt;too&lt;/em&gt; slow (although it does feels slower than a memory card).&lt;/p&gt;
+
+&lt;h2 id=&quot;emulation&quot;&gt;Emulation&lt;/h2&gt;
+&lt;p&gt;The Vita would be an excellent choice for emulating retro games, all the way up to Nintendo 64/PS1. And while I already have talked about &lt;a href=&quot;#adrenaline&quot;&gt;PS1/PSP emulation&lt;/a&gt;, there still remains other things, notably &lt;a href=&quot;https://docs.libretro.com/guides/install-psv/&quot;&gt;RetroArch&lt;/a&gt; and &lt;a href=&quot;https://github.com/Rinnegatamante/daedalusx64-vitagl&quot;&gt;DaedalusX64&lt;/a&gt;, which are, again, supported by &lt;a href=&quot;https://github.com/jimbob4000/RetroFlow-Launcher&quot;&gt;RetroFlow Launcher&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;And, sure, I personally prefer using &lt;a href=&quot;https://f-droid.org/en/packages/com.swordfish.lemuroid/&quot;&gt;Lemuroid&lt;/a&gt; on my phone, but a Vita would also be a great choice for pocketable, properly playable emulation.
+Phones don’t have buttons or joysticks, they only have a screen. That’s the main point where the Vita would excel at this.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-more-official-side-of-things&quot;&gt;The More Official Side of Things&lt;/h1&gt;
+&lt;p&gt;Sony obviously tried to make this a handheld game console that could also double as a smart mobile device. Kind of like the &lt;a href=&quot;https://en.wikipedia.org/wiki/N-Gage_(device)&quot;&gt;Nokia N-Gage&lt;/a&gt;, but less stupid. &lt;em&gt;Except the Vita also failed.&lt;/em&gt;
+However, as a mobile device, it would’ve been awesome back then, I’m sure. But it’s not hard to see why it didn’t succeed; smartphones did what the Vita did, in a more compact and useful package. The ones who wanted a handheld game console picked the 3DS.
+As a game console that can also be a mobile device, though, it’s hard to complain.&lt;/p&gt;
+
+&lt;h2 id=&quot;media-capabilities&quot;&gt;Media capabilities&lt;/h2&gt;
+&lt;p&gt;Look, it’s not awful; back then I’m sure it would be serviceable, but nowadays, it’s a bit rougher to use.&lt;/p&gt;
+
+&lt;p&gt;Playing media files from a PC is a bit harder to accomplish nowadays with the use of Qcma (and just how frankly clunky the whole system works), but it is still doable.&lt;/p&gt;
+
+&lt;h3 id=&quot;music-player&quot;&gt;Music player&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/media/vitamodding/musicplayer.png&quot; alt=&quot;Oh wow, look. Music.&quot; /&gt;
+I’m sure your smartphone, &lt;em&gt;if you have one&lt;/em&gt;, would outperform the PS Vita when it comes to this.
+As it is right now, it plays MP3 files. It’s not &lt;em&gt;awful&lt;/em&gt;, but I found artworks to just never work, regardless of how I transferred it to the device.
+And yes, you can play your music while ingame, although how well that is supported is up to the game itself.&lt;/p&gt;
+
+&lt;p&gt;Not bad. Not bad at all, actually.&lt;/p&gt;
+
+&lt;h3 id=&quot;video-player&quot;&gt;Video player&lt;/h3&gt;
+&lt;p&gt;Similar to music player. It works as an MP4 player, but your phone would do a way better job at it,
+not to mention that Android and iOS has pretty much every app for every streaming service available. And if that’s not the case, then your streaming service is bad.&lt;/p&gt;
+
+&lt;p&gt;Oh, and no, you cannot play videos ingame. Not that you should, anyway.&lt;/p&gt;
+
+&lt;h3 id=&quot;photo-viewercamera&quot;&gt;Photo viewer/Camera&lt;/h3&gt;
+&lt;p&gt;I give up reviewing this thing’s media capabilities. It’s pointless, just use it as a handheld game console or homebrewy thing. Not as a media player.&lt;/p&gt;
+
+&lt;h2 id=&quot;games&quot;&gt;Games.&lt;/h2&gt;
+&lt;p&gt;The main thing most people know a PlayStation Vita for: playing games.&lt;/p&gt;
+
+&lt;p&gt;In fact, Call of Duty Black Ops: Declassified serves as a perfect example as to why simpler Japanese/indie games work better on the system.
+Here’s my list of complaints that I have about the game:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The main protagonist feels like he’s taking drugs every 5 hours, the checkpoint system is awful, it’s a first person shooter on a mobile-sized handheld device, the auto aim always shoots above the enemy’s head, the tutorial was stupid and didn’t really explain 1) in detail 2) everything that would’ve been nice to know, the grenade system feels very gimmicky, the protagonist survives car explosions/C4 explosions/rocket explosions but not a few bullets, the enemies seem to be powered by Artificial &lt;em&gt;(note the lack of Intelligence)&lt;/em&gt;, the subtitles are stupidly small and unnoticeable in gameplay action, this feels like a cheap mobile game by some dumb B-grade Ubisoft-like game studio and not a Call of Duty game, this game just makes me want to turn on my Xbox 360 to play actual CoD games, the health system is hard to understand, the touch controls feel rather stupid, you die then you start all over.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Gravity Rush has none of those issues for a reason. The artstyle fits in with the PlayStation feel, and was not designed to require crazy amounts of inputs.&lt;/p&gt;
+
+&lt;p&gt;As a miniaturized PlayStation game console, it’s amazing. Not only do you get actually good PlayStation titles
+(notably Persona, Gravity Rush, LittleBigPlanet, Uncharted, etc.), but you also get decent indie games ported to the system
+(VVVVVV, Shovel Knight, Super Meat Boy, etc.). So, why not a mini review of some games I’ve been playing on this system?&lt;/p&gt;
+
+&lt;h3 id=&quot;mini-reviews&quot;&gt;Mini Reviews&lt;/h3&gt;
+&lt;p&gt;of games I played on the system, even before it was modded. ‘Cause why not.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Call of Duty Black Ops Declassified&lt;/strong&gt;, troglodyte turd. If you wanna see how bad an FPS game can be, or an example of what not to do, try this game. 2/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Downwell&lt;/strong&gt;, it’s an amazing little game that runs on everything. 8/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Duke Nukem 3D: Megaton Edition&lt;/strong&gt;, not bad. I’d say, it’s not &lt;em&gt;offensive&lt;/em&gt;, but isn’t &lt;em&gt;great&lt;/em&gt;. &lt;em&gt;Also, I don’t really like the game’s mature contents, so…&lt;/em&gt; 7/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Entwined&lt;/strong&gt;, underrated gem that I see no one talk about. I feel it’s perfect for the system, a very simple gameplay mechanic, and a relatively short game overall. 8/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Final Fantasy X HD Remaster&lt;/strong&gt;, long name, but a good RPG. I’ve played this one a long time ago and I do remember enjoying it for a few days. 7/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Gravity Rush&lt;/strong&gt;, awesome game, period. Neat story, great art style, awesome gameplay. If you have a Vita and haven’t played this game, &lt;strong&gt;&lt;em&gt;please play it&lt;/em&gt;&lt;/strong&gt;.
+Actually if you have a PS4/PS5, you can get the remastered version as well. If you’re bored, try that game out, it’s seriously awesome. 10/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lemmings Touch&lt;/strong&gt;, this works better as a mobile phone game. It’s still Lemmings, but now feels like a cheap Play Store game that should be throwing 5 ads at you in a row. 4/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Level 22&lt;/strong&gt;, cool indie game about roaming in an office undetected that I remember enjoying back then. 7/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;LittleBigPlanet&lt;/strong&gt; for the PlayStation Vita, it’s LittleBigPlanet on the go. It accomplishes what it sets out to do. 8/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Minecraft&lt;/strong&gt; for the PlayStation Vita, read line above. 8/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;MouseCraft&lt;/strong&gt;, I have not played this in YEARS, so I’ll go off from my memories. Neat little puzzle game about getting a mouse through a level,
+I remember it working pretty well on the Vita. 7/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Octodad: Dadliest Catch&lt;/strong&gt;, cheesegrated graphics on the Vita. That is to be expected, though. Other than that.. uh.. it’s Octodad. 6/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Papers, Please&lt;/strong&gt;, it really only uses the touch screen as an input. This works better as a smartphone game than a Vita title. 6/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Persona 4 Golden&lt;/strong&gt;, it’s Persona. Of course it’s excellent. And while the Vita might not be the best platform for the game, it works surprisingly well.
+Besides, Persona games aren’t crazy active games, half of the game can just be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;press cross button, read dialog, cross, read, cross, read, move character, get into encounter, think, attack, use skill, guard&lt;/code&gt;. So it works pretty well, and I can happily spend an hour playing that game. 9/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PlayStation All Stars Battle Royale&lt;/strong&gt;, stupid name. Other than that, it’s a Super Smash Bros. knockoff for PlayStation that is half-good, half-bad. 6/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Shovel Knight&lt;/strong&gt;, very similar opinion to Downwell and LittleBigPlanet. 8/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Super Meat Boy&lt;/strong&gt;, tough platforming game that is surprisingly fun and addictive. I like it. 8/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Uncharted: Golden Abyss&lt;/strong&gt;, cool little spinoff of the Uncharted franchise. This is how you do an action, shooty-type game on the Vita. This does it right.
+Certainly better than how &lt;em&gt;Call of Doodoo Darker Operation Unclassified Whatever The Heck&lt;/em&gt; does it. 8/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;VVVVVV&lt;/strong&gt;, neat indie game that feels like a Commodore 64 game. I liked playing this. Simple and fun gameplay, extensive levels… 8/10&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Welcome Park&lt;/strong&gt;, technically not a game but I don’t care, it showcases the Vita’s features in a cool and neat way.
+However, you can get through the entire thing in a short amount of time. It’s more of a tech demo than a game, and can get old pretty fast.
+Less offensive than &lt;em&gt;Declassified Dark Phone Call of Work Operation&lt;/em&gt; however. 5/10&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;I am very, &lt;strong&gt;very&lt;/strong&gt; happy to have my PlayStation Vita. It might be outdated, but it’s not old yet for me, not at all.
+I’m still trying new games for the Vita and enjoying… &lt;em&gt;most&lt;/em&gt; of them.
+If you have a Vita lying around, do mod it, check out some homebrew, play some games on it, and have fun with it.
+It’s still awesome today. &lt;a href=&quot;https://vita.hacks.guide/&quot;&gt;This website is a great guide for the mods that you can do to your system&lt;/a&gt;,
+and I highly, &lt;strong&gt;&lt;em&gt;highly&lt;/em&gt;&lt;/strong&gt; recommend you check it out if you’re interested. 
+&lt;em&gt;By the way, updating up to 3.73 (the latest firmware version) is absolutely safe.&lt;/em&gt;
+And, coincidentally, there has been a video by Modern Vintage Gamer about how this system’s security was defeated while writing this page!
+&lt;a href=&quot;https://www.youtube.com/watch?v=7V5jKUO6qJg&quot;&gt;Here it is, it’s definitely worth watching if you’re interested.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This was a fun time writing my thoughts and reviews on the system.&lt;/p&gt;</content><author><name></name></author><category term="blog" /><category term="gaming" /><category term="console" /><category term="psvita" /><summary type="html">The year is 2022. Valve has just released their Steam Deck, to great public reception. Mobile phones are powerful enough to run AAA games, with decent graphics and performance. The Nintendo Switch system family has sold over 100 million units to consumers worldwide.</summary></entry><entry><title type="html">hello Jekyll!</title><link href="https://atlasc0r3.github.io/blog/2022/02/12/helloworld.html" rel="alternate" type="text/html" title="hello Jekyll!" /><published>2022-02-12T20:25:21+00:00</published><updated>2022-02-12T20:25:21+00:00</updated><id>https://atlasc0r3.github.io/blog/2022/02/12/helloworld</id><content type="html" xml:base="https://atlasc0r3.github.io/blog/2022/02/12/helloworld.html">&lt;p&gt;It took a long, &lt;em&gt;long&lt;/em&gt; period of thinking and configuring, but finally it should all work as I want it to! That is, a GitHub page that allows me to have a custom HTML page, &lt;strong&gt;and&lt;/strong&gt; a bloggy-type Jekyll post thing as a subsection of this page! Woohoo!&lt;/p&gt;
+
+&lt;p&gt;So yeah, I’ll probably start writing more here.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/media/helloworld/example_cat.jpg&quot; alt=&quot;my cat :)&quot; /&gt;
+Here, have this photo of my cat.&lt;/p&gt;</content><author><name></name></author><category term="blog" /><summary type="html">It took a long, long period of thinking and configuring, but finally it should all work as I want it to! That is, a GitHub page that allows me to have a custom HTML page, and a bloggy-type Jekyll post thing as a subsection of this page! Woohoo!</summary></entry></feed>
