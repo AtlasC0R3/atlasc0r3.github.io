@@ -41,6 +41,38 @@ var backgrounds = [
         "bg_size": "cover",
         "font": "sans-serif",
         "position": "left bottom"
+    },
+    {
+        "name": "Amiga",
+        "description": "A multimedia powerhouse, that perhaps wasn't off to the best start. Commodore didn't know what they were doing. But it was definitely cutting-edge!",
+        "bg_url": "assets/img/themes/amiga.png",
+        "bg_blend": 0,
+        "text_color": 1,
+        "text_shadow": 0,
+        "bg_size": "cover",
+        "position": "left top",
+        "font": "default"
+    },
+    {
+        "name": "Quake",
+        "description": "What, who doesn't like some good old Quake.",
+        "bg_url": "assets/img/themes/quake.png",
+        "bg_blend": 0,
+        "text_color": 1,
+        "text_shadow": 1,
+        "bg_size": "cover",
+        "font": "monospace"
+    },
+    {
+        "name": "Macintosh 7.6.1",
+        "description": "Hello, I am the Macintosh. It sure is great to get out of that bag. (I know, this isn't historically accurate, shut up.)",
+        "bg_url": "assets/img/themes/macos.png",
+        "bg_blend": 0,
+        "text_color": 1,
+        "text_shadow": 1,
+        "bg_size": "cover",
+        "position": "left top",
+        "font": "monospace"
     }
 ]
 
@@ -67,3 +99,4 @@ function set_background(element){
 
 // set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
 if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
+// set_background(backgrounds[6])
