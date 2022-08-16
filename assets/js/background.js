@@ -7,6 +7,7 @@ var backgrounds = [
         "bg_blend": 1,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
         "text_color": 0,  // 0: dark, 1: white
         "text_shadow": 1,  // 1: activate, 0: disable
+        "footer_color": 2,  // 0: inherit (disable), 1: dark, 2: white
         "font": "Consolas"
     },
     {
@@ -21,6 +22,8 @@ var backgrounds = [
     }
 ]
 
+// TODO: footer color
+
 function set_background(element){
     // Basic CSS stuff
     document.body.style.backgroundImage = `url('${element.bg_url}')`;
@@ -31,7 +34,12 @@ function set_background(element){
     if(!element.text_color) document.body.style.color = "var(--bs-dark)";  // set text dark
     if(element.text_shadow) document.body.style.textShadow = "0px 0px 12px #000000";
     if(element.bg_blend) document.body.style.backgroundBlendMode = "difference";
+    if(element.footer_color){
+        if(element.footer_color == 1) document.getElementById("footer").style.color = "var(--bs-dark)"
+        if(element.footer_color == 2) document.getElementById("footer").style.color = "white"
+    };
     document.body.style.fontFamily = element.font;
 }
 
 set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
+// set_background(backgrounds[0])

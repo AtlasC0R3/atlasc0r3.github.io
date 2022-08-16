@@ -3,3 +3,12 @@ body, html {
   width: 100%;
 }
 
+.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+a {
+  color: inherit;
+}
+
