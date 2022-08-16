@@ -28,7 +28,7 @@ function set_background(element){
     // Basic CSS stuff
     document.body.style.backgroundImage = `url('${element.bg_url}')`;
     document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundAttachment = "fixed";  // CAUSES GRAPHICAl GLITCHES ON MOBILE
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundSize = element.bg_size;
     if(!element.text_color) document.body.style.color = "var(--bs-dark)";  // set text dark
@@ -41,5 +41,5 @@ function set_background(element){
     document.body.style.fontFamily = element.font;
 }
 
-set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
-// set_background(backgrounds[0])
+// set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
+if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
