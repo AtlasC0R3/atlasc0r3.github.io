@@ -9,7 +9,8 @@ var titles = [
     "recommended by 9 out of 10 dentists",
     "as seen on TV",
     "the human being ever",
-    "stupid fuck"
+    "stupid fuck",
+    "killed a spider"
 ]
 
 document.title = "atlas_core, " + titles[Math.floor(Math.random()*titles.length)]
