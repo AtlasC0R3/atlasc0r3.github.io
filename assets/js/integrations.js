@@ -1,11 +1,11 @@
 function httpGet(theUrl, callback){
     var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", theUrl);
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
             callback(xmlHttp.responseText);
     }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    xmlHttp.send(null);
+    xmlHttp.send();
 }
 
 text_truncate = function(str, length, ending){
@@ -38,7 +38,7 @@ function are_ya_winning(son){
         message2 += " — <em>" + game.playtime_linux_forever / 10 + " hours spent playing this game on Linux</em>";
     }
     
-    document.getElementById("steam1").innerHTML = "have recently been playing:";
+    document.getElementById("steam1").innerHTML = "have been playing some";
     document.getElementById("steam2").innerHTML = message2;
 }
 
@@ -64,9 +64,9 @@ function fuck(shit){
     }
 
     if(playing_now){
-        var message1 = "am currently listening to:"
+        var message1 = "am listening to"
     } else{
-        var message1 = "recently listened to:"
+        var message1 = "listened to"
     }
     
     var message2 = "<strong>" + trackinfo.track_name + "</strong><br><em>" + trackinfo.artist_name + "</em>";
@@ -86,7 +86,7 @@ function popcorn(data){
     if(data === "0"){
         console.log("nothing watching... going to use ListenBrainz instead");
 
-        document.getElementById("nowplaying1").innerHTML = "am trying to integrate with ListenBrainz";
+        document.getElementById("nowplaying1").innerHTML = "am connecting to ListenBrainz";
         document.getElementById("nowplaying2").innerHTML = "since I am not watching anything on Trakt, I am going to show you what I'm listening to. just give me a second...";
         httpGet("https://api.listenbrainz.org/1/user/atlas_core/playing-now", fuck)
         return;
@@ -98,13 +98,13 @@ function popcorn(data){
     if(episode){
         var message2 = "<strong>" + episode.show + "</strong><br><em>S" + episode.season + "E" + episode.ep + "</em> — <em>" + episode.title + "</em>";
 
-        document.getElementById("nowplaying1").innerHTML = "am currently watching:";
+        document.getElementById("nowplaying1").innerHTML = "am watching a TV show";
         document.getElementById("nowplaying2").innerHTML = message2;
     } else{
         // movie
         var movie = data.movies[0];
         var message2 = "<strong>" + movie.title + "</strong><br><em>" + movie.year + "</em>";
-        document.getElementById("nowplaying1").innerHTML = "am currently watching:";
+        document.getElementById("nowplaying1").innerHTML = "am watching a movie";
         document.getElementById("nowplaying2").innerHTML = message2;
     }
 }
@@ -119,9 +119,9 @@ httpGet("https://api.rightmouse.click/traktWatching", popcorn);
 function toothole(toots){  // toothole because funny or something idrk
                            // I was tired when doing this part of the code. Don't ask.
     var toot = JSON.parse(toots)[0];
-    var idontfuckingknow = "recently tooted ";
+    var idontfuckingknow = "am tooting ";
     if(toot.spoiler_text){
-        idontfuckingknow += "something controversial"
+        idontfuckingknow += "controversies"
         const random = Math.floor(Math.random() * 100) + 1;
         if(random < 20){
             var confirmation = "are you sure (is this what you want?)";
@@ -131,9 +131,9 @@ function toothole(toots){  // toothole because funny or something idrk
         var content = `<strong>Marked as sensitive:</strong> ${toot.spoiler_text}<br><a href=${toot.url}><i>${confirmation}</i></a>`;
     } else if(!(toot.content) && (toot.media_attachments)){
         if(length > 1){
-            idontfuckingknow += "attachments"
+            idontfuckingknow += "multiple attachments"
         } else{
-            idontfuckingknow += "an attachment"
+            idontfuckingknow += "a media attachment"
         }
         var content = `<em>nothing but attachments.</em><br><a href=${toot.url}><i>click here to see them.</i></a>`;
     } else{
@@ -142,7 +142,7 @@ function toothole(toots){  // toothole because funny or something idrk
     }
     var link = toot.url;
 
-    document.getElementById("toot1").innerHTML = idontfuckingknow + ":";
+    document.getElementById("toot1").innerHTML = idontfuckingknow;
     document.getElementById("toot2").innerHTML = content;
 }
 

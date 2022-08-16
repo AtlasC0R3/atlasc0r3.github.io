@@ -15,7 +15,7 @@ var backgrounds = [
         "name": "Bliss",
         "description": "Who didn't like Windows XP?",
         "bg_url": "assets/img/themes/bliss.jpg",
-        "bg_blend": 1,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
+        "bg_blend": 0,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
         "text_color": 1,  // 0: dark, 1: white
         "text_shadow": 1,  // 1: activate, 0: disable
         "bg_size": "cover",  // cover fits image to fit on screen without borders/stretching, contain puts image as big as possible while not losing any of the image but causes black bars, auto just kinda puts it there
