@@ -76,11 +76,13 @@ var backgrounds = [
     }
 ]
 
+// TODO: add CSS undertext filling stuff
+
 function set_background(element){
     // Basic CSS stuff
     document.body.style.backgroundImage = `url('${element.bg_url}')`;
     document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundAttachment = "fixed";  // CAUSES GRAPHICAl GLITCHES ON MOBILE
+    document.body.style.backgroundAttachment = "fixed";  // CAN CAUSE GRAPHICAL GLITCHES ON ANDROID BROWSERS IN SOME CIRCUMSTANCES THAT I HAVE NO FUCKING IDEA HOW OR WHY THEY MAY BE HAPPENING BUT THEY CAN
 
     var position = "center";
     if(element.position) position = element.position;
@@ -97,6 +99,6 @@ function set_background(element){
     document.body.style.fontFamily = element.font;
 }
 
-// set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
-if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
+set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
+// if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
 // set_background(backgrounds[6])
