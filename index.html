@@ -29,31 +29,7 @@ You won't find the answers here. Not the ones you came looking for.-->
                 <div style="max-width: 350px;">
                     <h1 class="fw-bold">atlas_core</h1>
                     <p class="text-break fs-5 my-3"><span style="color: rgb(232, 234, 237); background-color: rgb(32, 33, 36);">Canadian, tech enthusiast, Linux user, occasional code writer, vidja gaem player, music listener, Arch Linux user, typical highschool unenjoyer. Probably has braincells.</span><br>Wii U owner.</p>
-                    <div class="col"><button class="btn btn-primary btn-lg" id="midibutton" type="button" onclick="toggle()" midi="assets/midi/flourish.mid" style="display: none;">get some MIDI going</button><script src="https://cdn.jsdelivr.net/npm/web-midi-player@latest/index.js"></script>
-<script>
-	  midiPlayer = null;
-	  document.getElementsByTagName("body")[0].onload = function(){
-		      const { 'web-midi-player': { default: MidiPlayer } } = window;
-	  midiPlayer = new MidiPlayer();
-midiPlayer.play({ url: document.getElementById("midibutton").getAttribute("midi") });
-		  midiPlayer.pause();
-	  };
-	  playing = false;
-function toggle() {
-  if (playing) {
-		  midiPlayer.pause();
-    playing = false;
-  } else {
-    try {
-        midiPlayer.resume();
-    } catch (DOMException) {
-        midiPlayer.play();
-    }
-    playing = true;
-  }
-}
-
-</script></div>
+                    <div class="col"></div>
                 </div>
             </div>
         </div>
@@ -198,6 +174,29 @@ function toggle() {
                         </li>
                     </ul>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col"><a id="midibutton" href="javascript:void(0);" midi="assets/midi/flourish.mid" style="display: none;" onclick="toggle()">why not have some music?</a><script src="https://cdn.jsdelivr.net/npm/web-midi-player@latest/index.js"></script>
+<script>
+	  midiPlayer = null;
+	  document.getElementsByTagName("body")[0].onload = function(){
+		      const { 'web-midi-player': { default: MidiPlayer } } = window;
+	  midiPlayer = new MidiPlayer();
+midiPlayer.play({ url: document.getElementById("midibutton").getAttribute("midi") });
+		  midiPlayer.pause();
+	  };
+	  playing = false;
+function toggle() {
+  if (playing) {
+		  midiPlayer.pause();
+    playing = false;
+  } else {
+    midiPlayer.resume();
+    playing = true;
+  }
+}
+
+</script></div>
             </div>
         </div><!-- Start: 88x31 badges -->
         <div><img src="assets/img/badges/360.jpg" alt="Xbox 360 badge"><img src="assets/img/badges/best_viewed_with_eyes.gif"><img src="assets/img/badges/computer.png"><img src="assets/img/badges/mastodon.gif"><img src="assets/img/badges/nft.gif"><img src="assets/img/badges/nocookie.gif"><img src="assets/img/badges/PIRACY_NOW.png"><img src="assets/img/badges/xp.gif"><img src="assets/img/badges/discord.gif"><img src="assets/img/badges/stop-ms.gif"></div><!-- End: 88x31 badges -->
