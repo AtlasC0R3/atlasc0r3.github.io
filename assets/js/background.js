@@ -89,9 +89,9 @@ function set_background(element){
     document.body.style.backgroundPosition = position;
 
     document.body.style.backgroundSize = element.bg_size;
-    if(!element.text_color) document.body.style.color = "var(--bs-dark)";  // set text dark
-    if(element.text_shadow) document.body.style.textShadow = "0px 0px 12px #000000";
-    if(element.bg_blend) document.body.style.backgroundBlendMode = "difference";
+    if(!element.text_color) document.body.style.color = "var(--bs-dark)"; else document.body.style.color = "white";  // set text dark
+    if(element.text_shadow) document.body.style.textShadow = "0px 0px 12px #000000"; else document.body.style.textShadow = "";
+    if(element.bg_blend) document.body.style.backgroundBlendMode = "difference"; else document.body.style.backgroundBlendMode = "";
     if(element.footer_color){
         if(element.footer_color == 1) document.getElementById("footer").style.color = "var(--bs-dark)"
         if(element.footer_color == 2) document.getElementById("footer").style.color = "white"
@@ -99,6 +99,25 @@ function set_background(element){
     document.body.style.fontFamily = element.font;
 }
 
+function theming_menu(){
+    document.getElementById("theme-column").style.display = "inline";
+    document.getElementById("dropdown-thing").hidden = true;
+    for(let i=0; i < backgrounds.length; i++){
+        const bg = backgrounds[i]
+        document.getElementById("theme-menu").innerHTML += `<a id="theme-${i}" class="dropdown-item" href="javascript:set_background(backgrounds[${i}]);">${bg.name}</a>`;
+        // document.getElementById(`theme-${i}`).onclick = function(){console.log("bababooey"); set_background(backgrounds[i])}
+        document.getElementById(`theme-${i}`).addEventListener("click", function(e){
+            console.log("HOLY SHIT")
+        })
+    }
+    // var myDropdown = document.getElementById('holyshitfuck')
+    // myDropdown.addEventListener('show.bs.dropdown', function () {
+    //     console.log("holy fuck my little ass")
+    // })
+}
+
 set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
 // if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
 // set_background(backgrounds[6])
+
+theming_menu()
