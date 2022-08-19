@@ -14,7 +14,7 @@ var titles = [
     "killed a spider",
     "New Funky Mode",
     "dear god anything but a waifu",
-    "with illusions of enlightenment",
+    "with illusions of enlightenment",  // with our snouts in the dirt, with our snouts in the dirt
     "person who watched all Matrix movies",
     "un épais québécois qui a rien à faire",
     "music enjoyer",
@@ -26,6 +26,7 @@ var titles = [
     "Your Partner in Science",
     "pride of ${subject.hometown}",
     "remains safely operational up to 4000 degrees Kelvin",
+    "Mug Moment",
     "2+2 equals 10 (IN BASE FOUR! I'M FINE!)"  // it's okay, I barely even had math classes during 9th grade. not to mention that was a Portal reference.
 ]
 
