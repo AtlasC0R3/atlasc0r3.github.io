@@ -148,3 +148,18 @@ function toothole(toots){  // toothole because funny or something idrk
 
 httpGet("https://linuxrocks.online/api/v1/accounts/107615616350214854/statuses?exclude_reblogs=true&exclude_replies=true", toothole);
 // -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+// Blog integration
+// -------------------------------------------------------------------
+// function blogthing(posts){
+//     console.log(posts)
+//     var thing = document.getElementById("blog-element").cloneNode(true);
+//     document.getElementById("blog-element").remove()
+//     thing.querySelector("#blog-title").innerHTML = "Testing thing";
+//     thing.querySelector("#blog-desc").innerHTML = "This is a testing description, as well.";
+//     thing.querySelector("#blog-link").href = "https://linuxrocks.online";
+//     document.getElementById("blog-row").innerHTML += thing.outerHTML
+// }
+// httpGet("https://blog.rightmouse.click/rss", blogthing);
+// -------------------------------------------------------------------
