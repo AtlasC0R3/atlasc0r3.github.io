@@ -52,16 +52,16 @@ var playing_now = true;
 
 function fuck(shit){
     var listening = JSON.parse(shit).payload.listens[0];
-    // try {
-        // var trackinfo = listening.track_metadata;
-    // } catch(TypeError){
+    try {
+        var trackinfo = listening.track_metadata;
+    } catch(TypeError){
         playing_now = false;
 
         // go through the recent listens, I guess...
         document.getElementById("nowplaying2").innerHTML = "I am not currently listening to anything right now; I'll show you my most recently listened song, this won't take too long!";
         httpGet("https://api.listenbrainz.org/1/user/atlas_core/listens?count=1", fuck);
         return;
-    // }
+    }
 
     if(playing_now){
         var message1 = "am listening to"
@@ -109,7 +109,8 @@ function popcorn(data){
     }
 }
 
-httpGet("https://api.rightmouse.click/traktWatching", popcorn);
+// httpGet("https://api.rightmouse.click/traktWatching", popcorn);
+httpGet("https://api.listenbrainz.org/1/user/atlas_core/listens?count=1", fuck);
 // -------------------------------------------------------------------
 
 
