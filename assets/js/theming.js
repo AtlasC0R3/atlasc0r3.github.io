@@ -1,3 +1,5 @@
+// TODO: https://stackoverflow.com/questions/26960703/how-to-change-the-color-of-header-bar-and-address-bar-in-newest-chrome-version-o
+
 var backgrounds = [
     {
         "name": "The Presence",

@@ -109,7 +109,9 @@ function popcorn(data){
     }
 }
 
-httpGet("https://api.rightmouse.click/traktWatching", popcorn);
+// httpGet("https://api.rightmouse.click/traktWatching", popcorn);
+httpGet("https://api.listenbrainz.org/1/user/atlas_core/listens?count=1", fuck);
+// Because api.rightmouse.click is down.
 // -------------------------------------------------------------------
 
 
