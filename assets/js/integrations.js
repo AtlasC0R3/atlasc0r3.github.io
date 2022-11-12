@@ -79,7 +79,7 @@ function status_update(status){
                 var message1 = "listened to"
             }
     
-            if(track.artist_mbids.length != 0) var artist = "<a href=\"https://musicbrainz.org/artist/" + 
+            if(track.artist_mbids) var artist = "<a href=\"https://musicbrainz.org/artist/" + 
                 track.artist_mbids[0] + "\">" + track.artist + "</a>"
                 else var artist = track.artist;
             var message2 = "<strong>" + track.title + "</strong><br><em>" + artist + "</em>";
