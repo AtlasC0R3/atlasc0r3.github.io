@@ -16,8 +16,8 @@ function fediring_stuff(){
 function check_fediring() {
     if ([
         "fediring.net",
-        "cobra.vern.cc",
-        "tomxcd.me"]
+        "murtezayesil.me",
+        "mcgillij.dev"]
         .includes(document.referrer
             .replace("https://", '')
             .replace("http://", '')

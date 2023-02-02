@@ -1,3 +1,5 @@
+document.getElementById("platform-integration").style.display = "inherit";
+
 function httpGet(theUrl, callback){
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl);

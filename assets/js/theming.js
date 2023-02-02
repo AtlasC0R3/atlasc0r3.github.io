@@ -7,7 +7,7 @@ var backgrounds = [
         "bg_url": "assets/img/themes/presence.png",
         "bg_size": "cover",  // cover fits image to fit on screen without borders/stretching, contain puts image as big as possible while not losing any of the image but causes black bars, auto just kinda puts it there
         "bg_blend": 1,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
-        "text_color": 0,  // 0: dark, 1: white
+        "text_color": 1,  // 0: dark, 1: white
         "text_shadow": 1,  // 1: activate, 0: disable
         "footer_color": 2,  // 0: inherit (disable), 1: dark, 2: white
         "font": "Consolas, monospace",
@@ -17,7 +17,7 @@ var backgrounds = [
         "name": "Bliss",
         "description": "Who didn't like Windows XP?",
         "bg_url": "assets/img/themes/bliss.jpg",
-        "bg_blend": 0,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
+        "bg_blend": 1,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
         "text_color": 1,  // 0: dark, 1: white
         "text_shadow": 1,  // 1: activate, 0: disable
         "bg_size": "cover",  // cover fits image to fit on screen without borders/stretching, contain puts image as big as possible while not losing any of the image but causes black bars, auto just kinda puts it there
@@ -94,13 +94,14 @@ function set_background(element){
 
     document.body.style.backgroundSize = element.bg_size;
     if(element.text_color == 0) document.body.style.color = "var(--bs-dark)"; else if(element.text_color == 1) document.body.style.color = "white"; else document.body.style.color = element.text_color
-    if(element.text_shadow) document.body.style.textShadow = "0px 0px 12px #000000"; else document.body.style.textShadow = "";  // CAN ALSO CAUSE GRAPHICAL GLITCHES THAT I STILL HAVE NO IDEA WHAT THE FUCK IS CAUSING IT
-    if(element.bg_blend) document.body.style.backgroundBlendMode = "difference"; else document.body.style.backgroundBlendMode = "";
+    if(element.text_shadow) document.body.style.textShadow = "0px 0px 18px #000000"; else document.body.style.textShadow = "";  // CAN ALSO CAUSE GRAPHICAL GLITCHES THAT I STILL HAVE NO IDEA WHAT THE FUCK IS CAUSING IT
+    if(element.bg_blend) document.body.style.backgroundBlendMode = "overlay"; else document.body.style.backgroundBlendMode = "";
     if(element.footer_color){
         if(element.footer_color == 1) document.getElementById("footer").style.color = "var(--bs-dark)"
         if(element.footer_color == 2) document.getElementById("footer").style.color = "white"
     };
     document.body.style.fontFamily = element.font;
+    document.body.style.backgroundColor = "rgb(32, 33, 36)";
 }
 
 function theming_menu(){
@@ -120,8 +121,8 @@ function theming_menu(){
     // })
 }
 
-set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
+// set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
 // if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
-// set_background(backgrounds[6])
+set_background(backgrounds[0])
 
 theming_menu()
