@@ -1,4 +1,4 @@
-// TODO: https://stackoverflow.com/questions/26960703/how-to-change-the-color-of-header-bar-and-address-bar-in-newest-chrome-version-o
+// TODO: Dumb idea, what if we change the navbar's colors to go along with the themecolor?
 
 var backgrounds = [
     {
