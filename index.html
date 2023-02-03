@@ -144,12 +144,12 @@
                 <h2>on other platforms, I...</h2>
             </div>
         </div>
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3" id="integrations-row">
             <div class="col">
                 <div class="d-flex">
                     <div class="px-3">
-                        <h4 id="nowplaying1">don't know what media I recently watched</h4>
-                        <p id="nowplaying2">normally I would say what I've been listening to or been watching, but I probably haven't loaded the results yet. actually, you had the time to read this, so that's likely never gonna happen. (or you need better Internet)<br></p>
+                        <h4 id="nowplaying1">don't know what media I recently played</h4>
+                        <p id="nowplaying2">normally I would say what I've been listening to or been watching, but I probably haven't loaded the results yet. actually, you had the time to read this, so that's likely never gonna happen. (or you need better Internet)</p>
                         <div class="row">
                             <div class="col-auto"><a id="nowplaying-1" href="https://listenbrainz.org/user/atlas_core/">ListenBrainz&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
@@ -161,11 +161,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" id="the-game-thing">
                 <div class="d-flex">
                     <div class="px-3">
                         <h4 id="steam1">have been unable to play games</h4>
-                        <p id="steam2">and here would be where I show you a recent game I've been playing. however, I cannot tell what I've been recently playing on Steam.<br><em>TODO: either make this message disappear without JavaScript or add a fallback function.</em></p><a id="steam3" href="#" hidden="true">view game on Steam&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                        <p id="steam2">and here would be where I show you a recent game I've been playing. however, I cannot tell what I've been recently playing on Steam.</p><a id="steam3" href="#" hidden="true">view game on Steam&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
                                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
                             </svg></a>
                     </div>
@@ -174,13 +174,13 @@
             <div class="col">
                 <div class="d-flex">
                     <div class="px-3">
-                        <h4 id="toot1">am socially awkward</h4>
-                        <p id="toot2">and this box is for where my social media activity would go. but again, can't connect to my server, so that's not likely to happen anytime soon.<br><em>note: that top text isn't actually wrong.</em></p>
+                        <h4 id="toot1">am somewhere on the Fediverse</h4>
+                        <p id="toot2">and this box is for where my social media activity would go. but again, can't connect to my server, so that's not likely to happen anytime soon.</p>
                         <div class="row">
-                            <div class="col-auto"><a id="toot3" href="https://mk.absturztau.be/@atlas_core">Misskey (main)&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                            <div class="col-auto"><a id="toot4" href="https://linuxrocks.online/@atlas_core">Mastodon (main)&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
                                     </svg></a></div>
-                            <div class="col-auto"><a id="toot4" href="https://linuxrocks.online/@atlas_core">Mastodon&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                            <div class="col-auto"><a id="toot3" href="https://mk.absturztau.be/@atlas_core">Misskey (alt)&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
                                     </svg></a></div>
                         </div>
@@ -188,6 +188,9 @@
                 </div>
             </div>
         </div>
+        <p id="fallback-notice" style="display: none;margin-top: 12px;text-align: center;"><strong>Platform integration is in fallback mode; certain platforms won't appear here!</strong> <em>I probably just messed something up in the backend.</em>
+            <!--Or, depending on how you want to see it, I'm not a good "server maid"-->
+        </p>
     </div><!-- Start: Adblock message --><div id="fuckfuckshitgoddammitfuckingcuntshit" class="container" style="display: none;">
     <div class="p-4 p-md-5">
         <h2 class="fw-bold mb-3">Your adblocker's on.</h2>

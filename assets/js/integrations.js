@@ -1,12 +1,25 @@
 document.getElementById("platform-integration").style.display = "inherit";
 
-function httpGet(theUrl, callback){
-    var xmlHttp = new XMLHttpRequest();
+function httpOops(url){
+    console.log(url)
+}
+
+function httpGet(theUrl, callback, fallback=httpOops){
+    const xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl);
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
+    xmlHttp.timeout = 3000;
+    xmlHttp.onload = function() { 
+        if (xmlHttp.readyState === 4){
+            if (xmlHttp.status === 200) {
+                console.log('HTTP fetch successful');
+                callback(xmlHttp.responseText)
+            } else {
+                console.log('HTTP fetch failed. Yikes.');
+                fallback(theUrl)
+            }
+        }
     }
+    xmlHttp.ontimeout = xmlHttp.onload;  // do I know what's going on here? absolutely the fuck not. does it work? sure
     xmlHttp.send();
 }
 
@@ -148,11 +161,6 @@ function status_update(status){
     // document.getElementById("toot3").href = post.account.link;
 }
 
-// httpGet("http://192.168.2.202:5555/", status_update)
-httpGet("https://blobfish.rightmouse.click/", status_update)
-
-// document.getElementById("platformIntegration").hidden = false;
-
 // -------------------------------------------------------------------
 // Steam API integration
 // -------------------------------------------------------------------
@@ -175,39 +183,39 @@ httpGet("https://blobfish.rightmouse.click/", status_update)
 
 // -------------------------------------------------------------------
 // Media integration (ListenBrainz, Trakt)
-// var playing_now = true;
+var playing_now = true;
 
-// function fuck(shit){
-//     var listening = JSON.parse(shit).payload.listens[0];
-//     try {
-//         var trackinfo = listening.track_metadata;
-//     } catch(TypeError){
-//         playing_now = false;
+function fuck(shit){
+    var listening = JSON.parse(shit).payload.listens[0];
+    try {
+         var trackinfo = listening.track_metadata;
+    } catch(TypeError){
+        playing_now = false;
 
-//         // go through the recent listens, I guess...
-//         document.getElementById("nowplaying2").innerHTML = "I am not currently listening to anything right now; I'll show you my most recently listened song, this won't take too long!";
-//         httpGet("https://api.listenbrainz.org/1/user/atlas_core/listens?count=1", fuck);
-//         return;
-//     }
+        // go through the recent listens, I guess...
+        document.getElementById("nowplaying2").innerHTML = "I am not currently listening to anything right now; I'll show you my most recently listened song, this won't take too long!";
+        httpGet("https://api.listenbrainz.org/1/user/atlas_core/listens?count=1", fuck);
+        return;
+    }
 
-//     if(playing_now){
-//         var message1 = "am listening to"
-//     } else{
-//         var message1 = "listened to"
-//     }
+    if(playing_now){
+        var message1 = "am listening to"
+    } else{
+        var message1 = "listened to"
+    }
     
-//     var message2 = "<strong>" + trackinfo.track_name + "</strong><br><em>" + trackinfo.artist_name + "</em>";
-//     if(trackinfo.release_name) message2 += " — <em>" + trackinfo.release_name + "</em>";
-//     // I think the way ListenBrainz functions at times is that if the music player (e.g. Tauon Music Box) provies the MBID for the recording/release,
-//     // it sees no purpose in keeping the album name and ditches it, probably expecting whatever app/client to fetch the album name from that.
-//     // I definitely could do that, but it's not worth the extra networking/processing overhead, really.
-//     // We're already taking a chance just running JavaScript, for fuck's sake. Some people might not have it enabled.
-//     // Hell, I MYSELF don't even have it enabled by default; NoScript blocks JS domains by default unless I manually enable it to.
-//     // And considering who might see this website, they might not be fully happy to have to enable it either.
+    var message2 = "<strong>" + trackinfo.track_name + "</strong><br><em>" + trackinfo.artist_name + "</em>";
+    if(trackinfo.release_name) message2 += " — <em>" + trackinfo.release_name + "</em>";
+    // I think the way ListenBrainz functions at times is that if the music player (e.g. Tauon Music Box) provies the MBID for the recording/release,
+    // it sees no purpose in keeping the album name and ditches it, probably expecting whatever app/client to fetch the album name from that.
+    // I definitely could do that, but it's not worth the extra networking/processing overhead, really.
+    // We're already taking a chance just running JavaScript, for fuck's sake. Some people might not have it enabled.
+    // Hell, I MYSELF don't even have it enabled by default; NoScript blocks JS domains by default unless I manually enable it to.
+    // And considering who might see this website, they might not be fully happy to have to enable it either.
 
-//     document.getElementById("nowplaying1").innerHTML = message1;
-//     document.getElementById("nowplaying2").innerHTML = message2;
-// }
+    document.getElementById("nowplaying1").innerHTML = message1;
+    document.getElementById("nowplaying2").innerHTML = message2;
+}
 
 // function popcorn(data){
 //     if(data === "0"){
@@ -242,40 +250,39 @@ httpGet("https://blobfish.rightmouse.click/", status_update)
 // // -------------------------------------------------------------------
 
 
-// // -------------------------------------------------------------------
-// // Mastodon integration
-// // -------------------------------------------------------------------
-// function toothole(toots){  // toothole because funny or something idrk
-//                            // I was tired when doing this part of the code. Don't ask.
-//     var toot = JSON.parse(toots)[0];
-//     var idontfuckingknow = "am tooting ";
-//     if(toot.spoiler_text){
-//         idontfuckingknow += "controversies"
-//         const random = Math.floor(Math.random() * 100) + 1;
-//         if(random < 20){
-//             var confirmation = "are you sure (is this what you want?)";
-//         } else{
-//             var confirmation = "click here to see...";
-//         }
-//         var content = `<strong>Marked as sensitive:</strong> ${toot.spoiler_text}<br><a href=${toot.url}><i>${confirmation}</i></a>`;
-//     } else if(!(toot.content) && (toot.media_attachments)){
-//         if(length > 1){
-//             idontfuckingknow += "multiple attachments"
-//         } else{
-//             idontfuckingknow += "a media attachment"
-//         }
-//         var content = `<em>nothing but attachments.</em><br><a href=${toot.url}><i>click here to see them.</i></a>`;
-//     } else{
-//         idontfuckingknow += "something";
-//         var content = text_truncate(toot.content, 300);
-//     }
-//     var link = toot.url;
+// -------------------------------------------------------------------
+// Mastodon integration
+// -------------------------------------------------------------------
+function toothole(toots){  // toothole because funny or something idrk
+                           // I was tired when doing this part of the code. Don't ask.
+    var toot = JSON.parse(toots)[0];
+    var idontfuckingknow = "am tooting ";
+    if(toot.spoiler_text){
+        idontfuckingknow += "controversies"
+        const random = Math.floor(Math.random() * 100) + 1;
+        if(random < 20){
+            var confirmation = "are you sure (is this what you want?)";
+        } else{
+            var confirmation = "click here to see...";
+        }
+        var content = `<strong>Marked as sensitive:</strong> ${toot.spoiler_text}<br><a href=${toot.url}><i>${confirmation}</i></a>`;
+    } else if(!(toot.content) && (toot.media_attachments)){
+        if(length > 1){
+            idontfuckingknow += "multiple attachments"
+        } else{
+            idontfuckingknow += "a media attachment"
+        }
+        var content = `<em>nothing but attachments.</em><br><a href=${toot.url}><i>click here to see them.</i></a>`;
+    } else{
+        idontfuckingknow += "something";
+        var content = text_truncate(toot.content, 300);
+    }
+    var link = toot.url;
 
-//     document.getElementById("toot1").innerHTML = idontfuckingknow;
-//     document.getElementById("toot2").innerHTML = content;
-// }
+    document.getElementById("toot1").innerHTML = idontfuckingknow;
+    document.getElementById("toot2").innerHTML = content;
+}
 
-// httpGet("https://linuxrocks.online/api/v1/accounts/107615616350214854/statuses?exclude_reblogs=true&exclude_replies=true", toothole)
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -292,3 +299,24 @@ httpGet("https://blobfish.rightmouse.click/", status_update)
 // }
 // httpGet("https://blog.rightmouse.click/rss", blogthing);
 // -------------------------------------------------------------------
+
+
+function fallback_update(_url){
+    console.log("Using fallback update; couldn't reach the server status API thingamajig.")
+    
+    document.getElementById("fallback-notice").style.display = "inherit";
+    // Let the user know about this fallback mode nonsense
+    document.getElementById("the-game-thing").remove();
+    // Removes unused field.
+    document.getElementById("integrations-row").classList.remove('row-cols-xl-3');
+    // Adapts stuff to not make it look horrible.
+    
+    httpGet("https://api.listenbrainz.org/1/user/atlas_core/listens?count=1", fuck);
+    httpGet("https://linuxrocks.online/api/v1/accounts/107615616350214854/statuses?exclude_reblogs=true&exclude_replies=true", toothole);
+}
+
+
+// httpGet("http://192.168.2.202:5555/", status_update)
+let bullshit = httpGet("https://blobfish.rightmouse.click", status_update, fallback_update)
+
+// document.getElementById("platformIntegration").hidden = false;
