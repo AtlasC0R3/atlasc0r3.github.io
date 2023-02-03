@@ -3,13 +3,14 @@
 var backgrounds = [
     {
         "name": "The Presence",
-        "description": "Reference to Nine Inch Nails' 2007 release/ARG, Year Zero. The Presence is involved in this as a hand that reaches down from the sky. 'Some say it was a warning, some say it was a sign.'",
+        "description": "Reference to Nine Inch Nails' 2007 release/ARG, Year Zero. The Presence is involved in this as a hand that reaches down from the sky.",
         "bg_url": "assets/img/themes/presence.png",
         "bg_size": "cover",  // cover fits image to fit on screen without borders/stretching, contain puts image as big as possible while not losing any of the image but causes black bars, auto just kinda puts it there
         "bg_blend": 1,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
         "text_color": 1,  // 0: dark, 1: white
         "text_shadow": 1,  // 1: activate, 0: disable
         "footer_color": 2,  // 0: inherit (disable), 1: dark, 2: white
+        "themecolor": "#647177",
         "font": "Consolas, monospace",
         "position": "right top"  // align to where? left, center, right, bottom
     },
@@ -20,26 +21,29 @@ var backgrounds = [
         "bg_blend": 1,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
         "text_color": 1,  // 0: dark, 1: white
         "text_shadow": 1,  // 1: activate, 0: disable
+        "themecolor": "#245DDA",
         "bg_size": "cover",  // cover fits image to fit on screen without borders/stretching, contain puts image as big as possible while not losing any of the image but causes black bars, auto just kinda puts it there
         "font": "Tahoma"
     },
     {
         "name": "Pukebucket",
-        "description": "What the fuck. Blech.",
+        "description": "Probably the least beautiful thing I have ever done on this website.",
         "bg_url": "assets/img/themes/trash.jpg",
         "bg_blend": 1,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
         "text_color": "yellow",
         "text_shadow": 1,  // 1: activate, 0: disable
+        "themecolor": "#bdff00",
         "bg_size": "contain",  // cover fits image to fit on screen without borders/stretching, contain puts image as big as possible while not losing any of the image but causes black bars, auto just kinda puts it there
         "font": "Comic Sans MS"
     },
     {
         "name": "Win95",
-        "description": "Even if it came out in 1995, you still gotta admit we wouldn't be using computers if it weren't for that OS.",
+        "description": "Well what? It's Windows 95.",
         "bg_url": "assets/img/themes/win95.jpg",
         "bg_blend": 0,
         "text_color": 1,
         "text_shadow": 0,
+        "themecolor": "#008081",  // #c0c0c0 for that good old gray taskbar color
         "bg_size": "cover",
         "font": "sans-serif",
         "position": "left bottom"
@@ -51,17 +55,19 @@ var backgrounds = [
         "bg_blend": 0,
         "text_color": 1,
         "text_shadow": 0,
+        "themecolor": "#0252ab",
         "bg_size": "cover",
         "position": "left top",
         "font": "default"
     },
     {
         "name": "Quake",
-        "description": "What, who doesn't like some good old Quake.",
+        "description": "Mid-90's shooters galore. This one's definitely up there.",
         "bg_url": "assets/img/themes/quake.png",
         "bg_blend": 0,
         "text_color": 1,
         "text_shadow": 1,
+        "themecolor": "#231313",
         "bg_size": "cover",
         "font": "monospace"
     },
@@ -72,6 +78,7 @@ var backgrounds = [
         "bg_blend": 0,
         "text_color": 1,
         "text_shadow": 1,
+        "themecolor": "#818181",
         "bg_size": "cover",
         "position": "left top",
         "font": "monospace"
@@ -102,6 +109,9 @@ function set_background(element){
     };
     document.body.style.fontFamily = element.font;
     document.body.style.backgroundColor = "rgb(32, 33, 36)";
+    
+    if(element.themecolor) document.querySelector('meta[name="theme-color"]').setAttribute("content", element.themecolor)
+        else document.querySelector('meta[name="theme-color"]').setAttribute("content", "#C8C8C8");
 }
 
 function theming_menu(){
