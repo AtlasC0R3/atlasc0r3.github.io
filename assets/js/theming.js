@@ -4,7 +4,7 @@ var backgrounds = [
     {
         "name": "The Presence",
         "description": "Reference to Nine Inch Nails' 2007 release/ARG, Year Zero. The Presence is involved in this as a hand that reaches down from the sky.",
-        "bg_url": "assets/img/themes/presence.png",
+        "bg_url": "assets/img/themes/presence.jpg",
         "bg_size": "cover",  // cover fits image to fit on screen without borders/stretching, contain puts image as big as possible while not losing any of the image but causes black bars, auto just kinda puts it there
         "bg_blend": 1,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
         "text_color": 1,  // 0: dark, 1: white

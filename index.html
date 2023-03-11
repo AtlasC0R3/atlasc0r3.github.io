@@ -300,28 +300,6 @@
                 <div class="col m-auto"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width: 0;" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
             </div>
             <div class="row">
-                <div class="col" id="midisection" style="display: none;margin-bottom: 18px;"><a id="midibutton" href="javascript:void(0);" midi="assets/midi/flourish.mid" style="/*display: none;*/" onclick="toggle()">why not have some music?</a><script src="https://cdn.jsdelivr.net/npm/web-midi-player@latest/index.js"></script>
-<script>
-	  midiPlayer = null;
-	  document.getElementsByTagName("body")[0].onload = function(){
-		      const { 'web-midi-player': { default: MidiPlayer } } = window;
-	  midiPlayer = new MidiPlayer();
-midiPlayer.play({ url: document.getElementById("midibutton").getAttribute("midi") });
-		  midiPlayer.pause();
-		document.getElementById("midisection").style.display = "inline";
-	  };
-	  playing = false;
-function toggle() {
-  if (playing) {
-		  midiPlayer.pause();
-    playing = false;
-  } else {
-    midiPlayer.resume();
-    playing = true;
-  }
-}
-
-</script></div>
                 <div class="col" data-bs-toggle="tooltip" data-bss-tooltip="" id="heck-option" style="display: none;margin-bottom: 18px;" title="Please don't"><div class="col" id="fuck" style="display: inline;margin-bottom: 18px;"><a id="why" href="javascript:void(0);" style="/*display: none;*/" onclick="start_hell()" >why not enter hell?</a>
 <br><small><em>courtesy of <a href="https://github.com/aqua-lzma/OwOify">aqua-lzma's owoify</a></em></small></div>
 <!-- Maybe not the most organized. -->
@@ -372,13 +350,13 @@ document.getElementById("heck-option").style.display = "inline";
         </div><!-- Start: 88x31 badges -->
         <div style="margin-left: 32px;margin-right: 32px;"><img src="assets/img/badges/atlascore.gif"><img src="assets/img/badges/000010.gif"><img src="assets/img/badges/1080p.gif"><img src="assets/img/badges/360.jpg"><img src="assets/img/badges/3dot5mmfc-button.gif"><img src="assets/img/badges/archlinux.gif"><img src="assets/img/badges/best_viewed_with_eyes.gif"><img src="assets/img/badges/computer.png"><img src="assets/img/badges/discord.gif"><img src="assets/img/badges/f_ckfb.gif"><img src="assets/img/badges/hl.gif"><img src="assets/img/badges/jellyfin.gif"><img src="assets/img/badges/mastodon.gif"><img src="assets/img/badges/miku.gif"><img src="assets/img/badges/mswinmediaplayer8.gif"><img src="assets/img/badges/navidrome.gif"><img src="assets/img/badges/neo-fedi.gif"><img src="assets/img/badges/newlambda.gif"><img src="assets/img/badges/nft.gif"><img src="assets/img/badges/nocookie.gif"><img src="assets/img/badges/nya2.gif"><img src="assets/img/badges/PIRACY_NOW.png"><img src="assets/img/badges/psbutton.gif"><img src="assets/img/badges/qc6.gif"><img src="assets/img/badges/qnow7.gif"><img src="assets/img/badges/screw.gif"><img src="assets/img/badges/sdblast.gif"><img src="assets/img/badges/spaceorb.gif"><img src="assets/img/badges/steam.gif"><img src="assets/img/badges/stop.gif"><img src="assets/img/badges/stop-ms.gif"><img src="assets/img/badges/vocaloid.gif"><img src="assets/img/badges/wii.gif"><img src="assets/img/badges/winamp1.gif"><img src="assets/img/badges/windows_media_player.gif"><img src="assets/img/badges/winrar4.gif"><img src="assets/img/badges/xp.gif"></div><!-- End: 88x31 badges -->
     </footer><!-- End: Footer -->
-    <!--isn't this where-->
+    <!--isn't this where--><script src="assets/js/theming.js" defer></script>
+
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="assets/js/integrations.js"></script>
     <script src="assets/js/nojs.js"></script>
     <script src="assets/js/referral.js"></script>
-    <script src="assets/js/theming.js"></script>
     <script src="assets/js/title.js"></script>
     <script src="assets/js/utep_ad.js"></script>
 </body>
