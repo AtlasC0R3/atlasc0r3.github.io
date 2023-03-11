@@ -28,7 +28,7 @@ var backgrounds = [
     {
         "name": "Pukebucket",
         "description": "Probably the least beautiful thing I have ever done on this website.",
-        "bg_url": "assets/img/themes/trash.jpg",
+        "bg_url": "assets/img/themes/trash-opt.jpg",
         "bg_blend": 1,  // darken background image (or, really, enable use of "background-blend-mode: difference" in CSS)
         "text_color": "yellow",
         "text_shadow": 1,  // 1: activate, 0: disable
@@ -63,7 +63,7 @@ var backgrounds = [
     {
         "name": "Quake",
         "description": "Mid-90's shooters galore. This one's definitely up there.",
-        "bg_url": "assets/img/themes/quake.png",
+        "bg_url": "assets/img/themes/quake.jpg",
         "bg_blend": 0,
         "text_color": 1,
         "text_shadow": 1,
@@ -84,7 +84,7 @@ var backgrounds = [
         "font": "monospace"
     }
 ]
-
+file:///home/deck/Downloads/quake-opt.jpg
 // add CSS undertext filling stuff
 // a, h1, h2, h3, h4, h5, h6, p {background-color: white;}
 // no other way to do this... so I give up. it'd be too clunky.
