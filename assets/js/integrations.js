@@ -38,104 +38,61 @@ text_truncate = function(str, length, ending){
     }
   };
 
+function setRowBehind(rowId1, rowId2) {
+    var row1 = document.getElementById(rowId1);
+    var row2 = document.getElementById(rowId2);
 
-function status_update(status){
-    var status = JSON.parse(status);
+    // Get the parent node (tbody) of the rows
+    var tbody = row1.parentNode;
 
-    // Media stuff
-    switch(status.media.latest){
-        case "tv":
-            // Trakt
-            var media = status.media.tv;
-            if(media.now_playing == true) var message1 = "am watching"; else var message1 = 'watched'
-            if(media.type == 'episode'){
-                // TVDB
-                var show_link = "https://www.thetvdb.com/dereferrer/series/" + media.tvdb_id
-                var ep_link   = "https://www.thetvdb.com/dereferrer/episode/" + media.ep.tvdb_id
-                // IMDb
-                // var show_link = "https://www.imdb.com/title/" + media.imdb_id
-                // var ep_link   = "https://www.imdb.com/title/" + media.ep.imdb_id
-                // TMDb
-                // var show_link = "https://www.themoviedb.org/tv/" + media.tmdb_id
-                // var ep_link   = show_link + "/season/" + media.ep.season + "/episode/" + media.ep.ep_number  // Janky.
-                // TVRage is way too fucking confusing. And doesn't even have full info. So fuck it.
-                // Trakt
-                // var show_link = "https://www.trakt.tv/shows/" + media.trakt_id
-                // var ep_link   = show_link + "/seasons/" + media.ep.season + "/episodes/" + media.ep.ep_number
+    // Insert row1 before row2
+    tbody.insertBefore(row1, row2);
+}
 
-                var message2 = "<strong><a href=\"" + show_link + "\">" + media.title + "</a></strong> <em>(" + media.year + ")</em><br><a href=\"" + ep_link + "\"><em>" + media.ep.format + "</em> — <em>" + media.ep.title + "</em></a>";
+function setRowAsFirst(rowId) {
+    var row = document.getElementById(rowId);
 
-                document.getElementById("nowplaying1").innerHTML = message1 + " a TV show";
-                document.getElementById("nowplaying2").innerHTML = message2;
-            } else{
-                // movie
+    // Get the parent node (tbody) of the row
+    var tbody = row.parentNode;
 
-                // IMDb
-                var link = "https://www.imdb.com/title/" + media.imdb_id
-                // TVDB
-                // var link = "https://www.thetvdb.com/dereferrer/movie/" + media.tvdb_id
-                // CANNOT TEST THIS AT THE MOMENT. May or may not be right. Absolutely no docs on the dereferrer.
-                // TMDb
-                // var link = "https://www.themoviedb.org/movie/" + media.tmdb_id
-                // Trakt
-                // var link = "https://www.trakt.tv/movie/" + media.trakt_id
+    // Insert row at the beginning of the tbody
+    tbody.insertBefore(row, tbody.firstChild);
+}
 
-                var message2 = "<strong><a href=\"" + link + "\">" + media.title + "</strong></a><br><em>" + media.year + "</em>";
-                document.getElementById("nowplaying1").innerHTML = message1 + " a movie";
-                document.getElementById("nowplaying2").innerHTML = message2;
-            }
-            break;
-        case "music":
-            // ListenBrainz. And I don't care to set up Last.fm here.
-            var track = status.media.music;
-            if(track.now_playing == true){
-                var message1 = "am listening to"
-            } else{
-                var message1 = "listened to"
-            }
-    
-            if(track.artist_mbids) var artist = "<a href=\"https://musicbrainz.org/artist/" + 
-                track.artist_mbids[0] + "\">" + track.artist + "</a>"
-                else var artist = track.artist;
-            var message2 = "<strong>" + track.title + "</strong><br><em>" + artist + "</em>";
-            if(track.album){
-                if(track.release_mbid) var album = "<a href=\"https://musicbrainz.org/release/" + 
-                    track.release_mbid + "\">" + track.album + "</a>"
-                    else var album = track.album;
-                message2 += " — <em>" + album + "</em>";
-            }
+function setRowAsLast(rowId) {
+    var row = document.getElementById(rowId);
 
-            document.getElementById("nowplaying1").innerHTML = message1;
-            document.getElementById("nowplaying2").innerHTML = message2;
-            break;
+    // Get the parent node (tbody) of the row
+    var tbody = row.parentNode;
+
+    // Append row to the end of the tbody
+    tbody.appendChild(row);
+}
+
+function changeHeaderType(headerId, newType) {
+    var header = document.getElementById(headerId);
+
+    if (header) {
+        var newHeader = document.createElement(newType);
+        newHeader.innerHTML = header.innerHTML;
+
+        var parent = header.parentNode;
+        parent.replaceChild(newHeader, header);
     }
+}
 
-    // Steam integration
-    var game = status.steam
-    // var icon = "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/" + game.appid + "/" + game.img_icon_url + ".jpg"
+function isTimestampOver14DaysAgo(timestamp) {
+  var currentDate = new Date(); // Get the current date and time
+  var twoWeeksAgo = new Date(currentDate.getTime() - 7 * 24 * 60 * 60 * 1000); // Calculate the date 14 days ago
+  
+  var timestampDate = new Date(timestamp * 1000); // Convert the Unix timestamp to milliseconds
+  
+  return timestampDate < twoWeeksAgo; // Compare the timestamp date with twoWeeksAgo and return the result
+}
 
-    var message2 = "<strong><a href=\"https://store.steampowered.com/app/" + game.appid + "/\">" + game.name + "</a></strong><br><em>for " + game.playtime_2weeks / 10 + " hours during the past 2 weeks</em>";
-    if(game.playtime_linux_forever){
-        message2 += " — <em>" + game.playtime_linux_forever / 10 + " hours overall spent playing this game on Linux</em>";
-    }
-    
-    document.getElementById("steam1").innerHTML = "have been playing some";
-    document.getElementById("steam2").innerHTML = message2;
-
-    // Social integration
-    switch(status.social.latest){
-        case "mk":
-            // pain.
-            var post = status.social.mk;
-            var idontfuckingknow = "am noting ";
-            break;
-        case "mstdn":
-            var post = status.social.mstdn;
-            var idontfuckingknow = "am tooting ";
-            break;
-    }
+function socialPost(post, header, notice_text, headerId, contentId, noticeId){
     if(post.cw){
-        idontfuckingknow += "controversies"
+        header += "controversies"
         const random = Math.floor(Math.random() * 100) + 1;
         if(random < 20){
             var confirmation = "are you sure (is this what you want?)";
@@ -145,20 +102,155 @@ function status_update(status){
         var content = `<strong>Marked as sensitive:</strong> ${post.cw}<br><a href=${post.link}><i>${confirmation}</i></a>`;
     } else if(!(post.content) && (post.attachments)){
         if(length > 1){
-            idontfuckingknow += "multiple attachments"
+            header += "multiple attachments"
         } else{
-            idontfuckingknow += "a media attachment"
+            header += "a media attachment"
         }
         var content = `<em>nothing but attachments.</em><br><a href=${post.link}><i>click here to see them.</i></a>`;
     } else{
-        idontfuckingknow += "something";
+        header += "something";
         var content = text_truncate(post.content, 300);
     }
     var link = post.link;
 
-    document.getElementById("toot1").innerHTML = idontfuckingknow;
-    document.getElementById("toot2").innerHTML = content;
+    document.getElementById(headerId).innerHTML = header;
+    document.getElementById(contentId).innerHTML = content;
     // document.getElementById("toot3").href = post.account.link;
+    document.getElementById(noticeId).innerHTML += notice_text;
+    document.getElementById(noticeId).style.display = "inherit";
+}
+
+function status_update(status){
+    var status = JSON.parse(status);
+
+    // Media stuff
+
+    // ListenBrainz. And I don't care to set up Last.fm here.
+    var track = status.media.music;
+    if(track.now_playing == true){
+        var message1 = "am listening to"
+    } else{
+        var message1 = "listened to"
+    }
+
+    if(track.artist_mbids) var artist = "<a href=\"https://musicbrainz.org/artist/" + 
+        track.artist_mbids[0] + "\">" + track.artist + "</a>"
+        else var artist = track.artist;
+    var message2 = "<strong>" + track.title + "</strong><br><em>" + artist + "</em>";
+    if(track.album){
+        if(track.release_mbid) var album = "<a href=\"https://musicbrainz.org/release/" + 
+            track.release_mbid + "\">" + track.album + "</a>"
+            else var album = track.album;
+        message2 += " — <em>" + album + "</em>";
+    }
+
+    if(track.duration_ms) message2 += " <br><small><em>" + convertSecondsToMinutesAndSeconds(track.duration_ms / 1000) + "</em></small>";
+
+    document.getElementById("nowplaying1").innerHTML = message1;
+    document.getElementById("nowplaying2").innerHTML = message2;
+
+    // Trakt
+    var media = status.media.tv;
+    if(media.now_playing == true) var message1 = "am watching"; else var message1 = 'watched'
+    if(media.type == 'episode'){
+        // TVDB
+        var show_link = "https://www.thetvdb.com/dereferrer/series/" + media.tvdb_id
+        var ep_link   = "https://www.thetvdb.com/dereferrer/episode/" + media.ep.tvdb_id
+        // IMDb
+        // var show_link = "https://www.imdb.com/title/" + media.imdb_id
+        // var ep_link   = "https://www.imdb.com/title/" + media.ep.imdb_id
+        // TMDb
+        // var show_link = "https://www.themoviedb.org/tv/" + media.tmdb_id
+        // var ep_link   = show_link + "/season/" + media.ep.season + "/episode/" + media.ep.ep_number  // Janky.
+        // TVRage is way too fucking confusing. And doesn't even have full info. So fuck it.
+        // Trakt
+        // var show_link = "https://www.trakt.tv/shows/" + media.trakt_id
+        // var ep_link   = show_link + "/seasons/" + media.ep.season + "/episodes/" + media.ep.ep_number
+
+        var message2 = "<strong><a href=\"" + show_link + "\">" + media.title + "</a></strong> <em>(" + media.year + ")</em><br><a href=\"" + ep_link + "\"><em>" + media.ep.format + "</em> — <em>" + media.ep.title + "</em></a>";
+
+        document.getElementById("nowplaying-4").innerHTML = message1 + " a TV show";
+        document.getElementById("nowplaying-5").innerHTML = message2;
+    } else{
+        // movie
+
+        // IMDb
+        var link = "https://www.imdb.com/title/" + media.imdb_id
+        // TVDB
+        // var link = "https://www.thetvdb.com/dereferrer/movie/" + media.tvdb_id
+        // CANNOT TEST THIS AT THE MOMENT. May or may not be right. Absolutely no docs on the dereferrer.
+        // TMDb
+        // var link = "https://www.themoviedb.org/movie/" + media.tmdb_id
+        // Trakt
+        // var link = "https://www.trakt.tv/movie/" + media.trakt_id
+
+        var message2 = "<strong><a href=\"" + link + "\">" + media.title + "</strong></a><br><em>" + media.year + "</em>";
+        document.getElementById("nowplaying-4").innerHTML = message1 + " a movie";
+        document.getElementById("nowplaying-5").innerHTML = message2;
+    }
+
+    var musicColumn = document.getElementById("music");
+    var tvColumn    = document.getElementById("tv");
+    switch(status.media.latest){
+        case "tv":
+            // Trakt data is more recent than music data
+            setRowAsFirst("tv")
+            setRowAsLast("music")
+            setRowBehind("music", "social-alt")
+            setRowBehind("music", "empty-spaces")
+            changeHeaderType("nowplaying1", "h5")
+            var thirdElement = "music"
+            break;
+        case "music":
+            // music data is more recent than Trakt data
+            setRowAsFirst("music")
+            setRowAsLast("tv")
+            setRowBehind("tv", "social-alt")
+            setRowBehind("tv", "empty-spaces")
+            changeHeaderType("nowplaying-4", "h5")
+            var thirdElement = "tv"
+            break;
+    }
+
+    // Steam integration
+    var game = status.steam
+    // var icon = "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/" + game.appid + "/" + game.img_icon_url + ".jpg"
+
+    var message2 = "<strong><a href=\"https://store.steampowered.com/app/" + game.appid + "/\">" + game.name + "</a></strong><br><em>for " + (game.playtime_2weeks / 60).toFixed(1) + " hours during the past 2 weeks</em>";
+    if(game.playtime_linux_forever){
+        message2 += " — <em>" + (game.playtime_linux_forever / 60).toFixed(1) + " hours overall spent playing this game on Linux</em>";
+    }
+    
+    document.getElementById("steam1").innerHTML = "have been playing some";
+    document.getElementById("steam2").innerHTML = message2;
+
+    // Social integration
+    // Pleroma
+    var post = status.social.pleroma;
+    var idontfuckingknow = "am posting ";
+    var notice_text = '<a href="' + status.social.pleroma.account.link + '">Starnix Pleroma</a>'
+    socialPost(post, idontfuckingknow, notice_text, "toot1", "toot2", "toot-notice")
+
+    // Mastodon
+    var alt_post = status.social.mstdn;
+    var alt_idontfuckingknow = "am tooting ";
+    var alt_notice_text = '<a href="' + status.social.mstdn.account.link + '">linuxrocks.online (Mastodon)</a>'
+    socialPost(alt_post, alt_idontfuckingknow, alt_notice_text, "toot-1", "toot-2", "toot-notice-alt")
+
+    // Put more relevant one first
+    switch(status.social.latest){
+        case "pleroma":
+            // We do not need to do anything; the default placement is fine as is.
+            // setRowBehind("social", thirdElement)
+            // setRowAsLast("social-alt")
+            break;
+        case "mstdn":
+            setRowBehind("social-alt", "social")
+            setRowAsLast("social")
+            break;
+    }
+
+    if(isTimestampOver14DaysAgo(status.social.mstdn.posted)) document.getElementById("social-alt").style.display = "none";
 }
 
 // -------------------------------------------------------------------
@@ -213,8 +305,22 @@ function fuck(shit){
     // Hell, I MYSELF don't even have it enabled by default; NoScript blocks JS domains by default unless I manually enable it to.
     // And considering who might see this website, they might not be fully happy to have to enable it either.
 
+    if(trackinfo.duration_ms) message2 += "<small>" + convertSecondsToMinutesAndSeconds(trackinfo.duration_ms / 1000) + "</small>";
+
     document.getElementById("nowplaying1").innerHTML = message1;
     document.getElementById("nowplaying2").innerHTML = message2;
+}
+
+function convertSecondsToMinutesAndSeconds(seconds) {
+  var minutes = Math.floor(seconds / 60); // Calculate minutes
+  var remainingSeconds = seconds % 60; // Calculate remaining seconds
+
+  // Format the minutes and seconds
+  var formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+  var formattedSeconds = remainingSeconds < 10 ? "0" + remainingSeconds : remainingSeconds;
+
+  // Return the formatted time
+  return formattedMinutes + "m" + formattedSeconds + "s";
 }
 
 // function popcorn(data){
@@ -317,6 +423,6 @@ function fallback_update(_url){
 
 
 // httpGet("http://192.168.2.202:5555/", status_update)
-let bullshit = httpGet("https://blobfish.rightmouse.click", status_update, fallback_update)
+let bullshit = httpGet("https://azuki.rightmouse.click/atlas/status", status_update, fallback_update)
 
 // document.getElementById("platformIntegration").hidden = false;

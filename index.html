@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -9,14 +9,10 @@
     <meta name="og:image:alt" content="Chair, a white, rectangular cat-looking creature. A profile picture often used by atlas_core.">
     <meta name="description" content="Canadian tech enthusiast, code writer, music enjoyer, professional procrastinator, probable human. Not an email address.">
     <meta name="theme-color" content="#C8C8C8">
-    <meta property="og:image" content="https://rightmouse.click/assets/img/chair/Chair.svg">
+    <meta property="og:image" content="assets/img/chair/Chair.svg">
     <meta property="og:type" content="website">
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/img/icons/ios-home-screen.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="180x180" href="assets/img/icons/ios-home-screen.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/icons/android-home-screen.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/icons/android-splash-screen.png">
+    <link rel="icon" type="image/png" sizes="15x16" href="assets/img/icons/win98cd/favicon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/win98cd/favicon-32.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 </head>
 
@@ -102,7 +98,7 @@
     <div class="container py-4 py-xl-5" style="margin-top: 0px;">
         <div class="row gy-4 gy-md-0">
             <div class="col-md-6 d-none d-print-inline d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline">
-                <div class="p-xl-5 m-xl-5"><img data-bs-toggle="tooltip" data-bss-tooltip="" data-bs-placement="bottom" class="w-100 fit-cover" style="min-height: 300px;border-radius: 16px;" src="assets/img/chair/Chair.svg" alt="Image of Chair, the image I often use online." title="That's Chair, the character I often use as a profile picture online."></div>
+                <div class="p-xl-5 m-xl-5"><img class="w-100 fit-cover" style="min-height: 300px;border-radius: 16px;" src="assets/img/chair/Chair.svg"></div>
             </div>
             <div class="col-md-6 d-md-flex align-items-md-center">
                 <div style="max-width: 350px;">
@@ -132,52 +128,68 @@
             </div>
         </div>
     </section><!-- End: Phone warning -->
-    <div class="container py-4 py-xl-5" id="platform-integration" style="display: none;">
+    <div class="container py-4 py-xl-5" id="platform-integration" style="/*display: none;*/">
         <div class="row mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
                 <h2>on other platforms, I...</h2>
             </div>
         </div>
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3" id="integrations-row">
-            <div class="col">
-                <div class="d-flex">
-                    <div class="px-3">
-                        <h4 id="nowplaying1">don't know what media I recently played</h4>
-                        <p id="nowplaying2">normally I would say what I've been listening to or been watching, but I probably haven't loaded the results yet. actually, you had the time to read this, so that's likely never gonna happen. (or you need better Internet)</p>
-                        <div class="row">
-                            <div class="col-auto"><a id="nowplaying-1" href="https://listenbrainz.org/user/atlas_core/">ListenBrainz&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                    </svg></a></div>
-                            <div class="col-auto"><a id="nowplaying-2" href="https://trakt.tv/users/atlas_core">Trakt&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                    </svg></a></div>
-                        </div>
+        <div class="row gx-0 gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3" id="integrations-row">
+            <div class="col" id="music">
+                <div class="px-3">
+                    <h4 id="nowplaying1">don't know what music I recently played</h4>
+                    <p id="nowplaying2">normally I constantly listen to music, at least while I'm doing something. surprisingly, I can't gather any info on that.</p>
+                    <div class="row">
+                        <div class="col-auto"><a id="nowplaying-1" href="https://listenbrainz.org/user/atlas_core/">ListenBrainz&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                                </svg></a></div>
+                        <div class="col-auto"><a id="nowplaying-3" href="https://last.fm/user/atlas_core">Last.fm&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                                </svg></a></div>
                     </div>
                 </div>
             </div>
-            <div class="col" id="the-game-thing">
-                <div class="d-flex">
-                    <div class="px-3">
-                        <h4 id="steam1">have been unable to play games</h4>
-                        <p id="steam2">and here would be where I show you a recent game I've been playing. however, I cannot tell what I've been recently playing on Steam.</p><a id="steam3" href="#" hidden="true">view game on Steam&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                            </svg></a>
+            <div class="col" id="steam">
+                <div class="px-3">
+                    <h4 id="steam1">have been unable to play games</h4>
+                    <p id="steam2">and here would be where I show you a recent game I've been playing. however, I cannot tell what I've been recently playing on Steam.</p><a id="steam3" href="#" hidden="true">view game on Steam&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                        </svg></a>
+                </div>
+            </div>
+            <div class="col" id="social">
+                <div class="px-3">
+                    <h4 id="toot1">am somewhere on the Fediverse</h4>
+                    <h6 id="toot-notice" style="display: none;padding-left: 12px;"><em>via&nbsp;</em></h6>
+                    <p id="toot2">and this box is for where my social media activity would go. but again, can't connect to my server, so that's not likely to happen anytime soon.</p>
+                    <div class="row">
+                        <div class="col-auto"><a id="toot3" href="https://pl.starnix.network/users/atlas_core">Pleroma (main)&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                                </svg></a></div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="d-flex">
-                    <div class="px-3">
-                        <h4 id="toot1">am somewhere on the Fediverse</h4>
-                        <p id="toot2">and this box is for where my social media activity would go. but again, can't connect to my server, so that's not likely to happen anytime soon.</p>
-                        <div class="row">
-                            <div class="col-auto"><a id="toot4" href="https://linuxrocks.online/@atlas_core">Mastodon (main)&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                    </svg></a></div>
-                            <div class="col-auto"><a id="toot3" href="https://mk.absturztau.be/@atlas_core">Misskey (alt)&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                    </svg></a></div>
-                        </div>
+            <div class="col" id="tv">
+                <div class="px-3">
+                    <h4 id="nowplaying-4">don't watch movies or TV shows all that often</h4>
+                    <p id="nowplaying-5">that includes anime. although for some reason I watch that more often than actual things. it's still not very frequently though anyway, so...</p>
+                    <div class="row">
+                        <div class="col-auto"><a id="nowplaying-7" href="https://trakt.tv/users/atlas_core">Trakt&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                                </svg></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="empty-spaces" style="/*display: none;*/"></div>
+            <div class="col" id="social-alt" style="/*display: none;*/">
+                <div class="px-3">
+                    <h5 id="toot-1">have more than one social account</h5>
+                    <h6 id="toot-notice-alt" style="display: none;padding-left: 12px;"><em>via&nbsp;</em></h6>
+                    <p id="toot-2">this space is normally dedicated to another social presence, but I guess that won't happen.</p>
+                    <div class="row">
+                        <div class="col-auto"><a id="toot-4" href="https://linuxrocks.online/@atlas_core">Mastodon (alt)&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+                                </svg></a></div>
                     </div>
                 </div>
             </div>
@@ -185,9 +197,7 @@
         <p id="fallback-notice" style="display: none;margin-top: 12px;text-align: center;"><strong>Platform integration is in fallback mode; certain platforms won't appear here!</strong> <em>I probably just messed something up in the backend.</em>
             <!--Or, depending on how you want to see it, I'm not a good "server maid"-->
         </p>
-    </div><!-- Start: Adblock message -->
-    <div class="ad-zone ad-space ad-unit textads banner-ads banner_ads"></div>
-    <div id="fuckfuckshitgoddammitfuckingcuntshit" class="container" style="display: none;">
+    </div><!-- Start: Adblock message --><div id="fuckfuckshitgoddammitfuckingcuntshit" class="container" style="display: none;">
     <div class="p-4 p-md-5">
         <h2 class="fw-bold mb-3">Your adblocker's on.</h2>
         <p class="mb-4">Keep it on. Please, I beg you, whatever you do, keep it on. Never disable it. Tell everyone you know to get an ad blocker. Please.<br>
@@ -227,7 +237,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="p-xl-5 m-xl-5"><img class="img-fluid w-100 fit-cover" data-bs-toggle="tooltip" data-bss-tooltip="" style="min-height: 300px;" src="assets/img/chair/Chair,%20No%20BG.svg" alt="An image of Chair, the character." title="Yeah, right there. That's Chair."></div>
+                <div class="p-xl-5 m-xl-5"><img class="w-100 fit-cover" style="min-height: 300px;" src="assets/img/chair/Chair,%20No%20BG.svg" alt="An image of Chair, the character." title="Yeah, right there. That's Chair."></div>
             </div>
         </div>
     </div><!-- End: Chair -->
@@ -291,16 +301,16 @@
         </div>
     </div><!-- End: Projects Grid -->
     <!-- Start: Footer -->
-    <footer class="text-center" style="backdrop-filter: blur(8px) grayscale(75%);-webkit-backdrop-filter: blur(8px) grayscale(75%);border-top-left-radius: 64px;border-top-right-radius: 64px;padding-bottom: 120px;padding-top: 32px;">
+    <footer class="text-center" style="backdrop-filter: blur(8px) grayscale(75%);border-top-left-radius: 64px;border-top-right-radius: 64px;padding-bottom: 120px;padding-top: 32px;">
         <div class="container">
             <div class="row row-cols-1 row-cols-lg-3" id="footer" style="padding-bottom: 32px;">
                 <div class="col m-auto">
                     <p class="my-2" style="font-size: 14px;">Copypaste 2022 atlas_core.&nbsp;Rong wrights left.<br>Made with passion and listening to lots of&nbsp;<em>NIN</em>&nbsp;and <em>RATM</em>.</p>
                 </div>
-                <div class="col m-auto"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width: 0;" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
+                <div class="col m-auto"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
             </div>
             <div class="row">
-                <div class="col" data-bs-toggle="tooltip" data-bss-tooltip="" id="heck-option" style="display: none;margin-bottom: 18px;" title="Please don't"><div class="col" id="fuck" style="display: inline;margin-bottom: 18px;"><a id="why" href="javascript:void(0);" style="/*display: none;*/" onclick="start_hell()" >why not enter hell?</a>
+                <div class="col" data-bs-toggle="tooltip" data-bss-tooltip="" id="heck-option" style="display: none;margin-bottom: 18px;" title="Please don't"><div class="col" id="fuck" style="display: inline; margin-bottom: 18px;"><a id="why" href="javascript:void(0);" style="/*display: none;*/" onclick="start_hell()" >why not enter hell?</a>
 <br><small><em>courtesy of <a href="https://github.com/aqua-lzma/OwOify">aqua-lzma's owoify</a></em></small></div>
 <!-- Maybe not the most organized. -->
 <script>
@@ -348,7 +358,7 @@ document.getElementById("heck-option").style.display = "inline";
                 </div>
             </div>
         </div><!-- Start: 88x31 badges -->
-        <div style="margin-left: 32px;margin-right: 32px;"><img src="assets/img/badges/atlascore.gif"><img src="assets/img/badges/000010.gif"><img src="assets/img/badges/1080p.gif"><img src="assets/img/badges/360.jpg"><img src="assets/img/badges/3dot5mmfc-button.gif"><img src="assets/img/badges/archlinux.gif"><img src="assets/img/badges/best_viewed_with_eyes.gif"><img src="assets/img/badges/computer.png"><img src="assets/img/badges/discord.gif"><img src="assets/img/badges/f_ckfb.gif"><img src="assets/img/badges/hl.gif"><img src="assets/img/badges/jellyfin.gif"><img src="assets/img/badges/mastodon.gif"><img src="assets/img/badges/miku.gif"><img src="assets/img/badges/mswinmediaplayer8.gif"><img src="assets/img/badges/navidrome.gif"><img src="assets/img/badges/neo-fedi.gif"><img src="assets/img/badges/newlambda.gif"><img src="assets/img/badges/nft.gif"><img src="assets/img/badges/nocookie.gif"><img src="assets/img/badges/nya2.gif"><img src="assets/img/badges/PIRACY_NOW.png"><img src="assets/img/badges/psbutton.gif"><img src="assets/img/badges/qc6.gif"><img src="assets/img/badges/qnow7.gif"><img src="assets/img/badges/screw.gif"><img src="assets/img/badges/sdblast.gif"><img src="assets/img/badges/spaceorb.gif"><img src="assets/img/badges/steam.gif"><img src="assets/img/badges/stop.gif"><img src="assets/img/badges/stop-ms.gif"><img src="assets/img/badges/vocaloid.gif"><img src="assets/img/badges/wii.gif"><img src="assets/img/badges/winamp1.gif"><img src="assets/img/badges/windows_media_player.gif"><img src="assets/img/badges/winrar4.gif"><img src="assets/img/badges/xp.gif"></div><!-- End: 88x31 badges -->
+        <div style="margin-left: 32px;margin-right: 32px;"><img src="assets/img/badges/atlascore-lite2.gif"><img src="assets/img/badges/000010.gif"><img src="assets/img/badges/1080p.gif"><img src="assets/img/badges/360.jpg"><img src="assets/img/badges/3dot5mmfc-button.gif"><img src="assets/img/badges/archlinux.gif"><img src="assets/img/badges/best_viewed_with_eyes.gif"><img src="assets/img/badges/computer.png"><img src="assets/img/badges/discord.gif"><img src="assets/img/badges/f_ckfb.gif"><img src="assets/img/badges/hl.gif"><img src="assets/img/badges/jellyfin.gif"><img src="assets/img/badges/mastodon.gif"><img src="assets/img/badges/miku.gif"><img src="assets/img/badges/mswinmediaplayer8.gif"><img src="assets/img/badges/navidrome.gif"><img src="assets/img/badges/neo-fedi.gif"><img src="assets/img/badges/newlambda.gif"><img src="assets/img/badges/nft.gif"><img src="assets/img/badges/nocookie.gif"><img src="assets/img/badges/nya2.gif"><img src="assets/img/badges/PIRACY_NOW.png"><img src="assets/img/badges/psbutton.gif"><img src="assets/img/badges/qnow7.gif"><img src="assets/img/badges/screw.gif"><img src="assets/img/badges/sdblast.gif"><img src="assets/img/badges/spaceorb.gif"><img src="assets/img/badges/steam.gif"><img src="assets/img/badges/stop.gif"><img src="assets/img/badges/stop-ms.gif"><img src="assets/img/badges/vocaloid.gif"><img src="assets/img/badges/wii.gif"><img src="assets/img/badges/winamp1.gif"><img src="assets/img/badges/windows_media_player.gif"><img src="assets/img/badges/winrar4.gif"><img src="assets/img/badges/xp.gif"></div><!-- End: 88x31 badges -->
     </footer><!-- End: Footer -->
     <!--isn't this where--><script src="assets/js/theming.js" defer></script>
 
