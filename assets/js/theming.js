@@ -1,5 +1,3 @@
-// TODO: Dumb idea, what if we change the navbar's colors to go along with the themecolor?
-
 var backgrounds = [
     {
         "name": "The Presence",
@@ -89,6 +87,8 @@ file:///home/deck/Downloads/quake-opt.jpg
 // a, h1, h2, h3, h4, h5, h6, p {background-color: white;}
 // no other way to do this... so I give up. it'd be too clunky.
 
+var footer_exists = !!document.getElementById("footer");
+
 function set_background(element){
     // Basic CSS stuff
     document.body.style.backgroundImage = `url('${element.bg_url}')`;
@@ -103,7 +103,7 @@ function set_background(element){
     if(element.text_color == 0) document.body.style.color = "var(--bs-dark)"; else if(element.text_color == 1) document.body.style.color = "white"; else document.body.style.color = element.text_color
     if(element.text_shadow) document.body.style.textShadow = "0px 0px 18px #000000"; else document.body.style.textShadow = "";  // CAN ALSO CAUSE GRAPHICAL GLITCHES THAT I STILL HAVE NO IDEA WHAT THE FUCK IS CAUSING IT
     if(element.bg_blend) document.body.style.backgroundBlendMode = "overlay"; else document.body.style.backgroundBlendMode = "";
-    if(element.footer_color){
+    if(element.footer_color && footer_exists){
         if(element.footer_color == 1) document.getElementById("footer").style.color = "var(--bs-dark)"
         if(element.footer_color == 2) document.getElementById("footer").style.color = "white"
     };
@@ -135,4 +135,4 @@ function theming_menu(){
 // if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) set_background(backgrounds[Math.floor(Math.random()*backgrounds.length)])
 set_background(backgrounds[0])
 
-theming_menu()
+if(footer_exists) theming_menu();
