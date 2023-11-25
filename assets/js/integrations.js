@@ -6,7 +6,7 @@ function httpOops(url){
 
 function httpGet(theUrl, callback, fallback=httpOops){
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", theUrl);
+    xmlHttp.open("GET", theUrl, true);
     xmlHttp.timeout = 3000;
     xmlHttp.onload = function() { 
         if (xmlHttp.readyState === 4){
@@ -18,6 +18,9 @@ function httpGet(theUrl, callback, fallback=httpOops){
                 fallback(theUrl)
             }
         }
+    }
+    xmlHttp.onError = function(){
+        console.log("AW FUCK")
     }
     xmlHttp.ontimeout = xmlHttp.onload;  // do I know what's going on here? absolutely the fuck not. does it work? sure
     xmlHttp.send();
@@ -228,7 +231,14 @@ function status_update(status){
     // Pleroma
     var post = status.social.pleroma;
     var idontfuckingknow = "am posting ";
-    var notice_text = '<a href="' + status.social.pleroma.account.link + '">Starnix Pleroma</a>'
+    // var notice_text = '<a href="' + status.social.pleroma.account.link + '">Starnix Pleroma</a>'
+    if(status.social.pleroma.account.link.includes("starnix.network")){
+        var notice_text = '<a href="' + status.social.pleroma.account.link + '">Starnix Pleroma</a>'
+    } else if(status.social.pleroma.account.link.includes("rightmouse.click")){
+        var notice_text = '<a href="' + status.social.pleroma.account.link + '">self-hosted instance</a>'
+    } else{
+        var notice_text = '<a href="' + status.social.pleroma.account.link + '">I Hate JavaScript</a>'
+    }
     socialPost(post, idontfuckingknow, notice_text, "toot1", "toot2", "toot-notice")
 
     // Mastodon
@@ -407,7 +417,7 @@ function toothole(toots){  // toothole because funny or something idrk
 // -------------------------------------------------------------------
 
 
-function fallback_update(_url){
+function fallback_update(){
     console.log("Using fallback update; couldn't reach the server status API thingamajig.")
     
     document.getElementById("fallback-notice").style.display = "inherit";
@@ -423,6 +433,11 @@ function fallback_update(_url){
 
 
 // httpGet("http://192.168.2.202:5555/", status_update)
-let bullshit = httpGet("https://azuki.rightmouse.click/atlas/status", status_update, fallback_update)
+try{
+    let bullshit = httpGet("https://azuki.rightmouse.click/atlas/status", status_update, fallback_update)
+} catch{
+    console.log("aw fuck, doing fallback stuff...")
+    fallback_update()
+}
 
 // document.getElementById("platformIntegration").hidden = false;
