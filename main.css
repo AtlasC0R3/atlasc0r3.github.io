@@ -57,6 +57,7 @@ details summary {
 }
 #size-snark {
 	display: none;
+	font-style: italic;
 }
 
 .page-content {
@@ -200,17 +201,30 @@ TODO: make up your goddamned mind if you want it or not.
 	.intro {
 		flex-direction: column;
 		margin: 15px auto;
+		padding: 0;
 		padding-bottom: 50px;
 	}
+	.intro-desc {
+		padding: 0;
+	}
+
 	#size-snark {
 		display: inline;
-		font-style: italic;
+	}
+	.page-content {
+		padding: 0
 	}
 	body {
 		padding: 16px;
 	}
 	p {
 		font-size: revert;
+	}
+
+	footer {
+		padding: 12px 8px;
+		border-top-left-radius: 12px;
+		border-top-right-radius: 12px;
 	}
 }
 @media screen and (max-height: 360px) {
