@@ -1,384 +1,451 @@
 <!DOCTYPE html>
-<html data-bs-theme="dark" lang="en">
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>atlas_core @ rightmouse.click</title>
+<meta name="og:site_name" content="rightmouse.click">
+<meta name="og:image:alt" content="Chair, a white, rectangular cat-looking creature. A profile picture often used by atlas_core.">
+<meta name="description" content="Canadian tech enthusiast, code writer, music enjoyer, professional procrastinator, probable human. Not an email address.">
+<meta name="theme-color" content="#202124">
+<meta property="og:image" content="assets/img/chair/Chair.svg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="15x16" href="assets/img/icons/win98cd/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/win98cd/favicon-32.png">
+<link href="main.css" rel="stylesheet">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>atlas_core @ rightmouse.click</title>
-    <meta name="og:site_name" content="rightmouse.click">
-    <meta name="og:image:alt" content="Chair, a white, rectangular cat-looking creature. A profile picture often used by atlas_core.">
-    <meta name="description" content="Canadian tech enthusiast, code writer, music enjoyer, professional procrastinator, probable human. Not an email address.">
-    <meta name="theme-color" content="#C8C8C8">
-    <meta property="og:image" content="assets/img/chair/Chair.svg">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/png" sizes="15x16" href="assets/img/icons/win98cd/favicon-16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/win98cd/favicon-32.png">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-</head>
+<body>
 
-<body class="bg-dark" style="--bs-body-color: var(--bs-gray-100);">
-    <!--we came in?-->
-    <!-- Start: Introduction -->
-    <div class="container py-4 py-xl-5" style="margin-top: 0px;">
-        <div class="row gy-4 gy-md-0">
-            <div class="col-md-6 d-none d-print-inline d-sm-none d-md-inline d-lg-inline d-xl-inline d-xxl-inline">
-                <div class="p-xl-5 m-xl-5"><img class="w-100 fit-cover" style="min-height: 300px;border-radius: 16px;" src="assets/img/chair/Chair.svg"></div>
-            </div>
-            <div class="col-md-6 d-md-flex align-items-md-center">
-                <div style="max-width: 350px;">
-                    <h1 class="fw-bold">atlas_core</h1>
-                    <p class="text-break fs-5 my-3"><span style="color: rgb(232, 234, 237); background-color: rgb(32, 33, 36);">Computer fiddler, music listener, game player, part time weeb, partial problem, mere and hopefully inoffensive human being.</span>&nbsp;Now on a web browser.</p>
-                    <p class="text-break fs-6 my-3" id="pronoun">Pronouns: do/not/matter</p>
-                </div>
-            </div>
-        </div>
-    </div><!-- End: Introduction -->
-    <!-- Start: JS warning --><div id="jsDisabled" class="container">
-    <div class="text-white bg-dark border rounded border-0 p-4 p-md-5">
-        <h2 class="fw-bold text-white mb-3">You don't have JavaScript enabled.</h2>
-        <p class="mb-4">Good. Keep it that way. <br>
-        Rather than criticize you for it, I'm complimenting you. <br>
-        There are actually some JavaScript-dependent features on this website, but they're mere gimmicks. Not required at all.
-        </p>
-    </div>
+<!-- we came in? -->
+
+<div class="intro">
+	<img src="assets/img/chair/Chair.svg" alt="A vector picture of a rectangular cat, often used as a profile picture.">
+	<!-- TODO: find a not-brain-damaged way to add a JPG fallback for IE6 -->
+	
+	<div class="intro-desc">
+		<h1>atlas_core</h1>
+		<p>
+			<span>Computer fiddler, music listener, game player, part time weeb, partial problem, mere and hopefully inoffensive human being.</span>
+			Now on a web browser.
+		</p>
+		<p id="pronoun">Pronouns: do/not/matter</p>
+		<p id="size-snark">(btw, you have a funny screen)</p>
+	</div>
 </div>
-<!-- End: JS warning -->
-    <!-- Start: Phone warning -->
-    <section class="d-sm-inline d-md-none d-lg-none py-4 py-xl-5" style="background: var(--bs-gray-900);color: var(--bs-white);margin-bottom: 16px;">
-        <div class="container">
-            <div class="pb-2 pb-lg-1">
-                <h2 class="fw-bold mb-2">You are on a small screen.</h2>
-                <p class="mb-0">This website may not be at its best on such restrictions. Still, feel free to look around.</p>
-            </div>
-        </div>
-    </section><!-- End: Phone warning -->
-    <div class="container border rounded border-0 py-4 py-xl-5" id="platform-integration" style="display: none;background: rgba(55,58,60,0.79);backdrop-filter: blur(16px);">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <h2>on other platforms, I...</h2>
-            </div>
-        </div>
-        <div class="row gx-0 gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3" id="integrations-row">
-            <div class="col" id="music">
-                <div class="px-3">
-                    <h4 id="nowplaying1">don't know what music I recently played</h4>
-                    <p id="nowplaying2">normally I constantly listen to music, at least while I'm doing something. surprisingly, I can't gather any info on that.</p>
-                    <div class="row">
-                        <div class="col-auto"><a id="nowplaying-1" href="https://listenbrainz.org/user/atlas_core/">ListenBrainz&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                </svg></a></div>
-                        <div class="col-auto"><a id="nowplaying-3" href="https://last.fm/user/atlas_core">Last.fm&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                </svg></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" id="steam">
-                <div class="px-3">
-                    <h4 id="steam1">have been unable to play games</h4>
-                    <p id="steam2">and here would be where I show you a recent game I've been playing. however, I cannot tell what I've been recently playing on Steam.</p><a id="steam3" href="#" hidden="true">view game on Steam&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                        </svg></a>
-                </div>
-            </div>
-            <div class="col" id="social">
-                <div class="px-3">
-                    <h4 id="toot1">am somewhere on the Fediverse</h4>
-                    <h6 id="toot-notice" style="display: none;padding-left: 12px;"><em>via&nbsp;</em></h6>
-                    <p id="toot2">and this box is for where my social media activity would go. but again, can't connect to my server, so that's not likely to happen anytime soon.</p>
-                    <div class="row">
-                        <div class="col-auto"><a id="toot3" href="https://thonkbox.rightmouse.click/atlas">Pleroma (main)&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                </svg></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col d-none d-lg-inline-block" id="tv">
-                <div class="px-3">
-                    <h4 id="nowplaying-4">don't watch movies or TV shows all that often</h4>
-                    <p id="nowplaying-5">that includes anime. although for some reason I watch that more often than actual things. it's still not very frequently though anyway, so...</p>
-                    <div class="row">
-                        <div class="col-auto"><a id="nowplaying-7" href="https://trakt.tv/users/atlas_core">Trakt&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                </svg></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col d-none d-lg-inline-block" id="empty-spaces" style="/*display: none;*/min-height: 0;"></div>
-            <div class="col d-none d-lg-inline-block" id="social-alt" style="/*display: none;*/">
-                <div class="px-3">
-                    <h5 id="toot-1">have more than one social account</h5>
-                    <h6 id="toot-notice-alt" style="display: none;padding-left: 12px;"><em>via&nbsp;</em></h6>
-                    <p id="toot-2">this space is normally dedicated to another social presence, but I guess that won't happen.</p>
-                    <div class="row">
-                        <div class="col-auto"><a id="toot-4" href="https://linuxrocks.online/@atlas_core">Mastodon (alt)&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
-                                </svg></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p id="fallback-notice" style="display: none;margin-top: 12px;text-align: center;"><strong>Platform integration is in fallback mode; certain platforms won't appear here!</strong> <em>I probably just messed something up in the backend.</em>
-            <!--Or, depending on how you want to see it, I'm not a good "server maid"-->
-        </p>
-    </div><!-- Start: Adblock message --><div id="fuckfuckshitgoddammitfuckingcuntshit" class="container" style="display: none;">
-    <div class="p-4 p-md-5">
-        <h2 class="fw-bold mb-3">Your adblocker's on.</h2>
-        <p class="mb-4">Thank you. Keep it up. You're part of the minority (for some reason)
-        that actually use a brain.</p>
-    </div>
-</div>
-<!-- End: Adblock message -->
-    <div class="container">
-        <p id="narcissistic_sycophant_snobby_fucking_cunt" style="display: none;font-family: 'Open Sans', sans-serif;background: var(--bs-gray-900);color: var(--bs-white);">its been 45 minutes<br>i have tried writing something here<br>something to denounce all the bullshit ive put up through<br>some really awful shit that seriously would be a contender for legal action<br>or something that not even an sjw would have to agree is fucked up<br>child grooming. that type of shit. ive seen it, ive had it. i still remember.<br>apostle, jtapostle, toasty_77 i think they were. i think.<br>phos, nyaphosi? nyaki? cunt changed his name so many times, I don't remember. all i know is he was referred to as "phos"<br>naomi (korowa?) didn't fool anyone, they were an obvious red flag. but they were an obvious red flag. but they are a red flag. but we kept going on.<br>but fuck me, i can't think of nothing. i dont feel anything at all. i dont.<br>i dont even remember anything. i remember being able to, just weeks ago, but now its just gone?<br>why is it so late? why is there a used tissue next to me?<br>and why am I still fucking typing here<br><br>I'm not okay. I need help. But no one can help me, and I know that.<br>I would've helped myself long ago.<br>These are the times the lunatic is here. I can't do anything then.<br>No one is to be trusted. Everyone can have bad intentions.<br>That normal man? Must be up to something.<br>That trans autistic person? They can't be real.<br>This innocent friend from elementary school? They're not who they used to be.<br><br>I can't trust anyone. I don't even know if I trust myself.<br>And I know this is wrong. I know that trans autistic person is none of my business. I know that normal man has nothing wrong.<br><br>No, I've had enough. I can't keep writing this. Go check the Git commit history, there used to be a message. The conflict between Zoi has been arranged, I think. And I'm grateful that it did. Seriously, thanks. As for you,&nbsp;(DaR0gue/Sagittarius/Zorya/Vorteil)? Off yourself.<br><br>help<br>please<br>somebody somewhere<br>get this out of my head.</p>
-    </div><!-- Start: Description -->
-    <section id="intro" class="py-4 py-xl-5" style="margin-top: 32px;">
-        <div class="container">
-            <div class="pb-2 pb-lg-1">
-                <h2 class="fw-bold mb-2">who?</h2>
-                <p class="mb-0">A human being, as any other, with interest in technology, such as Linux, programming, server hosting and gaming. Also interested in art creation, not at all good at it. <em>Neurological disorders are not part of my personality, and I hope they'll never be; stop glamorising it as if it's a good thing, it's not, and you're making us look like a joke.</em><br>I also find a niche in music: primarily preferred genres include industrial/metal <em>(think Architects, Nine Inch Nails, Rage Against the Machine)</em>, electronic music <em>(like Aphex Twin, Daft Punk, Justice)</em>, and alternative <em>(Nothing but Thieves, Muse, Gorillaz)</em>. <a href="https://musicbrainz.org/collection/b70fe027-3501-4548-ae10-eaa246e48c11" target="_blank"><em>I mean, it's not like I have a CD collection or anything...</em></a><br><br>I do not tend to be an offence by default; should I ever disagree with your opinion, whatever may it be, I don't care. Believe in and be whatever you want, I don't care about politics, corporations' moralities, LGBT stuff, neurological disorders, things of the sort. <em>Don't make me care, either.</em></p>
-                <p class="fs-4" style="padding-top: 12px;font-style: italic;">...not that any of this actually defines a person, then again</p>
-            </div>
-        </div>
-    </section><!-- End: Description -->
-    <!-- Start: Contact -->
-    <section id="intro-1" class="py-4 py-xl-5" style="margin-top: 32px;">
-        <div class="container">
-            <h2 class="fw-bold mb-2">hello?</h2>
-            <p class="mb-0" style="padding-bottom: 20px;">Should you ever want to contact me, for whatever reason, use whatever method works best for you.<br>Just make sure you're <em>actually</em>&nbsp;talking to me; I usually won't link unknown methods here, so use this as a point of reference. <em>(Or I can make a PGP signature if I'm on my workstation...)</em></p>
-            <div style="padding-left: 16px;/*background: rgba(55,58,60,0.79);*/backdrop-filter: blur(16px);">
-                <!-- Start: PGP -->
-                <div style="padding-bottom: 20px;padding-left: 0px;">
-                    <h4 class="fw-bold mb-2" style="margin-left: 0px;font-style: italic;padding-left: 0px;"><span style="font-weight: normal !important;">PGP public key thing</span></h4>
-                    <p class="mb-0" style="padding-bottom: 0px;"><strong>If you don't know what this is, forget it</strong>; this is not "required," just a secure means of encryption/signing.&nbsp;<a href="https://emailselfdefense.fsf.org/en/">Here's a quick reference on how it "works" for emails.</a><br><br>To those who know what this is for, this is my fingerprint:&nbsp;<code><span style="color: rgb(248, 249, 250);">623A60EA2B9FDA40252A7D51550913E862FF13DD</span></code>.&nbsp;<a href="https://keys.openpgp.org/vks/v1/by-fingerprint/623A60EA2B9FDA40252A7D51550913E862FF13DD">Here's the public key on OpenPGP.org</a></p>
-                </div><!-- End: PGP -->
-                <!-- Start: XMPP/Jabber -->
-                <div style="padding-bottom: 20px;padding-left: 0px;">
-                    <h4 class="fw-bold mb-2" style="margin-left: 0px;font-style: italic;padding-left: 0px;"><span style="font-weight: normal !important;">XMPP/Jabber</span></h4>
-                    <p class="mb-0" style="padding-bottom: 0px;">I should be able to respond to XMPP messages when I'm home. This is a preferred way of sending messages; if you can, and if it suits your needs, use this.<br><a href="xmpp://atlascore@disroot.org"><strong>Main Disroot account</strong></a>,&nbsp;<a href="https://azuki.rightmouse.click/omemo.txt"><strong>OMEMO fingerprints</strong></a></p>
-                </div><!-- End: XMPP/Jabber -->
-                <!-- Start: Email -->
-                <div style="padding-bottom: 20px;padding-left: 0px;">
-                    <h4 class="fw-bold mb-2" style="margin-left: 0px;font-style: italic;padding-left: 0px;"><span style="font-weight: normal !important;">Email</span></h4>
-                    <p class="mb-0">Where possible, use plain text and PGP encryption.&nbsp;<em>(but don't stress if you can't figure it out.)</em><br><code>atlascore à disroot point org</code><br><sup>(démerdez-vous, êtres humains.)</sup></p>
-                </div><!-- End: Email -->
-                <!-- Start: Fediverse -->
-                <div style="padding-bottom: 20px;padding-left: 0px;">
-                    <h4 class="fw-bold mb-2" style="margin-left: 0px;font-style: italic;padding-left: 0px;"><span style="font-weight: normal !important;">Fediverse (Mastodon/Pleroma/Misskey/etc)</span></h4>
-                    <p class="mb-0" style="padding-bottom: 0px;">While it's not the most secure or private method of communication, it is one that works for quick messages.<br><a href="https://thonkbox.rightmouse.click/atlas"><strong>Self-hosted main</strong></a>,&nbsp;<a href="https://pl.starnix.network/users/atlas_core"><strong>Starnix/Pleroma alt</strong></a>,&nbsp;<a href="https://linuxrocks.online/@atlas_core"><strong>Mastodon alt</strong></a></p>
-                </div><!-- End: Fediverse -->
-                <!-- Start: Stinky Stinky Mr Fuck -->
-                <div style="padding-bottom: 20px;padding-left: 0px;">
-                    <h4 class="fw-bold mb-2" style="margin-left: 0px;font-style: italic;padding-left: 0px;"><span style="font-weight: normal !important;">Fucking Discord bullshit no one cares about</span></h4>
-                    <p class="mb-0" style="padding-bottom: 0px;">You seriously shouldn't use this for reasons other than desperation. To prove my statement, I will not provide my easily guessable username.</p>
-                </div><!-- End: Stinky Stinky Mr Fuck -->
-                <!-- Start: Other stuff -->
-                <div style="padding-bottom: 20px;padding-left: 12px;">
-                    <h4 class="fw-bold mb-2" style="margin-left: 0px;font-style: italic;padding-left: 0px;"><span style="font-weight: normal !important;">Other means</span></h4>
-                    <p class="mb-0" style="padding-bottom: 0px;">No guarantees at all. These likely are accounts that are either "niche" or less active.<br><a href="msnim:chat?contact=atlascore@escargot.chat"><strong>MSN Messenger</strong> <em>(via escargot.chat)</em></a>,&nbsp;<a href="ymsgr:addfriend?atlascore"><strong>Yahoo! Messenger</strong>&nbsp;<em>(via nina.chat)</em></a>,&nbsp;<strong>Telegram </strong>upon request<br><a href="https://escargot.chat"><sub>escargot.chat</sub></a><sub>&nbsp;and&nbsp;</sub><a href="https://nina.chat"><sub>nina.chat</sub></a><sub>&nbsp;are revivals of old messaging platforms I am not affiliated with. don't expect any seriousness here.</sub></p>
-                </div><!-- End: Other stuff -->
-            </div>
-        </div>
-    </section><!-- End: Contact -->
-    <!-- Start: Name explanation -->
-    <section id="name" class="py-4 py-xl-5" style="margin-left: 16px;margin-right: 16px;">
-        <div class="container" style="padding-left: 0px;padding-right: 0px;">
-            <div class="pb-2 pb-lg-1">
-                <h3 class="fw-bold mb-2">why "atlas_core", or "rightmouse.click"?</h3>
-                <p class="fs-5" style="padding-top: 12px;font-style: italic;">what, you wanna hear me ramble or something?</p>
-                <p class="mb-0" style="padding-bottom: 8px;"><em>"atlas core"</em>&nbsp;has a pretty simple meaning as a reference to one of my favorite games,&nbsp;<a href="https://en.wikipedia.org/wiki/Portal_2">Portal 2</a>. In that game, there's a co-op mode, where 2 players can complete levels together <em>(or not, and just mess around with stuff)</em>&nbsp;<em>(from experience, we mostly messed around)</em>. The characters,&nbsp;<a href="https://theportalwiki.com/wiki/Atlas">Atlas</a>&nbsp;and&nbsp;<a href="https://theportalwiki.com/wiki/P-body">P-body</a>, all look like other&nbsp;entities in the game; <strong><em>Atlas</em></strong>&nbsp;looks like an <a href="https://theportalwiki.com/wiki/Cores"><em>Aperture Science&nbsp;</em><strong><em>core</em></strong></a>, whereas <em>P-body</em>&nbsp;looks like a <a href="https://theportalwiki.com/wiki/Turrets"><em>turret</em></a>.<br><em>Would P-body be "P-turret"?..wait, no, that sounds like something else.</em></p>
-                <!--Completely unrelated to the reason why I went into a robotics learning program from 7th to 9th grade; I'm not Michael Reeves yet. Although I might be soon.
 
-note from 2023: when did I write that and what the fuck did I imply?-->
-                <p class="mb-0">The term "right mouse click" (as in <span style="text-decoration: underline;">rightmouse.click</span>) was just some creative name I tried coming up with when looking at domains and their ends (<em>.com</em>, <em>.co</em>, <em>.me</em>, etc). I didn't want to go with something too basic, so I found "click" to be quite interesting. I tried coming up with sentences with that, and thought of "left mouse click". That happened to be taken, so I went with the right mouse click.<br><em>Hmm, I could probably turn this website into some anti-NFT thing.. maybe I will.</em></p>
-            </div>
-        </div>
-    </section><!-- End: Name explanation -->
-    <!-- Start: Chair -->
-    <div class="container py-4 py-xl-5" id="chair">
-        <div class="row gy-4 gy-md-0">
-            <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
-                <div style="max-width: 350px;">
-                    <h2 class="fw-bold">Chair.</h2>
-                    <p class="my-3">The character I frequently use often as a "profile picture". Say hi to him. :)</p>
-                    <p class="my-3" style="font-size: 12px;font-style: italic;">It is designed to be a cat, but it can also look like a Wiimote/fridge/power outlet/phone/tower fan/blanket/Teletubbies/toilet/car/Arch Linux user/door.</p>
-                    <p class="my-3" style="font-size: 14px;"><strong>Early 2020</strong>: I wanted to do a quick sketch of a chair in GIMP, and for no reason decided to add cat ears. Turned out that it looked more like a cat than a chair, so it became a cat named <em>Chair</em>&nbsp;from now on.<br><strong>Mid 2020</strong>: I remade Chair entirely, so that it looked cleaner. I used those images as profile pictures nearly everywhere. <em>For the better.</em><br><strong>Late 2022</strong>: I remade Chair, again, without the intention of making something hugely different. This time, it was in Vector though!</p><!-- hey.. wanna know something? i'm.. i'm stuck in a vending machine. help. --><a href="https://github.com/AtlasC0R3/Chair" style="font-size: 20px;"><strong>Source images</strong></a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="p-xl-5 m-xl-5"><img class="w-100 fit-cover" style="min-height: 300px;" src="assets/img/chair/Chair,%20No%20BG.svg" alt="An image of Chair, the character." title="Yeah, right there. That's Chair."></div>
-            </div>
-        </div>
-    </div><!-- End: Chair -->
-    <!-- Start: Projects Grid -->
-    <div class="container py-4 py-xl-5" id="projects">
-        <div class="text-center" style="padding-bottom: 0px;margin-bottom: 20px;">
-            <h1>Personal codey-code projects</h1>
-            <p class="w-lg-50" style="margin-bottom: 0px;">Stuff I have worked on previously. And probably gave up on.<br>Time management is stupid anyway.</p>
-        </div>
-        <div class="text-center">
-            <h2 style="margin-bottom: 0px;padding-bottom: 12px;">Actual stuff</h2>
-            <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center" style="margin-top: 0px;">
-                <div class="col-xl-4" style="margin-top: 0px;">
-                    <div>
-                        <h4>Dotty</h4>
-                        <p style="margin-bottom: 0px;">A simple and addictive, arcade-like game where you collect dots, written in C++ with Raylib, although taking code inspiration from another game, Terri-Fried.<br><em>Probably my proudest work yet, I highly recommend you check it out!</em></p><a href="https://github.com/AtlasC0R3/dotty" style="font-size: 18px;"><strong>view...</strong></a>
-                    </div>
-                </div>
-                <div class="col-xl-4" style="margin-top: 0px;">
-                    <div>
-                        <h4>Litter</h4>
-                        <p style="margin-bottom: 0px;">A still very incomplete, rudimentary Android client for Nitter built with native, modern technologies like Compose in mind.<br><em>While incomplete and mostly put on the backlog of incomplete projects, it's my most prominent work on the Android platform.</em></p><a href="https://github.com/AtlasC0R3/litter" style="font-size: 18px;"><strong>view...</strong></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div style="padding: 32px;padding-top: 0;padding-bottom: 0;">
-            <h3 style="margin-bottom: 0px;padding-bottom: 0px;margin-top: 32px;">Other stuff that exists</h3>
-            <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center" style="margin-top: 0px;">
-                <div class="col-xl-3">
-                    <div>
-                        <h5>Drop</h5>
-                        <p>What used to be a Discord bot, that later got turned into a core library and a Discord bot.<br><em>Abandoned due to the main bot's discontinuation (Discord being garbage) and due to horrible memories with some people related to my Discord experience.</em></p><a href="https://github.com/AtlasC0R3/drop-mod" style="font-size: 18px;"><strong>view library core,&nbsp;</strong></a><a href="https://github.com/AtlasC0R3/drop-discord" style="font-size: 18px;"><strong>or view garbage dicsrod bot</strong></a>
-                    </div>
-                </div>
-                <div class="col-xl-3">
-                    <div>
-                        <h5>Bloxify</h5>
-                        <p>A Roblox module that allows the player to interact with the Spotify API from in-game as a potential substitute for game soundtrack or overlay.<br><em>Abandoned due to lack of motivation and not really having a way to authenticate. Oh, and because I now use YT Music.</em></p><a href="https://github.com/AtlasC0R3/bloxify" style="font-size: 18px;"><strong>view...</strong></a>
-                    </div>
-                </div>
-                <div class="col-xl-3">
-                    <div>
-                        <h5>Outsyncer</h5>
-                        <p>A CLI-based app meant to synchronize songs from one device to another, but that can also be used to sort song files elegantly<br><em>Mostly sitting in unfinished limbo; I myself didn't find the need to continue this. Syncthing does the job.</em></p><a href="https://github.com/AtlasC0R3/outsyncer" style="font-size: 18px;"><strong>view...</strong></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- End: Projects Grid -->
-    <!-- Start: Footer -->
-    <footer class="text-center" style="backdrop-filter: blur(8px) grayscale(75%);border-top-left-radius: 64px;border-top-right-radius: 64px;padding-top: 32px;padding-bottom: 32px;">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-lg-4" id="footer" style="padding-bottom: 32px;">
-                <div class="col m-auto">
-                    <p class="my-2" style="font-size: 14px;">Copypaste 2023 atlas_core.&nbsp;Rong wrights left.<br>Made with passion and listening to lots of&nbsp;<em>NIN</em>&nbsp;and <em>RATM</em>.<br>Sincere apologies for using Bootstrap.</p>
-                </div>
-                <div class="col-auto text-center m-auto" id="fediring-box" style="margin-left: 0px;padding-bottom: 8px;">
-                    <p id="fediring-text" style="display: none;margin-bottom: 6px;margin-right: 12px;margin-left: 12px;margin-top: 6px;">Seems like you came here from another user of the Fediring!<br>Here's a quick navigation panel to help you traverse it.</p><a id="fediring-link" href="https://fediring.net" style="color: var(--bs-navbar-hover-color);">Fediring</a>
-                    <ul class="list-inline my-2">
-                        <li class="list-inline-item me-4">
-                            <div class="bs-icon-circle bs-icon-primary bs-icon"><a href="https://fediring.net/previous?host=rightmouse.click"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
-                                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                                        <path d="M459.5 71.41l-171.5 142.9v83.45l171.5 142.9C480.1 457.7 512 443.3 512 415.1V96.03C512 68.66 480.1 54.28 459.5 71.41zM203.5 71.41L11.44 231.4c-15.25 12.87-15.25 36.37 0 49.24l192 159.1c20.63 17.12 52.51 2.749 52.51-24.62v-319.9C255.1 68.66 224.1 54.28 203.5 71.41z"></path>
-                                    </svg></a></div>
-                        </li>
-                        <li class="list-inline-item me-4">
-                            <div class="bs-icon-circle bs-icon-primary bs-icon"><a href="https://fediring.net/random"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
-                                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                                        <path d="M424.1 287c-15.13-15.12-40.1-4.426-40.1 16.97V352H336L153.6 108.8C147.6 100.8 138.1 96 128 96H32C14.31 96 0 110.3 0 128s14.31 32 32 32h80l182.4 243.2C300.4 411.3 309.9 416 320 416h63.97v47.94c0 21.39 25.86 32.12 40.99 17l79.1-79.98c9.387-9.387 9.387-24.59 0-33.97L424.1 287zM336 160h47.97v48.03c0 21.39 25.87 32.09 40.1 16.97l79.1-79.98c9.387-9.391 9.385-24.59-.0013-33.97l-79.1-79.98c-15.13-15.12-40.99-4.391-40.99 17V96H320c-10.06 0-19.56 4.75-25.59 12.81L254 162.7L293.1 216L336 160zM112 352H32c-17.69 0-32 14.31-32 32s14.31 32 32 32h96c10.06 0 19.56-4.75 25.59-12.81l40.4-53.87L154 296L112 352z"></path>
-                                    </svg></a></div>
-                        </li>
-                        <li class="list-inline-item">
-                            <div class="bs-icon-circle bs-icon-primary bs-icon"><a href="https://fediring.net/next?host=rightmouse.click"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
-                                        <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                                        <path d="M52.51 440.6l171.5-142.9V214.3L52.51 71.41C31.88 54.28 0 68.66 0 96.03v319.9C0 443.3 31.88 457.7 52.51 440.6zM308.5 440.6l192-159.1c15.25-12.87 15.25-36.37 0-49.24l-192-159.1c-20.63-17.12-52.51-2.749-52.51 24.62v319.9C256 443.3 287.9 457.7 308.5 440.6z"></path>
-                                    </svg></a></div>
-                        </li>
-                    </ul>
-                </div><!-- Start: Social media links -->
-                <div class="col-auto flex-shrink-1 align-self-center mx-auto" style="text-align: center;margin-left: 0px;padding-top: 0px;padding-left: 0px;margin-bottom: 8px;margin-top: 8px;padding-right: 0px;">
-                    <ul class="list-inline my-2" style="padding-left: 12px;">
-                        <li class="list-inline-item me-4" title="Pleroma (Fediverse)"><a href="https://thonkbox.rightmouse.click/atlas" rel="me">
-                                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-share-fill">
-                                        <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"></path>
-                                    </svg></div>
-                            </a></li>
-                        <li class="list-inline-item me-4" title="Mastodon (Fediverse, alt)"><a href="https://linuxrocks.online/@atlas_core" rel="me">
-                                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-mastodon">
-                                        <path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"></path>
-                                    </svg></div>
-                            </a></li>
-                        <li class="list-inline-item me-4" title="GitHub"><a href="https://github.com/AtlasC0R3/">
-                                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github">
-                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-                                    </svg></div>
-                            </a></li>
-                        <li class="list-inline-item me-4" title="Steam"><a href="https://steamcommunity.com/id/atlascore/">
-                                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-steam">
-                                        <path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z"></path>
-                                        <path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"></path>
-                                    </svg></div>
-                            </a></li>
-                        <li class="list-inline-item me-4" title="Source code"><a href="https://github.com/AtlasC0R3/atlasc0r3.github.io">
-                                <div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-code-slash">
-                                        <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"></path>
-                                    </svg></div>
-                            </a></li>
-                    </ul>
-                </div><!-- End: Social media links -->
-                <div class="col m-auto"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
-            </div>
-            <div class="row row-cols-1 row-cols-md-2">
-                <div class="col" data-bs-toggle="tooltip" data-bss-tooltip="" id="heck-option" style="display: none;margin-bottom: 18px;" title="Please don't"><div class="col" id="fuck" style="display: inline; margin-bottom: 18px;"><a id="why" href="javascript:void(0);" style="/*display: none;*/" onclick="start_hell()" >why not enter hell?</a>
-<br><small><em>courtesy of <a href="https://github.com/aqua-lzma/OwOify">aqua-lzma's owoify</a></em></small></div>
-<!-- Maybe not the most organized. -->
-<script>
-function hell(){
-    for (var i = 0; i < document.all.length; i++) {
-        let owo = new OwO()
-        item = document.all[i];
-        if(["P", "H1", "H2", "H3", "H4", "H5", "BUTTON"].includes(item.nodeName)) item.innerText = owo.owoify(item.innerText)
-        if(item.nodeName == "A"){
-            if(item.children.length == 0) {
-                item.innerText = owo.owoify(item.innerText)
-            } else {
-                if(item.innerText) item.firstChild.textContent = owo.owoify(item.firstChild.textContent)
-                for(var o = 0; o < item.children.length; o++) if(["P", "B", "EM", "STRONG"].includes(item.children[o].nodeName)) {
-                    item.children[0].innerText = owo.owoify(item.children[0].innerText)
-                }
-            }
-        }
-    }
-}
+<div class="page-content">
+	<section>
+		<p><strong>
+			Hey funny story: this website's being reworked!
+			Bootstrap is being removed and things are being reflourished
+			<i>(so I can finally use IE6 or the Kobo e-reader's web browser or whatever)</i>.
+			<br>
+			</strong></p>
+			<h3>So things will break and look odd.</h3>
+	</section>
 
-function start_hell(){
-    if(typeof OwO == "undefined") {
-        const script = document.createElement('script')
-        script.src = 'https://aqua-lzma.github.io/OwOify/owoify.js'
-        document.head.append(script)
-        script.onload = function(){
-            hell()
-            return;
-        }
-    } else{
-	hell();
-        return;
-    }
-}
+	<section>
+		<noscript><div id="jsDisabled">
+			<h2>You don't have JavaScript enabled. Good.</h2>
+			<p>
+				JavaScript is not required to simply read this page.
+				You do not have to sign into your exclusive members account.
+				You are not required to pay a monthly subscription fee to freely read this.
+				You are in no way obligated to agree to any terms and services to access this page, as should be free information.
 
-document.getElementById("heck-option").style.display = "inline";
+				<br>
+				<i class="less-important">
+					PS: this website does actually use some JS, but only for gimmicks (that really should be taken care of with PHP).
+				</i>
+			</p>
+		</div></noscript>
+	</section>
 
-</script>
-</div>
-                <div class="col" id="theme-column" style="display: none;margin-bottom: 18px;">
-                    <div class="dropdown dropup" id="holyshitfuck"><button class="btn btn-secondary btn-lg dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="border-radius: 16px;">themes and stuff&nbsp;</button>
-                        <div class="dropdown-menu" id="theme-menu"><a class="dropdown-item" id="dropdown-thing" href="#">First Item</a></div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- Start: 88x31 badges -->
-        <div style="margin-left: 32px;margin-right: 32px;"><a href="badges.html"><img src="assets/img/badges/atlascore-lite2.gif"></a><img src="assets/img/badges/000010.gif" title="Computer"><img src="assets/img/badges/1080p.gif" title="haven't tested on other, lower resolutions, sorry."><img src="assets/img/badges/360.jpg" title="my personal favourite of the 7th gen consoles, because of Xbox Live Arcade and how well the first half of its life was. the second half, well by that point, PC gaming was more and more relevant. and sure, the PlayStation 3 has had decent exclusives in its past year, but they would get rereleased. (or ported to PC)"><img src="assets/img/badges/3dot5mmfc-button.gif" title="curse you, Apple. and Samsung. and everyone for joining along on removing headphone jacks from phones."><a href="https://archlinux.org/"><img src="assets/img/badges/archlinux.gif" title="I use Arch btw"></a><img src="assets/img/badges/best_viewed_with_eyes.gif" title="not actually all too familiar with screen readers; sorry."><img src="assets/img/badges/computer.png" title=":)"><img src="assets/img/badges/discord.gif" title="unfortunately I have a Discord account, and I try to tell myself it's the least bad social option I could pick, but I'm doubting my words now."><img src="assets/img/badges/f_ckfb.gif" title="need I say more?"><img src="assets/img/badges/hl.gif" title="They're waiting for you, Gordon, in the test chamber."><img src="assets/img/badges/jellyfin.gif" title="The actually decent alternative to Plex for all sorts of (very legitimately acquired) media."><img src="assets/img/badges/mastodon.gif" title="Mastodon's likely the least you can do to ditch Twitter. (And for the love of fucking god don't go on Bluesky, it's just as bad as past Twitter.)"><img src="assets/img/badges/miku.gif" title="(not actually but ssshhhh) (also never listened to their songs)"><img src="assets/img/badges/mswinmediaplayer8.gif" title="This one, not as nostalgic. Kinda wish I was, once more."><img src="assets/img/badges/neo-fedi.gif" title="Welcome. Welcome to the Fediverse. You have chosen, or have been chosen, to relocate to one of our finest remaining decentralized networks. I thought so much of the Fediverse that I elected to establish my instance here, in this network so thoughtfully provided by Our Benefactors. So, whether you are here to stay, or passing through on your way to parts unknown, welcome to the Fediverse. It's safer here."><img src="assets/img/badges/newlambda.gif" title="Look, Gordon! Ropes! We can use these to--"><img src="assets/img/badges/nft.gif" title="want to own something? hold it in your hands."><img src="assets/img/badges/nocookie.gif" title="seriously, why the fuck would I use cookies here? what's the point?"><img src="assets/img/badges/nya2.gif" title="cat gor l go meow :)"><img src="assets/img/badges/PIRACY_NOW.png" title="stalwart friend that's always been a reliable one. no need to abide by any guidelines to enjoy a FLAC or MP4 file."><img src="assets/img/badges/psbutton.gif" title="I have a PlayStation Vita."><a href="https://archive.org/details/Quake_802"><img src="assets/img/badges/qnow7.gif" title="now that one, I know and own on Steam. timeless classic, really. (so is Doom)"></a><img src="assets/img/badges/screw.gif" title="nothing can hurt me here."><img src="assets/img/badges/sdblast.gif" title="another one of those relics I wish I had known."><a href="https://www.youtube.com/watch?v=UtRqgszxZlg"><img src="assets/img/badges/spaceorb.gif"></a><img src="assets/img/badges/steam.gif" title="might not be the best thing now, but still. better than Epic, Ubisoft or EA. plus, they actually allow for Linux gaming."><img src="assets/img/badges/stop.gif" title="funny."><img src="assets/img/badges/stop-ms.gif" title="I Don't Like Modern-Day Windows!!!"><img src="assets/img/badges/vocaloid.gif" title="likely should try listening to vocaloid music some day."><img src="assets/img/badges/wii.gif" title="almost didn't have one in my childhood; I did, I just very rarely got to play it."><a href="http://www.oldversion.com/windows/windows-media-player-11"><img src="assets/img/badges/windows_media_player.gif" title="I don't know why but I feel oddly very nostalgic for that specific Windows Media Player version."></a><img src="assets/img/badges/winamp1.gif" title="still the best music player to use on Windows, to this day. alongside MusicBee and Dopamine."><img src="assets/img/badges/winrar4.gif" title="here's a secret: to this day, I still prefer using WinRAR over 7-Zip."><img src="assets/img/badges/xp.gif" title="truthfully, I wish I had grown up during the days of XP."></div><!-- End: 88x31 badges -->
-    </footer><!-- End: Footer -->
-    <!--isn't this where--><script src="assets/js/theming.js" defer></script>
+	<!-- I'm sinning and making use of IDs in CSS; sorry, it's easier to do it this way with JS as well... -->
+	<div id="platform-integration">
+		<h2>on other platforms, I...</h2>
 
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/integrations.js"></script>
-    <script src="assets/js/nojs.js"></script>
-    <script src="assets/js/referral.js"></script>
-    <script src="assets/js/title.js"></script>
-    <script src="assets/js/utep_ad.js"></script>
+		<div id="integrations-row">
+			<div id="music">
+				<h3 id="music-header">don't know what music I recently played</h3>
+				<p id="music-body">normally I constantly listen to music, at least while I'm doing something. surprisingly, I can't gather any info on that.</p>
+				<div>
+					<a id="music-link1" href="https://listenbrainz.org/user/atlas_core/">ListenBrainz</a>;
+					<a id="music-link2" href="https://last.fm/user/atlas_core">Last.fm</a>.
+				</div>
+			</div>
+			<div id="steam">
+					<h3 id="steam1">have been unable to play games</h3>
+					<p id="steam2">Alan please add details.</p>
+					<!-- TODO: do I want to link my Steam profile? -->
+			</div>
+			<div id="social">
+				<div>
+					<h3 id="soc-header">am somewhere on the Fediverse</h3>
+					<p id="soc-body">blah blah blah I am an introverted idiot. look at my weird thoughts and niches.</p>
+					<div>
+						<a id="soc-link" href="https://thonkbox.rightmouse.click/atlas">Pleroma (main)</a>.
+					</div>
+				</div>
+			</div>
+			<div id="tv">
+				<div>
+					<h3 id="tv-header">stare at a television</h3>
+					<p id="tv-content">Hello friend.<br>That's lame. Maybe I should give you a name... but that's a slippery slope.</p>
+					<div>
+						<a id="tv-link" href="https://trakt.tv/users/atlas_core">Trakt</a>.
+					</div>
+				</div>
+			</div>
+			<!-- <div id="social-alt">
+				<div class="px-3">
+					<h3 id="toot-1">have more than one social account</h3>
+					<h6 id="toot-notice-alt"><em>via </em></h6>
+					<p id="toot-2">this space is normally dedicated to another social presence, but I guess that won't happen.</p>
+					<div class="row">
+						<a id="toot-4" href="https://linuxrocks.online/@atlas_core">Mastodon (alt)</a>.
+					</div>
+				</div>
+			</div> -->
+		</div>
+		<!-- <p id="fallback-notice" style="display: none;margin-top: 12px;text-align: center;"><strong>Platform integration is in fallback mode; certain platforms won't appear here!</strong> <em>I probably just messed something up in the backend.</em> -->
+		</p>
+	</div>
+	
+	<!-- 
+	<div id="fuckfuckshitgoddammitfuckingcuntshit" style="display: none;">
+		<h2>Your ad blocker fucking sucks.</h2>
+		<p>
+			That you have one isn't the bad part; that I am able to do a very, very dumb trick to detect it, is.
+			This is why you get some websites begging you to disable it.
+			<br>
+			Do yourself a favor and get uBlock Origin.
+			Don't rely on your browser's integrated one, or whichever one you currently have.
+		</p>
+	</div>
+
+	I give up on making an adblocker message, as that requires us to detect in the first place.
+	Any good ad blocker will want to avoid being detected; which is what we are trying to do.
+	-->
+
+	<section>
+		<div>
+			<h2>who?</h2>
+			<p>
+				A human being, as any other.
+				A doer-of-all in terms of technology, with an emphasis on Linux and programming, but mostly it's just whatever's on my mind.
+				Also interested in art creation, not at all good at doing it.
+				<!-- <br><em class="less-important">Neurological disorders are not part of my personality, and I hope they'll never be; stop glamorising it as if it's a good thing, it's not, and you're making us look like a joke.</em> -->
+			</p>
+			<p>
+				I also find a niche in music:
+				primarily preferred genres include industrial/metal,
+				electronic music <em>(like Warp Records)</em>, and alternative.
+				<a href="https://musicbrainz.org/collection/b70fe027-3501-4548-ae10-eaa246e48c11" target="_blank" class="less-important">I mean, it's not like I have a CD collection or anything...</a>
+			</p>
+				
+			<p>
+				I do not tend to be an offence by default; should I ever disagree with your opinion, whatever may it be, I don't care and neither should anyone else.
+				Believe in and be whatever you want, just have an appealing personality, please.
+				<br>
+				There is a time and place for politics, drama, things of the sort; more often than not, me wanting to have fun does not constitute as that.
+			</p>
+			
+			<p class="more-important">...not that any of this actually defines a person, then again</p>
+		</div>
+	</section>
+
+	<section id="contact">
+			<h2>hello?</h2>
+			<p>
+				Should you ever want to contact me, for whatever reason, use whatever method works best for you.
+			</p>
+			<div class="contact-means">
+				<details>
+					<summary>PGP public key thing</summary>
+
+                    <p>
+						<strong>If you don't know what this is, forget it</strong>; this is not "required," just a secure means of encryption/signing.
+						<a href="https://emailselfdefense.fsf.org/en/">Here's a quick reference on how it "works" for emails.</a>
+						<br>To those who know what this is for, this is my fingerprint:
+						<code style="color: rgb(248, 249, 250); word-wrap: break-word;">623A60EA2B9FDA40252A7D51550913E862FF13DD</code>
+						<br><a href="https://keys.openpgp.org/vks/v1/by-fingerprint/623A60EA2B9FDA40252A7D51550913E862FF13DD">Here's the public key on OpenPGP.org</a>
+					</p>
+				</details>
+
+				<details>
+					<summary>XMPP</summary>
+					<p>
+						I should be able to respond to XMPP messages rather quickly.
+						This is a preferred way of sending instant messages;
+						if you can, and if it suits your needs, use this.
+					</p>
+					<div>
+						<a href="xmpp://atlas_core@xmpp.xyz">Main xmpp.xyz account</a>,
+						<a href="xmpp://atlascore@disroot.org">alt Disroot account</a>,
+						<a href="https://azuki.rightmouse.click/omemo.txt">OMEMO fingerprints</a>
+					</div>
+				</details>
+
+				<details>
+					<summary>Matrix</summary>
+					<p>
+						I have a Matrix account hastily bridged to my XMPP account, so I should be reachable there.
+						<em>Beware of Matrix jank, but you probs know about it already.</em>
+					</p>
+					<div>
+						<a href="https://matrix.to/#/@atlas_core:matrix.thisisjoes.site">Less active Matrix account</a>
+					</div>
+				</details>
+
+				<details>
+					<summary>Email</summary>
+					<p>If possible, use plain text and PGP encryption.
+						<br>
+						<code>atlascore à disroot point org</code>
+						<br>
+						<sup>(démerdez-vous, êtres humains.)</sup>
+					</p>
+				</details>
+				
+				<details>
+					<summary>Telegram upon request</summary>
+					<p>
+						It's not the best of messaging platforms for privacy,
+						but it sure as hell isn't the worst by far.
+					<br>
+						I'd be happy to provide my username <strong>upon request</strong>.
+						Shoot me an email or whatever.
+					</p>
+				</details>
+
+				<details>
+					<summary>Fediverse (Mastodon/Pleroma/Misskey/etc)</summary>
+					<p>
+						While it's not the most secure or private method of communication, it is one that works for quick messages.
+					</p>
+					<div>
+						<a href="https://pl.starnix.network/users/atlas_core">Starnix Pleroma alt</a>, <a href="https://linuxrocks.online/@atlas_core">Mastodon alt</a>
+					</div>
+				</details>
+				
+				<details>
+					<summary>Hateful Discord bullshit platform</summary>
+					<p>You seriously shouldn't use this for reasons other than desperation. My username is as usual, worst comes to worst.</p>
+				</details>
+				
+				<!-- <details>
+					<summary>Other means</summary>
+					<p>No guarantees at all. These likely are accounts that are either "niche" or less active.</p>
+					
+					<div>
+						<a href="msnim:chat?contact=atlascore@escargot.chat">MSN Messenger <em>(via escargot.chat)</em></a>,
+						<a href="ymsgr:addfriend?atlascore">Yahoo! Messenger <em>(via nina.chat)</em></a>
+					</div>
+					
+					<br>
+					<p>
+						<sub>
+							<a href="https://escargot.chat">escargot.chat</a> and <a href="https://nina.chat">nina.chat</a>
+							are revivals of old messaging platforms I am not affiliated with, and frankly despise.
+						</sub>
+					</p>
+				</details> -->
+
+				<!-- TODO: add IRC... if I ever do use IRC -->
+			</div>
+	</section>
+	
+	<section id="name">
+		<div>
+			<h3>why "atlas_core", or "rightmouse.click"?</h3>
+			<p class="less-important">what, you wanna hear me ramble or something?</p>
+			<p><em>"atlas core"</em> has a pretty simple meaning as a reference to one of my favorite games,
+				<a href="https://en.wikipedia.org/wiki/Portal_2">Portal 2</a>.
+				In that game, there's a co-op mode, where 2 players can complete levels together
+				<em>(hopefully)</em>.
+				<br>
+				The characters,
+				<a href="https://theportalwiki.com/wiki/Atlas">Atlas</a> and <a href="https://theportalwiki.com/wiki/P-body">P-body</a>,
+				all look like other entities in the game;
+				<strong><em>Atlas</em></strong> looks like an 
+				<a href="https://theportalwiki.com/wiki/Cores"><em>Aperture Science </em><strong><em>core</em></strong></a>,
+				whereas <em>P-body</em> looks like a <a href="https://theportalwiki.com/wiki/Turrets"><em>turret</em></a>.
+				<i><s>And no, I'm not calling myself P-Turret.</s></i>
+
+			<p>
+				The term "right mouse click" (as in rightmouse dot click) was just some creative name I tried coming up with
+				when looking at domains and their ends (a.k.a. TLDs, or <em>.com</em>, <em>.co</em>, <em>.me</em>, etc).
+				I didn't want to go with something too basic, so I found "click" to be quite interesting.
+				I tried coming up with sentences with that, and thought of "left mouse click".
+				That happened to be taken, so I went with the right mouse click.
+				<br>
+				<em>And yes, I hate NFTs.</em>
+			</p>
+		</div>
+	</section>
+
+
+	<details>
+		<summary>Hey this section is really unfinished and fucky, beware.</summary>
+		<!-- Start: Chair -->
+		<div class="container py-4 py-xl-5" id="chair">
+			<div class="row gy-4 gy-md-0">
+				<div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+					<div style="max-width: 350px;">
+						<h2 class="fw-bold">Chair.</h2>
+						<p class="my-3">The character I frequently use often as a "profile picture". Say hi to him. :)</p>
+						<p class="my-3" style="font-size: 12px;font-style: italic;">It is designed to be a cat, but it can also look like a Wiimote/fridge/power outlet/phone/tower fan/blanket/Teletubbies/toilet/car/Arch Linux user/door.</p>
+						<p class="my-3" style="font-size: 14px;"><strong>Early 2020</strong>: I wanted to do a quick sketch of a chair in GIMP, and for no reason decided to add cat ears. Turned out that it looked more like a cat than a chair, so it became a cat named <em>Chair</em> from now on.<br><strong>Mid 2020</strong>: I remade Chair entirely, so that it looked cleaner. I used those images as profile pictures nearly everywhere. <em>For the better.</em><br><strong>Late 2022</strong>: I remade Chair, again, without the intention of making something hugely different. This time, it was in Vector though!</p><!-- hey.. wanna know something? i'm.. i'm stuck in a vending machine. help. --><a href="https://github.com/AtlasC0R3/Chair" style="font-size: 20px;"><strong>Source images</strong></a>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="p-xl-5 m-xl-5"><img class="w-100 fit-cover" style="max-height: 300px; max-width: 300px;" src="assets/img/chair/Chair,%20No%20BG.svg" alt="An image of Chair, the character." title="Yeah, right there. That's Chair."></div>
+				</div>
+			</div>
+		</div><!-- End: Chair -->
+		<!-- Start: Projects Grid -->
+		<div class="container py-4 py-xl-5" id="projects">
+			<div class="text-center" style="padding-bottom: 0px;margin-bottom: 20px;">
+				<h1>Personal codey-code projects</h1>
+				<p class="w-lg-50" style="margin-bottom: 0px;">Stuff I have worked on previously. And probably gave up on.<br>Time management is stupid anyway.</p>
+			</div>
+			<div class="text-center">
+				<h2 style="margin-bottom: 0px;padding-bottom: 12px;">Actual stuff</h2>
+				<div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center" style="margin-top: 0px;">
+					<div class="col-xl-4" style="margin-top: 0px;">
+						<div>
+							<h4>Dotty</h4>
+							<p style="margin-bottom: 0px;">A simple and addictive, arcade-like game where you collect dots, written in C++ with Raylib, although taking code inspiration from another game, Terri-Fried.<br><em>Probably my proudest work yet, I highly recommend you check it out!</em></p><a href="https://github.com/AtlasC0R3/dotty" style="font-size: 18px;"><strong>view...</strong></a>
+						</div>
+					</div>
+					<div class="col-xl-4" style="margin-top: 0px;">
+						<div>
+							<h4>Litter</h4>
+							<p style="margin-bottom: 0px;">A still very incomplete, rudimentary Android client for Nitter built with native, modern technologies like Compose in mind.<br><em>While incomplete and mostly put on the backlog of incomplete projects, it's my most prominent work on the Android platform.</em></p><a href="https://github.com/AtlasC0R3/litter" style="font-size: 18px;"><strong>view...</strong></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="padding: 32px;padding-top: 0;padding-bottom: 0;">
+				<h3 style="margin-bottom: 0px;padding-bottom: 0px;margin-top: 32px;">Other stuff that exists</h3>
+				<div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center" style="margin-top: 0px;">
+					<div class="col-xl-3">
+						<div>
+							<h5>Drop</h5>
+							<p>What used to be a Discord bot, that later got turned into a core library and a Discord bot.<br><em>Abandoned due to the main bot's discontinuation (Discord being garbage) and due to horrible memories with some people related to my Discord experience.</em></p><a href="https://github.com/AtlasC0R3/drop-mod" style="font-size: 18px;"><strong>view library core, </strong></a><a href="https://github.com/AtlasC0R3/drop-discord" style="font-size: 18px;"><strong>or view garbage dicsrod bot</strong></a>
+						</div>
+					</div>
+					<div class="col-xl-3">
+						<div>
+							<h5>Bloxify</h5>
+							<p>A Roblox module that allows the player to interact with the Spotify API from in-game as a potential substitute for game soundtrack or overlay.<br><em>Abandoned due to lack of motivation and not really having a way to authenticate. Oh, and because I now use YT Music.</em></p><a href="https://github.com/AtlasC0R3/bloxify" style="font-size: 18px;"><strong>view...</strong></a>
+						</div>
+					</div>
+					<div class="col-xl-3">
+						<div>
+							<h5>Outsyncer</h5>
+							<p>A CLI-based app meant to synchronize songs from one device to another, but that can also be used to sort song files elegantly<br><em>Mostly sitting in unfinished limbo; I myself didn't find the need to continue this. Syncthing does the job.</em></p><a href="https://github.com/AtlasC0R3/outsyncer" style="font-size: 18px;"><strong>view...</strong></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- End: Projects Grid -->
+	</details>
+
+</div> <!-- end of page-content -->
+
+
+	<!-- Start: Footer -->
+	<footer class="footer">
+			<div class="footer-row">
+				<div class="grid-item">
+					Copypaste 2024 atlas_core. Rong wrights left.<br>Made with passion and listening to lots of <em>NIN</em> and <em>RATM</em>.
+				</div>
+
+				<div class="grid-item" id="fediring-box">
+					<p id="fediring-text" style="display: none;">Seems like you came here from another user of the Fediring!<br>Here's a quick navigation panel to help you traverse it.</p>
+					<a id="fediring-link" href="https://fediring.net">Fediring</a>
+					<ul class="list-inline my-2">
+						<li class="list-inline-item me-4">
+							<div class="bs-icon-circle bs-icon-primary bs-icon"><a href="https://fediring.net/previous?host=rightmouse.click"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+										<!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+										<path d="M459.5 71.41l-171.5 142.9v83.45l171.5 142.9C480.1 457.7 512 443.3 512 415.1V96.03C512 68.66 480.1 54.28 459.5 71.41zM203.5 71.41L11.44 231.4c-15.25 12.87-15.25 36.37 0 49.24l192 159.1c20.63 17.12 52.51 2.749 52.51-24.62v-319.9C255.1 68.66 224.1 54.28 203.5 71.41z"></path>
+									</svg></a></div>
+						</li>
+						<li class="list-inline-item me-4">
+							<div class="bs-icon-circle bs-icon-primary bs-icon"><a href="https://fediring.net/random"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+										<!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+										<path d="M424.1 287c-15.13-15.12-40.1-4.426-40.1 16.97V352H336L153.6 108.8C147.6 100.8 138.1 96 128 96H32C14.31 96 0 110.3 0 128s14.31 32 32 32h80l182.4 243.2C300.4 411.3 309.9 416 320 416h63.97v47.94c0 21.39 25.86 32.12 40.99 17l79.1-79.98c9.387-9.387 9.387-24.59 0-33.97L424.1 287zM336 160h47.97v48.03c0 21.39 25.87 32.09 40.1 16.97l79.1-79.98c9.387-9.391 9.385-24.59-.0013-33.97l-79.1-79.98c-15.13-15.12-40.99-4.391-40.99 17V96H320c-10.06 0-19.56 4.75-25.59 12.81L254 162.7L293.1 216L336 160zM112 352H32c-17.69 0-32 14.31-32 32s14.31 32 32 32h96c10.06 0 19.56-4.75 25.59-12.81l40.4-53.87L154 296L112 352z"></path>
+									</svg></a></div>
+						</li>
+						<li class="list-inline-item">
+							<div class="bs-icon-circle bs-icon-primary bs-icon"><a href="https://fediring.net/next?host=rightmouse.click"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
+										<!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+										<path d="M52.51 440.6l171.5-142.9V214.3L52.51 71.41C31.88 54.28 0 68.66 0 96.03v319.9C0 443.3 31.88 457.7 52.51 440.6zM308.5 440.6l192-159.1c15.25-12.87 15.25-36.37 0-49.24l-192-159.1c-20.63-17.12-52.51-2.749-52.51 24.62v319.9C256 443.3 287.9 457.7 308.5 440.6z"></path>
+									</svg></a></div>
+						</li>
+					</ul>
+				</div>
+
+				<!-- <div class="col-auto flex-shrink-1 align-self-center mx-auto" style="text-align: center;margin-left: 0px;padding-top: 0px;padding-left: 0px;margin-bottom: 8px;margin-top: 8px;padding-right: 0px;">
+					<ul class="list-inline my-2" style="padding-left: 12px;">
+						<li class="list-inline-item me-4" title="Pleroma (Fediverse)"><a href="https://thonkbox.rightmouse.click/atlas" rel="me">
+								<div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-share-fill">
+										<path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"></path>
+									</svg></div>
+							</a></li>
+						<li class="list-inline-item me-4" title="Mastodon (Fediverse, alt)"><a href="https://linuxrocks.online/@atlas_core" rel="me">
+								<div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-mastodon">
+										<path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"></path>
+									</svg></div>
+							</a></li>
+						<li class="list-inline-item me-4" title="GitHub"><a href="https://github.com/AtlasC0R3/">
+								<div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github">
+										<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+									</svg></div>
+							</a></li>
+						<li class="list-inline-item me-4" title="Steam"><a href="https://steamcommunity.com/id/atlascore/">
+								<div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-steam">
+										<path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z"></path>
+										<path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"></path>
+									</svg></div>
+							</a></li>
+						<li class="list-inline-item me-4" title="Source code"><a href="https://github.com/AtlasC0R3/atlasc0r3.github.io">
+								<div class="bs-icon-circle bs-icon-primary bs-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-code-slash">
+										<path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"></path>
+									</svg></div>
+							</a></li>
+					</ul>
+				</div> -->
+
+				<div class="col m-auto"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
+			</div>
+
+			<div class="row row-cols-1 row-cols-md-2">
+				<div class="col" id="heck-option" style="display: none;margin-bottom: 18px;" title="Please don't"><div class="col" id="fuck" style="display: inline; margin-bottom: 18px;"><a id="why" href="javascript:void(0);" onclick="start_hell()" >why not enter hell?</a>
+					<br><small><em>courtesy of <a href="https://github.com/aqua-lzma/OwOify">aqua-lzma's owoify</a></em></small></div>
+					<script src="assets/js/heresy.js"></script>
+				</div>
+				<div class="col" id="theme-column" style="display: none;margin-bottom: 18px;">
+					<div class="dropdown dropup" id="holyshitfuck"><button class="btn btn-secondary btn-lg dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button" style="border-radius: 16px;">themes and stuff </button>
+					<div class="dropdown-menu" id="theme-menu"><a class="dropdown-item" id="dropdown-thing" href="#">First Item</a></div>
+					</div>
+				</div>
+			</div><!-- Start: 88x31 badges -->
+		<!-- TODO: add alt text to every badge here. -->
+		<div style="margin-left: 32px;margin-right: 32px;"><a href="badges.html"><img src="assets/img/badges/atlascore-lite2.gif"></a><img src="assets/img/badges/000010.gif" title="Computer"><img src="assets/img/badges/1080p.gif" title="haven't tested on other, lower resolutions, sorry."><img src="assets/img/badges/360.jpg" title="my personal favourite of the 7th gen consoles, because of Xbox Live Arcade and how well the first half of its life was. the second half, well by that point, PC gaming was more and more relevant. and sure, the PlayStation 3 has had decent exclusives in its past year, but they would get rereleased. (or ported to PC)"><img src="assets/img/badges/3dot5mmfc-button.gif" title="curse you, Apple. and Samsung. and everyone for joining along on removing headphone jacks from phones."><a href="https://archlinux.org/"><img src="assets/img/badges/archlinux.gif" title="I use Arch btw"></a><img src="assets/img/badges/best_viewed_with_eyes.gif" title="not actually all too familiar with screen readers; sorry."><img src="assets/img/badges/computer.png" title=":)"><img src="assets/img/badges/discord.gif" title="unfortunately I have a Discord account, and I try to tell myself it's the least bad social option I could pick, but I'm doubting my words now."><img src="assets/img/badges/f_ckfb.gif" title="need I say more?"><img src="assets/img/badges/hl.gif" title="They're waiting for you, Gordon, in the test chamber."><img src="assets/img/badges/jellyfin.gif" title="The actually decent alternative to Plex for all sorts of (very legitimately acquired) media."><img src="assets/img/badges/mastodon.gif" title="Mastodon's likely the least you can do to ditch Twitter. (And for the love of fucking god don't go on Bluesky, it's just as bad as past Twitter.)"><img src="assets/img/badges/miku.gif" title="(not actually but ssshhhh) (also never listened to their songs)"><img src="assets/img/badges/mswinmediaplayer8.gif" title="This one, not as nostalgic. Kinda wish I was, once more."><img src="assets/img/badges/neo-fedi.gif" title="Welcome. Welcome to the Fediverse. You have chosen, or have been chosen, to relocate to one of our finest remaining decentralized networks. I thought so much of the Fediverse that I elected to establish my instance here, in this network so thoughtfully provided by Our Benefactors. So, whether you are here to stay, or passing through on your way to parts unknown, welcome to the Fediverse. It's safer here."><img src="assets/img/badges/newlambda.gif" title="Look, Gordon! Ropes! We can use these to--"><img src="assets/img/badges/nft.gif" title="want to own something? hold it in your hands."><img src="assets/img/badges/nocookie.gif" title="seriously, why the fuck would I use cookies here? what's the point?"><img src="assets/img/badges/nya2.gif" title="cat gor l go meow :)"><img src="assets/img/badges/PIRACY_NOW.png" title="stalwart friend that's always been a reliable one. no need to abide by any guidelines to enjoy a FLAC or MP4 file."><img src="assets/img/badges/psbutton.gif" title="I have a PlayStation Vita."><a href="https://archive.org/details/Quake_802"><img src="assets/img/badges/qnow7.gif" title="now that one, I know and own on Steam. timeless classic, really. (so is Doom)"></a><img src="assets/img/badges/screw.gif" title="nothing can hurt me here."><img src="assets/img/badges/sdblast.gif" title="another one of those relics I wish I had known."><a href="https://www.youtube.com/watch?v=UtRqgszxZlg"><img src="assets/img/badges/spaceorb.gif"></a><img src="assets/img/badges/steam.gif" title="might not be the best thing now, but still. better than Epic, Ubisoft or EA. plus, they actually allow for Linux gaming."><img src="assets/img/badges/stop.gif" title="funny."><img src="assets/img/badges/stop-ms.gif" title="I Don't Like Modern-Day Windows!!!"><img src="assets/img/badges/vocaloid.gif" title="likely should try listening to vocaloid music some day."><img src="assets/img/badges/wii.gif" title="almost didn't have one in my childhood; I did, I just very rarely got to play it."><a href="http://www.oldversion.com/windows/windows-media-player-11"><img src="assets/img/badges/windows_media_player.gif" title="I don't know why but I feel oddly very nostalgic for that specific Windows Media Player version."></a><img src="assets/img/badges/winamp1.gif" title="still the best music player to use on Windows, to this day. alongside MusicBee and Dopamine."><img src="assets/img/badges/winrar4.gif" title="here's a secret: to this day, I still prefer using WinRAR over 7-Zip."><img src="assets/img/badges/xp.gif" title="truthfully, I wish I had grown up during the days of XP."></div><!-- End: 88x31 badges -->
+	</footer><!-- End: Footer -->
+	<script src="assets/js/theming.js" defer></script>
+	<script src="assets/js/title.js"></script>
+	<script src="assets/js/referral.js"></script>
+	<script src="assets/js/integrations.js"></script>
+	<!-- 	
+		<script src="assets/js/utep_ad.js"></script>
+		-->
+
+
+<!-- isn't this where -->
+
 </body>
 
 </html>

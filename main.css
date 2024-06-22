@@ -1,0 +1,228 @@
+body {
+	margin: 0;
+	font-family: Hack, Hack Nerd, Consolas, monospace;
+	background-color: #202124;
+	color: #e8eaed;
+
+    /* TODO: evaluate how effective this is in IE6 */
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/theme/bliss-manip.jpg',sizingMethod='scale');;
+	-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/theme/bliss-manip.jpg',sizingMethod='scale');;
+
+	font-variant-numeric: tabular-nums;  /* tabular numbers; monospaced digits */
+}
+
+a {
+    color: inherit;  /* white text */
+}
+a img {
+	/* bit of a hack to get badges in MSIE to look proper */
+	border: none; vertical-align: top;
+}
+
+p {
+	font-size: 1.125rem;
+	line-height: 1.5;
+}
+code {
+	font-size: 0.75rem;
+	line-height: 1;
+}
+
+details summary {
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+.intro {
+	display: -ms-flexbox;
+    display: flex;  /* inline-block feels noteworthy, different. */
+	position: relative;
+    padding: 32px;
+	align-items: center;
+}
+.intro-desc {
+	padding-left: 30px;
+}
+.intro .column {
+    -ms-flex-direction: column;
+	flex-direction: column;
+}
+.intro img {
+	border-radius: 16px;
+    max-width: 320px;
+	max-height: 320px;
+}
+.intro span {
+	background-color: #202124;
+}
+#size-snark {
+	display: none;
+}
+
+.page-content {
+    padding: 0% 10%;
+    padding: 0% 10vw;
+	padding-bottom: 48px;
+}
+
+#platform-integration {
+	backdrop-filter: blur(16px) brightness(75%);
+	border-radius: 18px;
+	padding: 18px;
+
+	display: none;
+}
+#platform-integration h2 {
+	margin: 0;
+}
+#platform-integration p {
+	margin: 4px;
+}
+#platform-integration h3 {
+	margin-bottom: 0;
+}
+#platform-integration h6 {
+	margin: 12px;
+}
+#platform-integration #soc-notice {
+	display: none;
+}
+
+.contact-means {
+	padding-left: 16px;
+}
+.contact-means summary {
+	font-size: 1.25em;
+	padding-bottom: 0.25em;
+}
+.contact-means p,
+.contact-means div {
+	margin-top: 0;
+	padding-left: 16px;
+	margin-bottom: 16px;
+}
+.contact-means div a {
+	font-weight: bold;
+}
+
+footer {
+    /* background-color: #202124; */
+    border-top-left-radius: 64px;
+    border-top-right-radius: 64px;
+    padding: 32px;
+    font-size: 14px;
+	line-height: 1.5;
+}
+
+section {
+    margin-bottom: 64px;
+}
+
+@supports (display: flex){
+    .intro {
+        margin: calc(50vh - (320px / 2)) auto;
+        padding: 0% 5%;
+    }
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+/*
+I dislike overly elaborate animations that serve no purpose.
+This one is done tastefully, but is still superfluous.
+TODO: make up your goddamned mind if you want it or not.
+@supports (animation-name: introSlide) {
+	.intro {
+		opacity: 0;
+		animation: introSlide 0.5s forwards 0.25s;
+	}
+    .page-content {
+        position: relative;
+		opacity: 0;
+        animation: bodySlide 0.5s forwards 0.25s;
+    }
+}
+*/
+
+@supports (backdrop-filter: blur(8px) grayscale(75%)){
+    footer.fancy {
+        backdrop-filter: blur(8px) grayscale(75%);
+        background-color: revert;
+    }
+}
+
+@supports (width: 50vw){
+	.intro {
+		width: 760px;
+	}
+}
+
+@keyframes introSlide {
+	0% {
+		left: -5vh; /* Initial position slightly above */
+		opacity: 0;	
+	}
+	100% {
+		left: 0;
+		opacity: 1;	
+	}
+}
+@keyframes bodySlide {
+	0% {
+		top: -25vh; /* Initial position slightly above */
+		opacity: 0;	
+	}
+	100% {
+		top: 0;
+		opacity: 1;	
+	}
+}
+
+@media screen and (max-width: 980px) {
+	.intro img {
+		max-height: 15vw;
+        max-width: 15vw;
+	}
+	.intro {
+		width: auto;
+	}
+}
+@media screen and ((max-width: 760px) or (max-height: 500px)) {
+	/* phones, more often than not, constitute here. */
+	.intro img {
+		max-height: 20vh;
+        max-width: 20vh;
+	}
+	.intro {
+		flex-direction: column;
+		margin: 15px auto;
+		padding-bottom: 50px;
+	}
+	#size-snark {
+		display: inline;
+		font-style: italic;
+	}
+	body {
+		padding: 16px;
+	}
+	p {
+		font-size: revert;
+	}
+}
+@media screen and (max-height: 360px) {
+	.intro img {
+		display: none;
+	}
+}
+
+.less-important {
+	font-size: 1rem;
+	font-style: italic;
+}
+.more-important {
+	font-size: 1.5rem;
+}
