@@ -191,9 +191,13 @@ if (screen.colorDepth <= 16) {
         "text_color": 1, "text_shadow": 1, "themecolor": "#245DDA",
         "bg_size": "stretch", "font": "Tahoma"
     })
+    
+    document.getElementById("chair-img").src = "assets/img/chair/chair.jpg"
 } else if(navigator.userAgent.indexOf("eRead") >= 0) {
     set_background(backgrounds[1])
+    document.getElementById("chair-img").src = "assets/img/chair/chair.svg"
 } else {
     set_background(backgrounds[0])
     // if(footer_exists) theming_menu();
+    document.getElementById("chair-img").src = "assets/img/chair/chair.svg"
 }

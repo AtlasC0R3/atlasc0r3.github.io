@@ -47,10 +47,15 @@ details summary {
     -ms-flex-direction: column;
 	flex-direction: column;
 }
-.intro img {
+.intro img,
+.intro picture {
 	border-radius: 16px;
-    max-width: 320px;
-	max-height: 320px;
+    width: 320px;
+	height: 320px;
+	image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
 }
 .intro span {
 	background-color: #202124;
