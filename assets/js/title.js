@@ -9,21 +9,42 @@ var titles = [
     "stupid fuck",
     "killed a spider",
     "New Funky Mode",
-    "dear god anything but a waifu",
     "un épais québécois qui a rien à faire",
     "music enjoyer",
     "privacy enjoyer",
-    "proud cthulhu voter for 2024",
-    "Your Partner in Science",
+    "proud cthulhu voter for 2028",
+    "sponsored by Oingo Boingo VPN!",
     "pride of ${subject.hometown}",
-    "Mug Moment",
     "batteries not included",
-    "2+2 equals 10 (IN BASE FOUR! I'M FINE!)",  // it's okay, I barely even had math classes during 9th grade. not to mention that was a Portal reference.
+    "2+2 equals 10 (IN BASE FOUR! I'M FINE!)",
     "Wii U owner",
     "nerd",
-    "Halo disliker",
     "free time enjoyer",
-    "gluten free"
+    "gluten free",
+    "probably",
+    "I think",
+    "again.",
+    "as seen on TV",
+    "now in a record store",
+    "drinking water",
+    "probably alive",
+    "now 20% more dysfunctional!",
+    "please laugh",
+    "in \"Doing Something is Hard!\""
 ]
 
-document.title = "atlas_core, " + titles[Math.floor(Math.random()*titles.length)]
+let lastIndex = 0
+
+function randomTitle(){
+    let currentIndex = Math.floor(Math.random()*titles.length)
+    if(currentIndex != lastIndex){
+        document.title = "atlas_core, " + titles[currentIndex]
+        lastIndex = currentIndex
+        return
+    } else{
+        randomTitle()
+        return
+    }
+}
+
+setInterval(randomTitle, 30000)
