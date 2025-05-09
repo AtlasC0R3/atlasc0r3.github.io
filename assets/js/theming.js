@@ -194,9 +194,8 @@ if (screen.colorDepth <= 16) {
         "text_color": 1, "text_shadow": 1, "themecolor": "#245DDA",
         "bg_size": "stretch", "font": "Tahoma"
     })
-    
-    // document.getElementById("chair-img").src = "assets/img/chair/chair.jpg"
-    document.getElementById("chair-img").style = "width: 32px;	height: 32px;"
+    document.getElementById("chair-img").style = "display: none;"
+    // you know what, fuck you IE. there goes your image displaying rights.
 } else if(navigator.userAgent.indexOf("eRead") >= 0) {
     set_background(backgrounds[1])
     document.getElementById("chair-img").src = "assets/img/chair/chair.svg"
