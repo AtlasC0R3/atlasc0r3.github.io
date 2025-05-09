@@ -195,7 +195,10 @@ if (screen.colorDepth <= 16) {
         "bg_size": "stretch", "font": "Tahoma"
     })
     
-    document.getElementById("chair-img").src = "assets/img/chair/chair.jpg"
+    // document.getElementById("chair-img").src = "assets/img/chair/chair.jpg"
+    // you know what, Internet Explorer just sucks with images; only IE11 supports SVGs, and it insists on stretching the image.
+    // I'm taking away your profile picture displaying rights, Internet Explorer.
+    document.getElementById("chair-img").remove()
 } else if(navigator.userAgent.indexOf("eRead") >= 0) {
     set_background(backgrounds[1])
     document.getElementById("chair-img").src = "assets/img/chair/chair.svg"
