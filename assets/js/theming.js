@@ -188,14 +188,14 @@ function theming_menu(){
 
 if (screen.colorDepth <= 16) {
     // too low color depth; fuck that.
+} else if(!(/webOS|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
+    // old mobile web browser; probably not worth it
 } else if(detectIE()){
     set_background({
         "bg_url": "assets/img/themes/bliss-manip.jpg", "bg_blend": 0,
         "text_color": 1, "text_shadow": 1, "themecolor": "#245DDA",
         "bg_size": "stretch", "font": "Tahoma"
     })
-    document.getElementById("chair-img").style = "display: none;"
-    // you know what, fuck you IE. there goes your image displaying rights.
 } else if(navigator.userAgent.indexOf("eRead") >= 0) {
     set_background(backgrounds[1])
     document.getElementById("chair-img").src = "assets/img/chair/chair.svg"
