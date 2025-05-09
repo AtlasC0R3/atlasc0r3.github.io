@@ -50,9 +50,9 @@ details summary {
 .intro img,
 .intro picture {
 	border-radius: 16px;
-    width: 320px;
+    /* width: 320px;
+	max-width: 320px; */
 	height: 320px;
-	max-width: 320px;
 	max-height: 320px;
 	object-fit: cover;
 	image-rendering: -moz-crisp-edges;
