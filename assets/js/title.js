@@ -1,7 +1,6 @@
 var titles = [
     "hi",
     "somebody",
-    "a Ubisoft original",
     "made in Canada",
     "vidja gaemr",
     "thing doer",
