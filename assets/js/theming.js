@@ -188,8 +188,6 @@ function theming_menu(){
 
 if (screen.colorDepth <= 16) {
     // too low color depth; fuck that.
-} else if(!(/webOS|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))){
-    // old mobile web browser; probably not worth it
 } else if(detectIE()){
     set_background({
         "bg_url": "assets/img/themes/bliss-manip.jpg", "bg_blend": 0,
