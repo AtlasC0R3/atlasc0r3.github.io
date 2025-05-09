@@ -123,7 +123,10 @@ function testBlendMode(){
 }
 
 function detectIE(){
-    return navigator.appName == "Microsoft Internet Explorer"
+    if (
+        (navigator.appName == "Microsoft Internet Explorer")
+        || "ActiveXObject" in window
+    ) return true
 }
 
 function set_background(element){
