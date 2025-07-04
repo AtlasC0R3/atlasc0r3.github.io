@@ -4,7 +4,7 @@ body {
 	background-color: #202124;
 	color: #e8eaed;
 
-    /* TODO: evaluate how effective this is in IE6 */
+	/* TODO: evaluate how effective this is in IE6 */
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/theme/bliss-manip.jpg',sizingMethod='scale');;
 	-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/theme/bliss-manip.jpg',sizingMethod='scale');;
 
@@ -12,7 +12,7 @@ body {
 }
 
 a {
-    color: inherit;  /* white text */
+	color: inherit;  /* white text */
 }
 a img {
 	/* bit of a hack to get badges in MSIE to look proper */
@@ -35,30 +35,30 @@ details summary {
 
 .intro {
 	display: -ms-flexbox;
-    display: flex;  /* inline-block feels noteworthy, different. */
+	display: flex;  /* inline-block feels noteworthy, different. */
 	position: relative;
-    padding: 32px;
+	padding: 32px;
 	align-items: center;
 }
 .intro-desc {
 	padding-left: 30px;
 }
 .intro .column {
-    -ms-flex-direction: column;
+	-ms-flex-direction: column;
 	flex-direction: column;
 }
 .intro img,
 .intro picture {
 	border-radius: 16px;
-    /* width: 320px;
+	/* width: 320px;
 	max-width: 320px; */
 	height: 320px;
 	max-height: 320px;
 	object-fit: cover;
 	image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: crisp-edges;
+	-ms-interpolation-mode: nearest-neighbor;
 }
 .intro span {
 	background-color: #202124;
@@ -69,8 +69,8 @@ details summary {
 }
 
 .page-content {
-    padding: 0% 10%;
-    padding: 0% 10vw;
+	padding: 0% 10%;
+	padding: 0% 10vw;
 	padding-bottom: 48px;
 }
 
@@ -115,64 +115,84 @@ details summary {
 }
 
 footer {
-    /* background-color: #202124; */
-    border-top-left-radius: 64px;
-    border-top-right-radius: 64px;
-    padding: 32px;
-    font-size: 14px;
+	/* background-color: #202124; */
+	border-top-left-radius: 64px;
+	border-top-right-radius: 64px;
+	padding: 32px 64px;
+	font-size: 14px;
 	line-height: 1.5;
 }
 
+footer .footer-row {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	padding-bottom: 1rem;
+}
+
+footer .footer-row > div {
+	flex-grow: 1;
+    flex-basis: 0;
+	text-align: center;
+}
+
+.license p {
+	font-size: 14px;
+	margin: 0;
+}
+
+#fediring-box {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+#fediring-box span > a {
+	 text-decoration: none
+}
+
+.badges {
+	line-height: 0;
+	font-size: 0;  /* allows to put newlines between the imgs in HTML code. */
+	text-align: center;
+}
+
 section {
-    margin-bottom: 64px;
+	margin-bottom: 64px;
 }
 
 @supports (display: flex){
-    .intro {
-        margin: calc(50vh - (320px / 2)) auto;
-        padding: 0% 5%;
-    }
+	.intro {
+		margin: calc(50vh - (320px / 2)) auto;
+		padding: 0% 5%;
+	}
 
-    footer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+	footer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
 }
 
 /*
 I dislike overly elaborate animations that serve no purpose.
 This one is done tastefully, but is still superfluous.
-TODO: make up your goddamned mind if you want it or not.
+TODO: make up your goddamned mind if you want this or not.
 @supports (animation-name: introSlide) {
 	.intro {
 		opacity: 0;
 		animation: introSlide 0.5s forwards 0.25s;
 	}
-    .page-content {
-        position: relative;
+	.page-content {
+		position: relative;
 		opacity: 0;
-        animation: bodySlide 0.5s forwards 0.25s;
-    }
-}
-*/
-
-@supports (backdrop-filter: blur(8px) grayscale(75%)){
-    footer.fancy {
-        backdrop-filter: blur(8px) grayscale(75%);
-        background-color: revert;
-    }
-}
-
-@supports (width: 50vw){
-	.intro {
-		width: 760px;
+		animation: bodySlide 0.5s forwards 0.25s;
 	}
 }
 
 @keyframes introSlide {
 	0% {
-		left: -5vh; /* Initial position slightly above */
+		left: -5vh;
 		opacity: 0;	
 	}
 	100% {
@@ -182,7 +202,7 @@ TODO: make up your goddamned mind if you want it or not.
 }
 @keyframes bodySlide {
 	0% {
-		top: -25vh; /* Initial position slightly above */
+		top: -25vh;
 		opacity: 0;	
 	}
 	100% {
@@ -190,11 +210,25 @@ TODO: make up your goddamned mind if you want it or not.
 		opacity: 1;	
 	}
 }
+*/
+
+@supports (backdrop-filter: blur(8px) grayscale(75%)){
+	footer {
+		backdrop-filter: blur(8px) grayscale(75%);
+		background-color: revert;
+	}
+}
+
+@supports (width: 50vw){
+	.intro {
+		width: 760px;
+	}
+}
 
 @media screen and (max-width: 980px) {
 	.intro img {
 		max-height: 15vw;
-        max-width: 15vw;
+		max-width: 15vw;
 	}
 	.intro {
 		width: auto;
@@ -204,7 +238,7 @@ TODO: make up your goddamned mind if you want it or not.
 	/* phones, more often than not, constitute here. */
 	.intro img {
 		max-height: 20vh;
-        max-width: 20vh;
+		max-width: 20vh;
 	}
 	.intro {
 		flex-direction: column;
@@ -219,10 +253,7 @@ TODO: make up your goddamned mind if you want it or not.
 	#size-snark {
 		display: inline;
 	}
-	.page-content {
-		padding: 0
-	}
-	body {
+	.page-content, .intro {
 		padding: 16px;
 	}
 	p {
@@ -230,7 +261,7 @@ TODO: make up your goddamned mind if you want it or not.
 	}
 
 	footer {
-		padding: 12px 8px;
+		padding: 24px;
 		border-top-left-radius: 12px;
 		border-top-right-radius: 12px;
 	}

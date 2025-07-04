@@ -30,7 +30,8 @@ var titles = [
     "probably alive",
     "now 20% more dysfunctional!",
     "please laugh",
-    "in \"Doing Something is Hard!\""
+    "in \"Doing Something is Hard!\"",
+    "ceci n'est pas une page Web."
 ]
 
 let lastIndex = 0

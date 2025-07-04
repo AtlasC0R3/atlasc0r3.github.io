@@ -147,9 +147,6 @@ function set_background(element){
         if(element.footer_color == 1) footer.style.color = "#202124"
         if(element.footer_color == 2) footer.style.color = "white"
     };
-    if(element.footer_bg != 0 && footer_exists){
-        footer.classList = "fancy";
-    };
     document.body.style.fontFamily = element.font;
     document.body.style.backgroundColor = "rgb(32, 33, 36)";
     

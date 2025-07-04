@@ -1,5 +1,3 @@
-// if (document.referrer && document.referrer != "") document.write('Thanks for visiting this site from ' + document.referrer);
-
 function fediring_stuff(){
     // User came from the Fediring. Show a Fediring traversal menu.
     document.body.append(document.getElementById("fediring-box"));
